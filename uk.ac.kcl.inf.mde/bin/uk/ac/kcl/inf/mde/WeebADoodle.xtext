@@ -1,0 +1,25 @@
+grammar uk.ac.kcl.inf.mde.WeebADoodle with org.eclipse.xtext.common.Terminals
+
+generate weebADoodle "http://www.ac.uk/kcl/inf/mde/WeebADoodle"
+
+Board:
+	settings += Setting*
+;
+
+Setting:
+	Action |
+	Character
+;
+
+
+Action:
+	command = ActionCommand '(' ')'
+;
+
+enum ActionCommand:
+	forward='forward' | backward='backward'
+;
+
+Character:
+	'character'
+;

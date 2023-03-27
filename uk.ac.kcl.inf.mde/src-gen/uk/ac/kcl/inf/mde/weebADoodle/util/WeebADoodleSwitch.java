@@ -8,7 +8,12 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import uk.ac.kcl.inf.mde.weebADoodle.*;
+import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.Scene;
+import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
+import uk.ac.kcl.inf.mde.weebADoodle.Setting;
+import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
+import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,10 +78,31 @@ public class WeebADoodleSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case WeebADoodlePackage.BOARD:
+      case WeebADoodlePackage.STORYBOARD:
       {
-        Board board = (Board)theEObject;
-        T result = caseBoard(board);
+        Storyboard storyboard = (Storyboard)theEObject;
+        T result = caseStoryboard(storyboard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.SCENE:
+      {
+        Scene scene = (Scene)theEObject;
+        T result = caseScene(scene);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.CHARACTER:
+      {
+        uk.ac.kcl.inf.mde.weebADoodle.Character character = (uk.ac.kcl.inf.mde.weebADoodle.Character)theEObject;
+        T result = caseCharacter(character);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.SCENE_OBJECT:
+      {
+        SceneObject sceneObject = (SceneObject)theEObject;
+        T result = caseSceneObject(sceneObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -87,11 +113,10 @@ public class WeebADoodleSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WeebADoodlePackage.ACTION:
+      case WeebADoodlePackage.DIRECTION:
       {
-        Action action = (Action)theEObject;
-        T result = caseAction(action);
-        if (result == null) result = caseSetting(action);
+        Direction direction = (Direction)theEObject;
+        T result = caseDirection(direction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -100,17 +125,65 @@ public class WeebADoodleSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Board</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Storyboard</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Board</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Storyboard</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBoard(Board object)
+  public T caseStoryboard(Storyboard object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Scene</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Scene</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScene(Scene object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Character</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Character</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCharacter(uk.ac.kcl.inf.mde.weebADoodle.Character object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Scene Object</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Scene Object</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSceneObject(SceneObject object)
   {
     return null;
   }
@@ -132,17 +205,17 @@ public class WeebADoodleSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Direction</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Direction</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAction(Action object)
+  public T caseDirection(Direction object)
   {
     return null;
   }

@@ -15,7 +15,11 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import uk.ac.kcl.inf.mde.services.WeebADoodleGrammarAccess;
-import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.Scene;
+import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
+import uk.ac.kcl.inf.mde.weebADoodle.Setting;
+import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 @SuppressWarnings("all")
@@ -32,11 +36,23 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == WeebADoodlePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case WeebADoodlePackage.ACTION:
-				sequence_Action(context, (uk.ac.kcl.inf.mde.weebADoodle.Action) semanticObject); 
+			case WeebADoodlePackage.CHARACTER:
+				sequence_Character(context, (uk.ac.kcl.inf.mde.weebADoodle.Character) semanticObject); 
 				return; 
-			case WeebADoodlePackage.BOARD:
-				sequence_Board(context, (Board) semanticObject); 
+			case WeebADoodlePackage.DIRECTION:
+				sequence_Direction(context, (Direction) semanticObject); 
+				return; 
+			case WeebADoodlePackage.SCENE:
+				sequence_Scene(context, (Scene) semanticObject); 
+				return; 
+			case WeebADoodlePackage.SCENE_OBJECT:
+				sequence_SceneObject(context, (SceneObject) semanticObject); 
+				return; 
+			case WeebADoodlePackage.SETTING:
+				sequence_Setting(context, (Setting) semanticObject); 
+				return; 
+			case WeebADoodlePackage.STORYBOARD:
+				sequence_Storyboard(context, (Storyboard) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,20 +62,31 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Setting returns Action
-	 *     Action returns Action
+	 *     Character returns Character
 	 *
 	 * Constraint:
-	 *     command=ActionCommand
+	 *     (name=ID value=STRING action=STRING dialogue=STRING description=STRING)
 	 * </pre>
 	 */
-	protected void sequence_Action(ISerializationContext context, uk.ac.kcl.inf.mde.weebADoodle.Action semanticObject) {
+	protected void sequence_Character(ISerializationContext context, uk.ac.kcl.inf.mde.weebADoodle.Character semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.ACTION__COMMAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.ACTION__COMMAND));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CHARACTER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CHARACTER__NAME));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CHARACTER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CHARACTER__VALUE));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CHARACTER__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CHARACTER__ACTION));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CHARACTER__DIALOGUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CHARACTER__DIALOGUE));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CHARACTER__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CHARACTER__DESCRIPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getActionAccess().getCommandActionCommandEnumRuleCall_0_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getCharacterAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCharacterAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getCharacterAccess().getActionSTRINGTerminalRuleCall_8_0(), semanticObject.getAction());
+		feeder.accept(grammarAccess.getCharacterAccess().getDialogueSTRINGTerminalRuleCall_11_0(), semanticObject.getDialogue());
+		feeder.accept(grammarAccess.getCharacterAccess().getDescriptionSTRINGTerminalRuleCall_14_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
@@ -67,13 +94,107 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Board returns Board
+	 *     Direction returns Direction
 	 *
 	 * Constraint:
-	 *     settings+=Setting+
+	 *     ((targetCharacter=[Character|ID] | targetObject=[SceneObject|ID]) movement=STRING description=STRING)
 	 * </pre>
 	 */
-	protected void sequence_Board(ISerializationContext context, Board semanticObject) {
+	protected void sequence_Direction(ISerializationContext context, Direction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SceneObject returns SceneObject
+	 *
+	 * Constraint:
+	 *     (name=ID value=STRING position=STRING description=STRING)
+	 * </pre>
+	 */
+	protected void sequence_SceneObject(ISerializationContext context, SceneObject semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__NAME));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__POSITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__POSITION));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SCENE_OBJECT__DESCRIPTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSceneObjectAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSceneObjectAccess().getValueSTRINGTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSceneObjectAccess().getPositionSTRINGTerminalRuleCall_8_0(), semanticObject.getPosition());
+		feeder.accept(grammarAccess.getSceneObjectAccess().getDescriptionSTRINGTerminalRuleCall_11_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Scene returns Scene
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         value=STRING 
+	 *         background=STRING 
+	 *         characters+=Character* 
+	 *         objects+=SceneObject* 
+	 *         settings=Setting 
+	 *         directions=Direction?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Scene(ISerializationContext context, Scene semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Setting returns Setting
+	 *
+	 * Constraint:
+	 *     (cameraShot=STRING cameraAngle=STRING lighting=STRING description=STRING)
+	 * </pre>
+	 */
+	protected void sequence_Setting(ISerializationContext context, Setting semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SETTING__CAMERA_SHOT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SETTING__CAMERA_SHOT));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SETTING__CAMERA_ANGLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SETTING__CAMERA_ANGLE));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SETTING__LIGHTING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SETTING__LIGHTING));
+			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.SETTING__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.SETTING__DESCRIPTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSettingAccess().getCameraShotSTRINGTerminalRuleCall_3_0(), semanticObject.getCameraShot());
+		feeder.accept(grammarAccess.getSettingAccess().getCameraAngleSTRINGTerminalRuleCall_6_0(), semanticObject.getCameraAngle());
+		feeder.accept(grammarAccess.getSettingAccess().getLightingSTRINGTerminalRuleCall_9_0(), semanticObject.getLighting());
+		feeder.accept(grammarAccess.getSettingAccess().getDescriptionSTRINGTerminalRuleCall_12_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Storyboard returns Storyboard
+	 *
+	 * Constraint:
+	 *     scenes+=Scene+
+	 * </pre>
+	 */
+	protected void sequence_Storyboard(ISerializationContext context, Storyboard semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

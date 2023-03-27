@@ -10,6 +10,15 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Setting</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraShot <em>Camera Shot</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraAngle <em>Camera Angle</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting <em>Lighting</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription <em>Description</em>}</li>
+ * </ul>
  *
  * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting()
  * @model
@@ -17,4 +26,92 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Setting extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Camera Shot</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Camera Shot</em>' attribute.
+   * @see #setCameraShot(String)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_CameraShot()
+   * @model
+   * @generated
+   */
+  String getCameraShot();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraShot <em>Camera Shot</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Camera Shot</em>' attribute.
+   * @see #getCameraShot()
+   * @generated
+   */
+  void setCameraShot(String value);
+
+  /**
+   * Returns the value of the '<em><b>Camera Angle</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Camera Angle</em>' attribute.
+   * @see #setCameraAngle(String)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_CameraAngle()
+   * @model
+   * @generated
+   */
+  String getCameraAngle();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraAngle <em>Camera Angle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Camera Angle</em>' attribute.
+   * @see #getCameraAngle()
+   * @generated
+   */
+  void setCameraAngle(String value);
+
+  /**
+   * Returns the value of the '<em><b>Lighting</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Lighting</em>' attribute.
+   * @see #setLighting(String)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_Lighting()
+   * @model
+   * @generated
+   */
+  String getLighting();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting <em>Lighting</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Lighting</em>' attribute.
+   * @see #getLighting()
+   * @generated
+   */
+  void setLighting(String value);
+
+  /**
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_Description()
+   * @model
+   * @generated
+   */
+  String getDescription();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(String value);
+
 } // Setting

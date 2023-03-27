@@ -27,7 +27,7 @@ public class WeebADoodleParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Board";
+		return "Storyboard";
 	}
 
 	public WeebADoodleGrammarAccess getGrammarAccess() {

@@ -17,41 +17,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Board;
-import uk.ac.kcl.inf.mde.weebADoodle.Setting;
+import uk.ac.kcl.inf.mde.weebADoodle.Scene;
+import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Board</b></em>'.
+ * An implementation of the model object '<em><b>Storyboard</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl#getSettings <em>Settings</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.StoryboardImpl#getScenes <em>Scenes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BoardImpl extends MinimalEObjectImpl.Container implements Board
+public class StoryboardImpl extends MinimalEObjectImpl.Container implements Storyboard
 {
   /**
-   * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference list.
+   * The cached value of the '{@link #getScenes() <em>Scenes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSettings()
+   * @see #getScenes()
    * @generated
    * @ordered
    */
-  protected EList<Setting> settings;
+  protected EList<Scene> scenes;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BoardImpl()
+  protected StoryboardImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   @Override
   protected EClass eStaticClass()
   {
-    return WeebADoodlePackage.Literals.BOARD;
+    return WeebADoodlePackage.Literals.STORYBOARD;
   }
 
   /**
@@ -73,13 +73,13 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
    * @generated
    */
   @Override
-  public EList<Setting> getSettings()
+  public EList<Scene> getScenes()
   {
-    if (settings == null)
+    if (scenes == null)
     {
-      settings = new EObjectContainmentEList<Setting>(Setting.class, this, WeebADoodlePackage.BOARD__SETTINGS);
+      scenes = new EObjectContainmentEList<Scene>(Scene.class, this, WeebADoodlePackage.STORYBOARD__SCENES);
     }
-    return settings;
+    return scenes;
   }
 
   /**
@@ -92,8 +92,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.BOARD__SETTINGS:
-        return ((InternalEList<?>)getSettings()).basicRemove(otherEnd, msgs);
+      case WeebADoodlePackage.STORYBOARD__SCENES:
+        return ((InternalEList<?>)getScenes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.BOARD__SETTINGS:
-        return getSettings();
+      case WeebADoodlePackage.STORYBOARD__SCENES:
+        return getScenes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.BOARD__SETTINGS:
-        getSettings().clear();
-        getSettings().addAll((Collection<? extends Setting>)newValue);
+      case WeebADoodlePackage.STORYBOARD__SCENES:
+        getScenes().clear();
+        getScenes().addAll((Collection<? extends Scene>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.BOARD__SETTINGS:
-        getSettings().clear();
+      case WeebADoodlePackage.STORYBOARD__SCENES:
+        getScenes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +160,10 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.BOARD__SETTINGS:
-        return settings != null && !settings.isEmpty();
+      case WeebADoodlePackage.STORYBOARD__SCENES:
+        return scenes != null && !scenes.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //BoardImpl
+} //StoryboardImpl

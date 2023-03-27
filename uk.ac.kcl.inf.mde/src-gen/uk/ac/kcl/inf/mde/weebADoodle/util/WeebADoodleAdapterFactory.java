@@ -10,7 +10,12 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.kcl.inf.mde.weebADoodle.*;
+import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.Scene;
+import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
+import uk.ac.kcl.inf.mde.weebADoodle.Setting;
+import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
+import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,9 +81,24 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
     new WeebADoodleSwitch<Adapter>()
     {
       @Override
-      public Adapter caseBoard(Board object)
+      public Adapter caseStoryboard(Storyboard object)
       {
-        return createBoardAdapter();
+        return createStoryboardAdapter();
+      }
+      @Override
+      public Adapter caseScene(Scene object)
+      {
+        return createSceneAdapter();
+      }
+      @Override
+      public Adapter caseCharacter(uk.ac.kcl.inf.mde.weebADoodle.Character object)
+      {
+        return createCharacterAdapter();
+      }
+      @Override
+      public Adapter caseSceneObject(SceneObject object)
+      {
+        return createSceneObjectAdapter();
       }
       @Override
       public Adapter caseSetting(Setting object)
@@ -86,9 +106,9 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
         return createSettingAdapter();
       }
       @Override
-      public Adapter caseAction(Action object)
+      public Adapter caseDirection(Direction object)
       {
-        return createActionAdapter();
+        return createDirectionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -113,16 +133,61 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Board <em>Board</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Storyboard <em>Storyboard</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Board
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Storyboard
    * @generated
    */
-  public Adapter createBoardAdapter()
+  public Adapter createStoryboardAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene <em>Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene
+   * @generated
+   */
+  public Adapter createSceneAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Character <em>Character</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character
+   * @generated
+   */
+  public Adapter createCharacterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject <em>Scene Object</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.SceneObject
+   * @generated
+   */
+  public Adapter createSceneObjectAdapter()
   {
     return null;
   }
@@ -143,16 +208,16 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Action <em>Action</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction <em>Direction</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Action
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction
    * @generated
    */
-  public Adapter createActionAdapter()
+  public Adapter createDirectionAdapter()
   {
     return null;
   }

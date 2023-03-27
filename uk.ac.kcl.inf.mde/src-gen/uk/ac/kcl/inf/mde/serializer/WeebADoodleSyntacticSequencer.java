@@ -26,21 +26,9 @@ public class WeebADoodleSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getCharacterRule())
-			return getCharacterToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * Character:
-	 * 	'character'
-	 * ;
-	 */
-	protected String getCharacterToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "character";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

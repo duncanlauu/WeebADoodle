@@ -5,7 +5,6 @@ package uk.ac.kcl.inf.mde.weebADoodle;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -59,32 +58,233 @@ public interface WeebADoodlePackage extends EPackage
   WeebADoodlePackage eINSTANCE = uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl.init();
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl <em>Board</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.StoryboardImpl <em>Storyboard</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl
-   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getBoard()
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.StoryboardImpl
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getStoryboard()
    * @generated
    */
-  int BOARD = 0;
+  int STORYBOARD = 0;
 
   /**
-   * The feature id for the '<em><b>Settings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Scenes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOARD__SETTINGS = 0;
+  int STORYBOARD__SCENES = 0;
 
   /**
-   * The number of structural features of the '<em>Board</em>' class.
+   * The number of structural features of the '<em>Storyboard</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOARD_FEATURE_COUNT = 1;
+  int STORYBOARD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl <em>Scene</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getScene()
+   * @generated
+   */
+  int SCENE = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Background</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__BACKGROUND = 2;
+
+  /**
+   * The feature id for the '<em><b>Characters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__CHARACTERS = 3;
+
+  /**
+   * The feature id for the '<em><b>Objects</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__OBJECTS = 4;
+
+  /**
+   * The feature id for the '<em><b>Settings</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__SETTINGS = 5;
+
+  /**
+   * The feature id for the '<em><b>Directions</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE__DIRECTIONS = 6;
+
+  /**
+   * The number of structural features of the '<em>Scene</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl <em>Character</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getCharacter()
+   * @generated
+   */
+  int CHARACTER = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER__VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER__ACTION = 2;
+
+  /**
+   * The feature id for the '<em><b>Dialogue</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER__DIALOGUE = 3;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER__DESCRIPTION = 4;
+
+  /**
+   * The number of structural features of the '<em>Character</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTER_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneObjectImpl <em>Scene Object</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.SceneObjectImpl
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getSceneObject()
+   * @generated
+   */
+  int SCENE_OBJECT = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_OBJECT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_OBJECT__VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Position</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_OBJECT__POSITION = 2;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_OBJECT__DESCRIPTION = 3;
+
+  /**
+   * The number of structural features of the '<em>Scene Object</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENE_OBJECT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl <em>Setting</em>}' class.
@@ -94,7 +294,43 @@ public interface WeebADoodlePackage extends EPackage
    * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getSetting()
    * @generated
    */
-  int SETTING = 1;
+  int SETTING = 4;
+
+  /**
+   * The feature id for the '<em><b>Camera Shot</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SETTING__CAMERA_SHOT = 0;
+
+  /**
+   * The feature id for the '<em><b>Camera Angle</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SETTING__CAMERA_ANGLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Lighting</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SETTING__LIGHTING = 2;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SETTING__DESCRIPTION = 3;
 
   /**
    * The number of structural features of the '<em>Setting</em>' class.
@@ -103,67 +339,290 @@ public interface WeebADoodlePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SETTING_FEATURE_COUNT = 0;
+  int SETTING_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.ActionImpl <em>Action</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.DirectionImpl <em>Direction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.ActionImpl
-   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getAction()
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.DirectionImpl
+   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getDirection()
    * @generated
    */
-  int ACTION = 2;
+  int DIRECTION = 5;
 
   /**
-   * The feature id for the '<em><b>Command</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__COMMAND = SETTING_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Action</em>' class.
+   * The feature id for the '<em><b>Target Character</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = SETTING_FEATURE_COUNT + 1;
+  int DIRECTION__TARGET_CHARACTER = 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.ActionCommand <em>Action Command</em>}' enum.
+   * The feature id for the '<em><b>Target Object</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mde.weebADoodle.ActionCommand
-   * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getActionCommand()
    * @generated
+   * @ordered
    */
-  int ACTION_COMMAND = 3;
+  int DIRECTION__TARGET_OBJECT = 1;
+
+  /**
+   * The feature id for the '<em><b>Movement</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTION__MOVEMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTION__DESCRIPTION = 3;
+
+  /**
+   * The number of structural features of the '<em>Direction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECTION_FEATURE_COUNT = 4;
 
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Board <em>Board</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Storyboard <em>Storyboard</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Board</em>'.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Board
+   * @return the meta object for class '<em>Storyboard</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Storyboard
    * @generated
    */
-  EClass getBoard();
+  EClass getStoryboard();
 
   /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mde.weebADoodle.Board#getSettings <em>Settings</em>}'.
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mde.weebADoodle.Storyboard#getScenes <em>Scenes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Settings</em>'.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Board#getSettings()
-   * @see #getBoard()
+   * @return the meta object for the containment reference list '<em>Scenes</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Storyboard#getScenes()
+   * @see #getStoryboard()
    * @generated
    */
-  EReference getBoard_Settings();
+  EReference getStoryboard_Scenes();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene <em>Scene</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scene</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene
+   * @generated
+   */
+  EClass getScene();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getName()
+   * @see #getScene()
+   * @generated
+   */
+  EAttribute getScene_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getValue()
+   * @see #getScene()
+   * @generated
+   */
+  EAttribute getScene_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getBackground <em>Background</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Background</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getBackground()
+   * @see #getScene()
+   * @generated
+   */
+  EAttribute getScene_Background();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getCharacters <em>Characters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Characters</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getCharacters()
+   * @see #getScene()
+   * @generated
+   */
+  EReference getScene_Characters();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getObjects <em>Objects</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Objects</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getObjects()
+   * @see #getScene()
+   * @generated
+   */
+  EReference getScene_Objects();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getSettings <em>Settings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Settings</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getSettings()
+   * @see #getScene()
+   * @generated
+   */
+  EReference getScene_Settings();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getDirections <em>Directions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Directions</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Scene#getDirections()
+   * @see #getScene()
+   * @generated
+   */
+  EReference getScene_Directions();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Character <em>Character</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Character</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character
+   * @generated
+   */
+  EClass getCharacter();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character#getName()
+   * @see #getCharacter()
+   * @generated
+   */
+  EAttribute getCharacter_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character#getValue()
+   * @see #getCharacter()
+   * @generated
+   */
+  EAttribute getCharacter_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getAction <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Action</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character#getAction()
+   * @see #getCharacter()
+   * @generated
+   */
+  EAttribute getCharacter_Action();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDialogue <em>Dialogue</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Dialogue</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character#getDialogue()
+   * @see #getCharacter()
+   * @generated
+   */
+  EAttribute getCharacter_Dialogue();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Character#getDescription()
+   * @see #getCharacter()
+   * @generated
+   */
+  EAttribute getCharacter_Description();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject <em>Scene Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Scene Object</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.SceneObject
+   * @generated
+   */
+  EClass getSceneObject();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getName()
+   * @see #getSceneObject()
+   * @generated
+   */
+  EAttribute getSceneObject_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getValue()
+   * @see #getSceneObject()
+   * @generated
+   */
+  EAttribute getSceneObject_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Position</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getPosition()
+   * @see #getSceneObject()
+   * @generated
+   */
+  EAttribute getSceneObject_Position();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getDescription()
+   * @see #getSceneObject()
+   * @generated
+   */
+  EAttribute getSceneObject_Description();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting <em>Setting</em>}'.
@@ -176,35 +635,102 @@ public interface WeebADoodlePackage extends EPackage
   EClass getSetting();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Action <em>Action</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraShot <em>Camera Shot</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action</em>'.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Action
+   * @return the meta object for the attribute '<em>Camera Shot</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraShot()
+   * @see #getSetting()
    * @generated
    */
-  EClass getAction();
+  EAttribute getSetting_CameraShot();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Action#getCommand <em>Command</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraAngle <em>Camera Angle</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Command</em>'.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Action#getCommand()
-   * @see #getAction()
+   * @return the meta object for the attribute '<em>Camera Angle</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraAngle()
+   * @see #getSetting()
    * @generated
    */
-  EAttribute getAction_Command();
+  EAttribute getSetting_CameraAngle();
 
   /**
-   * Returns the meta object for enum '{@link uk.ac.kcl.inf.mde.weebADoodle.ActionCommand <em>Action Command</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting <em>Lighting</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Action Command</em>'.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.ActionCommand
+   * @return the meta object for the attribute '<em>Lighting</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting()
+   * @see #getSetting()
    * @generated
    */
-  EEnum getActionCommand();
+  EAttribute getSetting_Lighting();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription()
+   * @see #getSetting()
+   * @generated
+   */
+  EAttribute getSetting_Description();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction <em>Direction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Direction</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction
+   * @generated
+   */
+  EClass getDirection();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction#getTargetCharacter <em>Target Character</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target Character</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction#getTargetCharacter()
+   * @see #getDirection()
+   * @generated
+   */
+  EReference getDirection_TargetCharacter();
+
+  /**
+   * Returns the meta object for the reference '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction#getTargetObject <em>Target Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target Object</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction#getTargetObject()
+   * @see #getDirection()
+   * @generated
+   */
+  EReference getDirection_TargetObject();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction#getMovement <em>Movement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Movement</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction#getMovement()
+   * @see #getDirection()
+   * @generated
+   */
+  EAttribute getDirection_Movement();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction#getDescription()
+   * @see #getDirection()
+   * @generated
+   */
+  EAttribute getDirection_Description();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -230,22 +756,180 @@ public interface WeebADoodlePackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl <em>Board</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.StoryboardImpl <em>Storyboard</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl
-     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getBoard()
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.StoryboardImpl
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getStoryboard()
      * @generated
      */
-    EClass BOARD = eINSTANCE.getBoard();
+    EClass STORYBOARD = eINSTANCE.getStoryboard();
 
     /**
-     * The meta object literal for the '<em><b>Settings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Scenes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BOARD__SETTINGS = eINSTANCE.getBoard_Settings();
+    EReference STORYBOARD__SCENES = eINSTANCE.getStoryboard_Scenes();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl <em>Scene</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getScene()
+     * @generated
+     */
+    EClass SCENE = eINSTANCE.getScene();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE__NAME = eINSTANCE.getScene_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE__VALUE = eINSTANCE.getScene_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Background</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE__BACKGROUND = eINSTANCE.getScene_Background();
+
+    /**
+     * The meta object literal for the '<em><b>Characters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENE__CHARACTERS = eINSTANCE.getScene_Characters();
+
+    /**
+     * The meta object literal for the '<em><b>Objects</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENE__OBJECTS = eINSTANCE.getScene_Objects();
+
+    /**
+     * The meta object literal for the '<em><b>Settings</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENE__SETTINGS = eINSTANCE.getScene_Settings();
+
+    /**
+     * The meta object literal for the '<em><b>Directions</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENE__DIRECTIONS = eINSTANCE.getScene_Directions();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl <em>Character</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getCharacter()
+     * @generated
+     */
+    EClass CHARACTER = eINSTANCE.getCharacter();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARACTER__NAME = eINSTANCE.getCharacter_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARACTER__VALUE = eINSTANCE.getCharacter_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Action</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARACTER__ACTION = eINSTANCE.getCharacter_Action();
+
+    /**
+     * The meta object literal for the '<em><b>Dialogue</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARACTER__DIALOGUE = eINSTANCE.getCharacter_Dialogue();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARACTER__DESCRIPTION = eINSTANCE.getCharacter_Description();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneObjectImpl <em>Scene Object</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.SceneObjectImpl
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getSceneObject()
+     * @generated
+     */
+    EClass SCENE_OBJECT = eINSTANCE.getSceneObject();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE_OBJECT__NAME = eINSTANCE.getSceneObject_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE_OBJECT__VALUE = eINSTANCE.getSceneObject_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE_OBJECT__POSITION = eINSTANCE.getSceneObject_Position();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENE_OBJECT__DESCRIPTION = eINSTANCE.getSceneObject_Description();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl <em>Setting</em>}' class.
@@ -258,32 +942,78 @@ public interface WeebADoodlePackage extends EPackage
     EClass SETTING = eINSTANCE.getSetting();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.ActionImpl <em>Action</em>}' class.
+     * The meta object literal for the '<em><b>Camera Shot</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.ActionImpl
-     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getAction()
      * @generated
      */
-    EClass ACTION = eINSTANCE.getAction();
+    EAttribute SETTING__CAMERA_SHOT = eINSTANCE.getSetting_CameraShot();
 
     /**
-     * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Camera Angle</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION__COMMAND = eINSTANCE.getAction_Command();
+    EAttribute SETTING__CAMERA_ANGLE = eINSTANCE.getSetting_CameraAngle();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.ActionCommand <em>Action Command</em>}' enum.
+     * The meta object literal for the '<em><b>Lighting</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mde.weebADoodle.ActionCommand
-     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getActionCommand()
      * @generated
      */
-    EEnum ACTION_COMMAND = eINSTANCE.getActionCommand();
+    EAttribute SETTING__LIGHTING = eINSTANCE.getSetting_Lighting();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SETTING__DESCRIPTION = eINSTANCE.getSetting_Description();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.DirectionImpl <em>Direction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.DirectionImpl
+     * @see uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodlePackageImpl#getDirection()
+     * @generated
+     */
+    EClass DIRECTION = eINSTANCE.getDirection();
+
+    /**
+     * The meta object literal for the '<em><b>Target Character</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTION__TARGET_CHARACTER = eINSTANCE.getDirection_TargetCharacter();
+
+    /**
+     * The meta object literal for the '<em><b>Target Object</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECTION__TARGET_OBJECT = eINSTANCE.getDirection_TargetObject();
+
+    /**
+     * The meta object literal for the '<em><b>Movement</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIRECTION__MOVEMENT = eINSTANCE.getDirection_Movement();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DIRECTION__DESCRIPTION = eINSTANCE.getDirection_Description();
 
   }
 

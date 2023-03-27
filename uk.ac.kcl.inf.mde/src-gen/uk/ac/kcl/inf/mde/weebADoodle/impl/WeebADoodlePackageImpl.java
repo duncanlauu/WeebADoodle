@@ -5,16 +5,16 @@ package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Action;
-import uk.ac.kcl.inf.mde.weebADoodle.ActionCommand;
-import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.Scene;
+import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
+import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodleFactory;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
@@ -31,7 +31,28 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boardEClass = null;
+  private EClass storyboardEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sceneEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass characterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sceneObjectEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -45,14 +66,7 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass actionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum actionCommandEEnum = null;
+  private EClass directionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -122,9 +136,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EClass getBoard()
+  public EClass getStoryboard()
   {
-    return boardEClass;
+    return storyboardEClass;
   }
 
   /**
@@ -133,9 +147,218 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getBoard_Settings()
+  public EReference getStoryboard_Scenes()
   {
-    return (EReference)boardEClass.getEStructuralFeatures().get(0);
+    return (EReference)storyboardEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getScene()
+  {
+    return sceneEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getScene_Name()
+  {
+    return (EAttribute)sceneEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getScene_Value()
+  {
+    return (EAttribute)sceneEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getScene_Background()
+  {
+    return (EAttribute)sceneEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScene_Characters()
+  {
+    return (EReference)sceneEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScene_Objects()
+  {
+    return (EReference)sceneEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScene_Settings()
+  {
+    return (EReference)sceneEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScene_Directions()
+  {
+    return (EReference)sceneEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCharacter()
+  {
+    return characterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCharacter_Name()
+  {
+    return (EAttribute)characterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCharacter_Value()
+  {
+    return (EAttribute)characterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCharacter_Action()
+  {
+    return (EAttribute)characterEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCharacter_Dialogue()
+  {
+    return (EAttribute)characterEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCharacter_Description()
+  {
+    return (EAttribute)characterEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSceneObject()
+  {
+    return sceneObjectEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSceneObject_Name()
+  {
+    return (EAttribute)sceneObjectEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSceneObject_Value()
+  {
+    return (EAttribute)sceneObjectEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSceneObject_Position()
+  {
+    return (EAttribute)sceneObjectEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSceneObject_Description()
+  {
+    return (EAttribute)sceneObjectEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -155,9 +378,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EClass getAction()
+  public EAttribute getSetting_CameraShot()
   {
-    return actionEClass;
+    return (EAttribute)settingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -166,9 +389,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getAction_Command()
+  public EAttribute getSetting_CameraAngle()
   {
-    return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)settingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -177,9 +400,75 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EEnum getActionCommand()
+  public EAttribute getSetting_Lighting()
   {
-    return actionCommandEEnum;
+    return (EAttribute)settingEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSetting_Description()
+  {
+    return (EAttribute)settingEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDirection()
+  {
+    return directionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirection_TargetCharacter()
+  {
+    return (EReference)directionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDirection_TargetObject()
+  {
+    return (EReference)directionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirection_Movement()
+  {
+    return (EAttribute)directionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDirection_Description()
+  {
+    return (EAttribute)directionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -213,16 +502,42 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
     isCreated = true;
 
     // Create classes and their features
-    boardEClass = createEClass(BOARD);
-    createEReference(boardEClass, BOARD__SETTINGS);
+    storyboardEClass = createEClass(STORYBOARD);
+    createEReference(storyboardEClass, STORYBOARD__SCENES);
+
+    sceneEClass = createEClass(SCENE);
+    createEAttribute(sceneEClass, SCENE__NAME);
+    createEAttribute(sceneEClass, SCENE__VALUE);
+    createEAttribute(sceneEClass, SCENE__BACKGROUND);
+    createEReference(sceneEClass, SCENE__CHARACTERS);
+    createEReference(sceneEClass, SCENE__OBJECTS);
+    createEReference(sceneEClass, SCENE__SETTINGS);
+    createEReference(sceneEClass, SCENE__DIRECTIONS);
+
+    characterEClass = createEClass(CHARACTER);
+    createEAttribute(characterEClass, CHARACTER__NAME);
+    createEAttribute(characterEClass, CHARACTER__VALUE);
+    createEAttribute(characterEClass, CHARACTER__ACTION);
+    createEAttribute(characterEClass, CHARACTER__DIALOGUE);
+    createEAttribute(characterEClass, CHARACTER__DESCRIPTION);
+
+    sceneObjectEClass = createEClass(SCENE_OBJECT);
+    createEAttribute(sceneObjectEClass, SCENE_OBJECT__NAME);
+    createEAttribute(sceneObjectEClass, SCENE_OBJECT__VALUE);
+    createEAttribute(sceneObjectEClass, SCENE_OBJECT__POSITION);
+    createEAttribute(sceneObjectEClass, SCENE_OBJECT__DESCRIPTION);
 
     settingEClass = createEClass(SETTING);
+    createEAttribute(settingEClass, SETTING__CAMERA_SHOT);
+    createEAttribute(settingEClass, SETTING__CAMERA_ANGLE);
+    createEAttribute(settingEClass, SETTING__LIGHTING);
+    createEAttribute(settingEClass, SETTING__DESCRIPTION);
 
-    actionEClass = createEClass(ACTION);
-    createEAttribute(actionEClass, ACTION__COMMAND);
-
-    // Create enums
-    actionCommandEEnum = createEEnum(ACTION_COMMAND);
+    directionEClass = createEClass(DIRECTION);
+    createEReference(directionEClass, DIRECTION__TARGET_CHARACTER);
+    createEReference(directionEClass, DIRECTION__TARGET_OBJECT);
+    createEAttribute(directionEClass, DIRECTION__MOVEMENT);
+    createEAttribute(directionEClass, DIRECTION__DESCRIPTION);
   }
 
   /**
@@ -254,21 +569,44 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    actionEClass.getESuperTypes().add(this.getSetting());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(boardEClass, Board.class, "Board", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBoard_Settings(), this.getSetting(), null, "settings", null, 0, -1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(storyboardEClass, Storyboard.class, "Storyboard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStoryboard_Scenes(), this.getScene(), null, "scenes", null, 0, -1, Storyboard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sceneEClass, Scene.class, "Scene", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScene_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScene_Value(), ecorePackage.getEString(), "value", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getScene_Background(), ecorePackage.getEString(), "background", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScene_Characters(), this.getCharacter(), null, "characters", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScene_Objects(), this.getSceneObject(), null, "objects", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScene_Settings(), this.getSetting(), null, "settings", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScene_Directions(), this.getDirection(), null, "directions", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(characterEClass, uk.ac.kcl.inf.mde.weebADoodle.Character.class, "Character", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCharacter_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCharacter_Value(), ecorePackage.getEString(), "value", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCharacter_Action(), ecorePackage.getEString(), "action", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCharacter_Dialogue(), ecorePackage.getEString(), "dialogue", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCharacter_Description(), ecorePackage.getEString(), "description", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sceneObjectEClass, SceneObject.class, "SceneObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSceneObject_Name(), ecorePackage.getEString(), "name", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSceneObject_Value(), ecorePackage.getEString(), "value", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSceneObject_Position(), ecorePackage.getEString(), "position", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSceneObject_Description(), ecorePackage.getEString(), "description", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(settingEClass, Setting.class, "Setting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetting_CameraShot(), ecorePackage.getEString(), "cameraShot", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetting_CameraAngle(), ecorePackage.getEString(), "cameraAngle", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetting_Lighting(), ecorePackage.getEString(), "lighting", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetting_Description(), ecorePackage.getEString(), "description", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAction_Command(), this.getActionCommand(), "command", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(actionCommandEEnum, ActionCommand.class, "ActionCommand");
-    addEEnumLiteral(actionCommandEEnum, ActionCommand.FORWARD);
-    addEEnumLiteral(actionCommandEEnum, ActionCommand.BACKWARD);
+    initEClass(directionEClass, Direction.class, "Direction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDirection_TargetCharacter(), this.getCharacter(), null, "targetCharacter", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDirection_TargetObject(), this.getSceneObject(), null, "targetObject", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirection_Movement(), ecorePackage.getEString(), "movement", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDirection_Description(), ecorePackage.getEString(), "description", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

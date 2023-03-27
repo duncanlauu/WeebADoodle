@@ -4,7 +4,6 @@
 package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -12,7 +11,13 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import uk.ac.kcl.inf.mde.weebADoodle.*;
+import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.Scene;
+import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
+import uk.ac.kcl.inf.mde.weebADoodle.Setting;
+import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
+import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodleFactory;
+import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,9 +71,12 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
   {
     switch (eClass.getClassifierID())
     {
-      case WeebADoodlePackage.BOARD: return createBoard();
+      case WeebADoodlePackage.STORYBOARD: return createStoryboard();
+      case WeebADoodlePackage.SCENE: return createScene();
+      case WeebADoodlePackage.CHARACTER: return createCharacter();
+      case WeebADoodlePackage.SCENE_OBJECT: return createSceneObject();
       case WeebADoodlePackage.SETTING: return createSetting();
-      case WeebADoodlePackage.ACTION: return createAction();
+      case WeebADoodlePackage.DIRECTION: return createDirection();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -80,15 +88,10 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
    * @generated
    */
   @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
+  public Storyboard createStoryboard()
   {
-    switch (eDataType.getClassifierID())
-    {
-      case WeebADoodlePackage.ACTION_COMMAND:
-        return createActionCommandFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
+    StoryboardImpl storyboard = new StoryboardImpl();
+    return storyboard;
   }
 
   /**
@@ -97,15 +100,10 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
    * @generated
    */
   @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
+  public Scene createScene()
   {
-    switch (eDataType.getClassifierID())
-    {
-      case WeebADoodlePackage.ACTION_COMMAND:
-        return convertActionCommandToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
+    SceneImpl scene = new SceneImpl();
+    return scene;
   }
 
   /**
@@ -114,10 +112,22 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
    * @generated
    */
   @Override
-  public Board createBoard()
+  public uk.ac.kcl.inf.mde.weebADoodle.Character createCharacter()
   {
-    BoardImpl board = new BoardImpl();
-    return board;
+    CharacterImpl character = new CharacterImpl();
+    return character;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SceneObject createSceneObject()
+  {
+    SceneObjectImpl sceneObject = new SceneObjectImpl();
+    return sceneObject;
   }
 
   /**
@@ -138,32 +148,10 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
    * @generated
    */
   @Override
-  public Action createAction()
+  public Direction createDirection()
   {
-    ActionImpl action = new ActionImpl();
-    return action;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ActionCommand createActionCommandFromString(EDataType eDataType, String initialValue)
-  {
-    ActionCommand result = ActionCommand.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertActionCommandToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
+    DirectionImpl direction = new DirectionImpl();
+    return direction;
   }
 
   /**

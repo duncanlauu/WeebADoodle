@@ -24,13 +24,40 @@ public interface WeebADoodleFactory extends EFactory
   WeebADoodleFactory eINSTANCE = uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodleFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Board</em>'.
+   * Returns a new object of class '<em>Storyboard</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Board</em>'.
+   * @return a new object of class '<em>Storyboard</em>'.
    * @generated
    */
-  Board createBoard();
+  Storyboard createStoryboard();
+
+  /**
+   * Returns a new object of class '<em>Scene</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scene</em>'.
+   * @generated
+   */
+  Scene createScene();
+
+  /**
+   * Returns a new object of class '<em>Character</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Character</em>'.
+   * @generated
+   */
+  Character createCharacter();
+
+  /**
+   * Returns a new object of class '<em>Scene Object</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Scene Object</em>'.
+   * @generated
+   */
+  SceneObject createSceneObject();
 
   /**
    * Returns a new object of class '<em>Setting</em>'.
@@ -42,13 +69,13 @@ public interface WeebADoodleFactory extends EFactory
   Setting createSetting();
 
   /**
-   * Returns a new object of class '<em>Action</em>'.
+   * Returns a new object of class '<em>Direction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action</em>'.
+   * @return a new object of class '<em>Direction</em>'.
    * @generated
    */
-  Action createAction();
+  Direction createDirection();
 
   /**
    * Returns the package supported by this factory.

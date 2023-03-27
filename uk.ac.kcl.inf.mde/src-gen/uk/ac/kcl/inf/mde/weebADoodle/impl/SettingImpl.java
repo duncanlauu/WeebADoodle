@@ -3,8 +3,11 @@
  */
 package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
@@ -14,11 +17,100 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Setting</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getCameraShot <em>Camera Shot</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getCameraAngle <em>Camera Angle</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getLighting <em>Lighting</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getDescription <em>Description</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
 {
+  /**
+   * The default value of the '{@link #getCameraShot() <em>Camera Shot</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCameraShot()
+   * @generated
+   * @ordered
+   */
+  protected static final String CAMERA_SHOT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCameraShot() <em>Camera Shot</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCameraShot()
+   * @generated
+   * @ordered
+   */
+  protected String cameraShot = CAMERA_SHOT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCameraAngle() <em>Camera Angle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCameraAngle()
+   * @generated
+   * @ordered
+   */
+  protected static final String CAMERA_ANGLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCameraAngle() <em>Camera Angle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCameraAngle()
+   * @generated
+   * @ordered
+   */
+  protected String cameraAngle = CAMERA_ANGLE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getLighting() <em>Lighting</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLighting()
+   * @generated
+   * @ordered
+   */
+  protected static final String LIGHTING_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLighting() <em>Lighting</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLighting()
+   * @generated
+   * @ordered
+   */
+  protected String lighting = LIGHTING_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +130,225 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   protected EClass eStaticClass()
   {
     return WeebADoodlePackage.Literals.SETTING;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getCameraShot()
+  {
+    return cameraShot;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCameraShot(String newCameraShot)
+  {
+    String oldCameraShot = cameraShot;
+    cameraShot = newCameraShot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__CAMERA_SHOT, oldCameraShot, cameraShot));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getCameraAngle()
+  {
+    return cameraAngle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCameraAngle(String newCameraAngle)
+  {
+    String oldCameraAngle = cameraAngle;
+    cameraAngle = newCameraAngle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__CAMERA_ANGLE, oldCameraAngle, cameraAngle));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getLighting()
+  {
+    return lighting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLighting(String newLighting)
+  {
+    String oldLighting = lighting;
+    lighting = newLighting;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__LIGHTING, oldLighting, lighting));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
+        return getCameraShot();
+      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
+        return getCameraAngle();
+      case WeebADoodlePackage.SETTING__LIGHTING:
+        return getLighting();
+      case WeebADoodlePackage.SETTING__DESCRIPTION:
+        return getDescription();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
+        setCameraShot((String)newValue);
+        return;
+      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
+        setCameraAngle((String)newValue);
+        return;
+      case WeebADoodlePackage.SETTING__LIGHTING:
+        setLighting((String)newValue);
+        return;
+      case WeebADoodlePackage.SETTING__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
+        setCameraShot(CAMERA_SHOT_EDEFAULT);
+        return;
+      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
+        setCameraAngle(CAMERA_ANGLE_EDEFAULT);
+        return;
+      case WeebADoodlePackage.SETTING__LIGHTING:
+        setLighting(LIGHTING_EDEFAULT);
+        return;
+      case WeebADoodlePackage.SETTING__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
+        return CAMERA_SHOT_EDEFAULT == null ? cameraShot != null : !CAMERA_SHOT_EDEFAULT.equals(cameraShot);
+      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
+        return CAMERA_ANGLE_EDEFAULT == null ? cameraAngle != null : !CAMERA_ANGLE_EDEFAULT.equals(cameraAngle);
+      case WeebADoodlePackage.SETTING__LIGHTING:
+        return LIGHTING_EDEFAULT == null ? lighting != null : !LIGHTING_EDEFAULT.equals(lighting);
+      case WeebADoodlePackage.SETTING__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (cameraShot: ");
+    result.append(cameraShot);
+    result.append(", cameraAngle: ");
+    result.append(cameraAngle);
+    result.append(", lighting: ");
+    result.append(lighting);
+    result.append(", description: ");
+    result.append(description);
+    result.append(')');
+    return result.toString();
   }
 
 } //SettingImpl

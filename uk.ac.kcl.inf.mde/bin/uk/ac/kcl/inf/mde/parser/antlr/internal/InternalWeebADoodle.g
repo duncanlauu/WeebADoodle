@@ -84,12 +84,34 @@ ruleBoard returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getBoardAccess().getLeftCurlyBracketKeyword_1());
 		}
+		otherlv_2='title:'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getBoardAccess().getTitleKeyword_2());
+		}
+		(
+			(
+				lv_title_3_0=RULE_STRING
+				{
+					newLeafNode(lv_title_3_0, grammarAccess.getBoardAccess().getTitleSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getBoardRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"title",
+						lv_title_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBoardAccess().getScenesSceneParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBoardAccess().getScenesSceneParserRuleCall_4_0());
 				}
-				lv_scenes_2_0=ruleScene
+				lv_scenes_4_0=ruleScene
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBoardRule());
@@ -97,15 +119,15 @@ ruleBoard returns [EObject current=null]
 					add(
 						$current,
 						"scenes",
-						lv_scenes_2_0,
+						lv_scenes_4_0,
 						"uk.ac.kcl.inf.mde.WeebADoodle.Scene");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		otherlv_3='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getBoardAccess().getRightCurlyBracketKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getBoardAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -354,7 +376,7 @@ ruleCharacter returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
@@ -411,7 +433,7 @@ ruleCharacter returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		otherlv_10='}'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getCharacterAccess().getRightCurlyBracketKeyword_10());
@@ -838,31 +860,33 @@ ruleCameraShotStatement returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='from'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getCameraShotStatementAccess().getFromKeyword_2());
-		}
 		(
+			otherlv_2='from'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getCameraShotStatementAccess().getFromKeyword_2_0());
+			}
 			(
-				lv_cameraAngle_3_0=RULE_STRING
-				{
-					newLeafNode(lv_cameraAngle_3_0, grammarAccess.getCameraShotStatementAccess().getCameraAngleSTRINGTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCameraShotStatementRule());
+				(
+					lv_cameraAngle_3_0=RULE_STRING
+					{
+						newLeafNode(lv_cameraAngle_3_0, grammarAccess.getCameraShotStatementAccess().getCameraAngleSTRINGTerminalRuleCall_2_1_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"cameraAngle",
-						lv_cameraAngle_3_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCameraShotStatementRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"cameraAngle",
+							lv_cameraAngle_3_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=';'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getCameraShotStatementAccess().getSemicolonKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getCameraShotStatementAccess().getSemicolonKeyword_3());
 		}
 	)
 ;
@@ -905,31 +929,33 @@ ruleLightingStatement returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='from'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLightingStatementAccess().getFromKeyword_2());
-		}
 		(
+			otherlv_2='from'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getLightingStatementAccess().getFromKeyword_2_0());
+			}
 			(
-				lv_direction_3_0=RULE_STRING
-				{
-					newLeafNode(lv_direction_3_0, grammarAccess.getLightingStatementAccess().getDirectionSTRINGTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLightingStatementRule());
+				(
+					lv_direction_3_0=RULE_STRING
+					{
+						newLeafNode(lv_direction_3_0, grammarAccess.getLightingStatementAccess().getDirectionSTRINGTerminalRuleCall_2_1_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"direction",
-						lv_direction_3_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLightingStatementRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"direction",
+							lv_direction_3_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=';'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getLightingStatementAccess().getSemicolonKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getLightingStatementAccess().getSemicolonKeyword_3());
 		}
 	)
 ;

@@ -105,7 +105,7 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Board returns Board
 	 *
 	 * Constraint:
-	 *     scenes+=Scene+
+	 *     (title=STRING scenes+=Scene+)
 	 * </pre>
 	 */
 	protected void sequence_Board(ISerializationContext context, Board semanticObject) {
@@ -119,20 +119,11 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     CameraShotStatement returns CameraShotStatement
 	 *
 	 * Constraint:
-	 *     (cameraShot=STRING cameraAngle=STRING)
+	 *     (cameraShot=STRING cameraAngle=STRING?)
 	 * </pre>
 	 */
 	protected void sequence_CameraShotStatement(ISerializationContext context, CameraShotStatement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CAMERA_SHOT_STATEMENT__CAMERA_SHOT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CAMERA_SHOT_STATEMENT__CAMERA_SHOT));
-			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.CAMERA_SHOT_STATEMENT__CAMERA_ANGLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.CAMERA_SHOT_STATEMENT__CAMERA_ANGLE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCameraShotStatementAccess().getCameraShotSTRINGTerminalRuleCall_1_0(), semanticObject.getCameraShot());
-		feeder.accept(grammarAccess.getCameraShotStatementAccess().getCameraAngleSTRINGTerminalRuleCall_3_0(), semanticObject.getCameraAngle());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -145,10 +136,10 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     (
 	 *         name=ID 
 	 *         value=STRING 
-	 *         position=PositionStatement 
+	 *         position=PositionStatement? 
 	 *         action=ActionStatement? 
 	 *         dialogue=DialogueStatement? 
-	 *         description=DescriptionStatement
+	 *         description=DescriptionStatement?
 	 *     )
 	 * </pre>
 	 */
@@ -203,20 +194,11 @@ public class WeebADoodleSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     LightingStatement returns LightingStatement
 	 *
 	 * Constraint:
-	 *     (source=STRING direction=STRING)
+	 *     (source=STRING direction=STRING?)
 	 * </pre>
 	 */
 	protected void sequence_LightingStatement(ISerializationContext context, LightingStatement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.LIGHTING_STATEMENT__SOURCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.LIGHTING_STATEMENT__SOURCE));
-			if (transientValues.isValueTransient(semanticObject, WeebADoodlePackage.Literals.LIGHTING_STATEMENT__DIRECTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WeebADoodlePackage.Literals.LIGHTING_STATEMENT__DIRECTION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLightingStatementAccess().getSourceSTRINGTerminalRuleCall_1_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getLightingStatementAccess().getDirectionSTRINGTerminalRuleCall_3_0(), semanticObject.getDirection());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -68,13 +68,22 @@ public interface WeebADoodlePackage extends EPackage
   int BOARD = 0;
 
   /**
+   * The feature id for the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOARD__TITLE = 0;
+
+  /**
    * The feature id for the '<em><b>Scenes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BOARD__SCENES = 0;
+  int BOARD__SCENES = 1;
 
   /**
    * The number of structural features of the '<em>Board</em>' class.
@@ -83,7 +92,7 @@ public interface WeebADoodlePackage extends EPackage
    * @generated
    * @ordered
    */
-  int BOARD_FEATURE_COUNT = 1;
+  int BOARD_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl <em>Scene</em>}' class.
@@ -530,6 +539,17 @@ public interface WeebADoodlePackage extends EPackage
   EClass getBoard();
 
   /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mde.weebADoodle.Board#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Title</em>'.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Board#getTitle()
+   * @see #getBoard()
+   * @generated
+   */
+  EAttribute getBoard_Title();
+
+  /**
    * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mde.weebADoodle.Board#getScenes <em>Scenes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -969,6 +989,14 @@ public interface WeebADoodlePackage extends EPackage
      * @generated
      */
     EClass BOARD = eINSTANCE.getBoard();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOARD__TITLE = eINSTANCE.getBoard_Title();
 
     /**
      * The meta object literal for the '<em><b>Scenes</b></em>' containment reference list feature.

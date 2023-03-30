@@ -1,7 +1,6 @@
 package uk.ac.kcl.inf.mde.generator;
 
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -11,7 +10,11 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import uk.ac.kcl.inf.mde.weebADoodle.ActionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Scene;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 
@@ -37,109 +40,140 @@ public class WeebADoodleGenerator extends AbstractGenerator {
   public String doGenerateTxt(final Board m) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("Number of Scenes: ");
-    int _size = IteratorExtensions.size(Iterators.<Scene>filter(m.eAllContents(), Scene.class));
-    _builder.append(_size, "\t");
+    _builder.append("\t\t");
+    _builder.append("Script Title: ");
+    String _title = m.getTitle();
+    _builder.append(_title, "\t\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("Number of Characters: ");
-    int _size_1 = IteratorExtensions.size(Iterators.<uk.ac.kcl.inf.mde.weebADoodle.Character>filter(m.eAllContents(), uk.ac.kcl.inf.mde.weebADoodle.Character.class));
-    _builder.append(_size_1, "\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("Number of Objects: ");
-    int _size_2 = IteratorExtensions.size(Iterators.<SceneObject>filter(m.eAllContents(), SceneObject.class));
-    _builder.append(_size_2, "\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
     {
       Iterable<Scene> _filter = Iterables.<Scene>filter(IteratorExtensions.<EObject>toIterable(m.eAllContents()), Scene.class);
       for(final Scene scene : _filter) {
-        _builder.append("\t");
+        _builder.append("\t\t");
         String _name = scene.getName();
-        _builder.append(_name, "\t");
+        _builder.append(_name, "\t\t");
         _builder.append(" ");
         String _value = scene.getValue();
-        _builder.append(_value, "\t");
+        _builder.append(_value, "\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("BG: ");
         String _background = scene.getBackground();
-        _builder.append(_background, "\t");
+        _builder.append(_background, "\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("Setting: ");
         String _description = scene.getSettings().getDescription().getDescription();
-        _builder.append(_description, "\t");
+        _builder.append(_description, "\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("Camera: ");
         String _cameraShot = scene.getSettings().getCamera().getCameraShot();
-        _builder.append(_cameraShot, "\t");
+        _builder.append(_cameraShot, "\t\t");
         _builder.append(" ");
         String _cameraAngle = scene.getSettings().getCamera().getCameraAngle();
-        _builder.append(_cameraAngle, "\t");
+        _builder.append(_cameraAngle, "\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
+        _builder.append("Lighting: ");
         String _source = scene.getSettings().getLighting().getSource();
-        _builder.append(_source, "\t");
+        _builder.append(_source, "\t\t");
         _builder.append(" ");
         String _direction = scene.getSettings().getLighting().getDirection();
-        _builder.append(_direction, "\t");
+        _builder.append(_direction, "\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.newLine();
         {
           EList<uk.ac.kcl.inf.mde.weebADoodle.Character> _characters = scene.getCharacters();
           for(final uk.ac.kcl.inf.mde.weebADoodle.Character character : _characters) {
-            _builder.append("\t");
+            _builder.append("\t\t");
             String _name_1 = character.getName();
-            _builder.append(_name_1, "\t");
+            _builder.append(_name_1, "\t\t");
             _builder.append(" ");
             String _value_1 = character.getValue();
-            _builder.append(_value_1, "\t");
+            _builder.append(_value_1, "\t\t");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            String _action = character.getAction().getAction();
-            _builder.append(_action, "\t");
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            String _position = character.getPosition().getPosition();
-            _builder.append(_position, "\t");
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            String _dialogue = character.getDialogue().getDialogue();
-            _builder.append(_dialogue, "\t");
-            _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            String _description_1 = character.getDescription().getDescription();
-            _builder.append(_description_1, "\t");
-            _builder.newLineIfNotEmpty();
+            {
+              ActionStatement _action = character.getAction();
+              boolean _tripleNotEquals = (_action != null);
+              if (_tripleNotEquals) {
+                _builder.append("\t\t");
+                String _action_1 = character.getAction().getAction();
+                _builder.append(_action_1, "\t\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              PositionStatement _position = character.getPosition();
+              boolean _tripleNotEquals_1 = (_position != null);
+              if (_tripleNotEquals_1) {
+                _builder.append("\t\t");
+                String _position_1 = character.getPosition().getPosition();
+                _builder.append(_position_1, "\t\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              DialogueStatement _dialogue = character.getDialogue();
+              boolean _tripleNotEquals_2 = (_dialogue != null);
+              if (_tripleNotEquals_2) {
+                _builder.append("\t\t");
+                String _dialogue_1 = character.getDialogue().getDialogue();
+                _builder.append(_dialogue_1, "\t\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              DescriptionStatement _description_1 = character.getDescription();
+              boolean _tripleNotEquals_3 = (_description_1 != null);
+              if (_tripleNotEquals_3) {
+                _builder.append("\t\t");
+                _builder.append("(");
+                String _description_2 = character.getDescription().getDescription();
+                _builder.append(_description_2, "\t\t");
+                _builder.append(")");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            _builder.append("\t\t");
+            _builder.newLine();
           }
         }
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.newLine();
         {
           EList<SceneObject> _objects = scene.getObjects();
           for(final SceneObject object : _objects) {
-            _builder.append("\t");
+            _builder.append("\t\t");
             String _name_2 = object.getName();
-            _builder.append(_name_2, "\t");
+            _builder.append(_name_2, "\t\t");
             _builder.append(" ");
             String _value_2 = object.getValue();
-            _builder.append(_value_2, "\t");
+            _builder.append(_value_2, "\t\t");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            String _position_1 = object.getPosition().getPosition();
-            _builder.append(_position_1, "\t");
+            _builder.append("\t\t");
+            String _position_2 = object.getPosition().getPosition();
+            _builder.append(_position_2, "\t\t");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t");
-            String _description_2 = object.getDescription().getDescription();
-            _builder.append(_description_2, "\t");
+            _builder.append("\t\t");
+            String _description_3 = object.getDescription().getDescription();
+            _builder.append(_description_3, "\t\t");
             _builder.newLineIfNotEmpty();
           }
         }
+        _builder.append("\t\t");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("---");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.newLine();
       }
     }
+    _builder.append("\t\t");
+    _builder.newLine();
     return _builder.toString();
   }
 
@@ -149,112 +183,303 @@ public class WeebADoodleGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("<html lang=\"en\">");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("  ");
     _builder.append("<head>");
     _builder.newLine();
-    _builder.append("\t   \t");
+    _builder.append("    ");
     _builder.append("<meta charset=\"utf-8\">");
     _builder.newLine();
-    _builder.append("\t   \t");
+    _builder.append("    ");
     _builder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
     _builder.newLine();
-    _builder.append("\t   \t");
-    _builder.append("<title>Bootstrap demo</title>");
+    _builder.append("    ");
+    _builder.append("<title>Storyboard</title>");
     _builder.newLine();
-    _builder.append("\t   \t");
+    _builder.append("    ");
     _builder.append("<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">");
     _builder.newLine();
-    _builder.append("\t \t");
+    _builder.append("  ");
     _builder.append("</head>");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("  ");
     _builder.append("<body>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("<br>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("<h1 class=\"text-center\">");
+    String _title = m.getTitle();
+    _builder.append(_title, "  ");
+    _builder.append("</h1>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("<br><br><br>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<div class=\"card-deck\">");
+    _builder.newLine();
+    _builder.append("\t  ");
+    _builder.append("<div class=\"row\">");
     _builder.newLine();
     {
       Iterable<Scene> _filter = Iterables.<Scene>filter(IteratorExtensions.<EObject>toIterable(m.eAllContents()), Scene.class);
       for(final Scene scene : _filter) {
-        _builder.append("\t\t\t");
-        _builder.append("<div class=\"card\" style=\"width: 18rem;\">");
+        _builder.append("\t    ");
+        _builder.append("<div class=\"col-md-4 mb-3\">");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
+        _builder.append("\t    ");
+        _builder.append("  ");
+        _builder.append("<div class=\"card h-100\">");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("    ");
         _builder.append("<div class=\"card-header\">");
+        _builder.newLine();
+        _builder.append("\t\t                    ");
+        _builder.append("<div class=\"row\">");
+        _builder.newLine();
+        _builder.append("\t\t                      ");
+        _builder.append("<div class=\"col-7\"><span>");
         String _name = scene.getName();
-        _builder.append(_name, "\t\t\t   ");
-        _builder.append(" ");
+        _builder.append(_name, "\t\t                      ");
+        _builder.append(" - ");
         String _value = scene.getValue();
-        _builder.append(_value, "\t\t\t   ");
-        _builder.append("</div>");
+        _builder.append(_value, "\t\t                      ");
+        _builder.append("</span></div>");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
-        _builder.append("<svg width=\"100\" height=\"100\">");
+        _builder.append("\t\t                      ");
+        _builder.append("<div class=\"col-5 text-end\"><span>BG: ");
+        String _background = scene.getBackground();
+        _builder.append(_background, "\t\t                      ");
+        _builder.append("</span></div>");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t                    ");
+        _builder.append("</div>");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("     ");
-        _builder.append("<rect x=\"10\" y=\"10\" width=\"80\" height=\"80\" />");
+        _builder.append("\t\t                  ");
+        _builder.append("</div>");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
-        _builder.append("</svg>");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
+        _builder.append("\t    ");
+        _builder.append("    ");
         _builder.append("<div class=\"card-body\">");
         _builder.newLine();
-        _builder.append("\t\t\t");
+        _builder.append("\t    ");
         _builder.append("      ");
-        _builder.append("<h5 class=\"card-title\">Card title</h5>");
+        _builder.append("<div class=\"row\">");
         _builder.newLine();
-        _builder.append("\t\t\t");
+        _builder.append("\t    ");
+        _builder.append("        ");
+        _builder.append("<div class=\"col-8\"><div class=\"bordered\" style=\"height: 150px;\"></div></div>");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("        ");
+        _builder.append("<div class=\"col-4\"><div class=\"bordered\" style=\"height: 300px;\"></div></div>");
+        _builder.newLine();
+        _builder.append("\t    ");
         _builder.append("      ");
-        _builder.append("<p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
         _builder.append("</div>");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.append("<h6 class=\"card-title\">");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.append("Camera: ");
+        String _cameraShot = scene.getSettings().getCamera().getCameraShot();
+        _builder.append(_cameraShot, "\t          ");
+        _builder.newLineIfNotEmpty();
+        {
+          String _cameraAngle = scene.getSettings().getCamera().getCameraAngle();
+          boolean _tripleNotEquals = (_cameraAngle != null);
+          if (_tripleNotEquals) {
+            _builder.append("\t    ");
+            _builder.append("      ");
+            _builder.append("from ");
+            String _cameraAngle_1 = scene.getSettings().getCamera().getCameraAngle();
+            _builder.append(_cameraAngle_1, "\t          ");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t    ");
+            _builder.append("      ");
+          }
+        }
+        _builder.append(",");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.append("Lighting: ");
+        String _source = scene.getSettings().getLighting().getSource();
+        _builder.append(_source, "\t          ");
+        _builder.newLineIfNotEmpty();
+        {
+          String _direction = scene.getSettings().getLighting().getDirection();
+          boolean _tripleNotEquals_1 = (_direction != null);
+          if (_tripleNotEquals_1) {
+            _builder.append("from ");
+            String _direction_1 = scene.getSettings().getLighting().getDirection();
+            _builder.append(_direction_1);
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("  \t\t\t    \t       ");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.append("</h6>");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
+        _builder.append("<p class=\"card-text\"></p>");
+        _builder.newLine();
+        _builder.append("\t    ");
+        _builder.append("      ");
         _builder.append("<ul class=\"list-group list-group-flush\">");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("      ");
-        _builder.append("<li class=\"list-group-item\">An item</li>");
+        _builder.append("\t    ");
+        _builder.append("        ");
+        _builder.append("<li class=\"list-group-item\">");
+        String _description = scene.getSettings().getDescription().getDescription();
+        _builder.append(_description, "\t            ");
+        _builder.append("</li>");
+        _builder.newLineIfNotEmpty();
+        {
+          EList<uk.ac.kcl.inf.mde.weebADoodle.Character> _characters = scene.getCharacters();
+          for(final uk.ac.kcl.inf.mde.weebADoodle.Character character : _characters) {
+            _builder.append("\t\t    \t        \t\t");
+            _builder.append("<li class=\"list-group-item\">");
+            String _name_1 = character.getName();
+            _builder.append(_name_1, "\t\t    \t        \t\t");
+            _builder.append(" ");
+            String _value_1 = character.getValue();
+            _builder.append(_value_1, "\t\t    \t        \t\t");
+            _builder.append(": ");
+            _builder.newLineIfNotEmpty();
+            {
+              DialogueStatement _dialogue = character.getDialogue();
+              boolean _tripleNotEquals_2 = (_dialogue != null);
+              if (_tripleNotEquals_2) {
+                String _dialogue_1 = character.getDialogue().getDialogue();
+                _builder.append(_dialogue_1);
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              ActionStatement _action = character.getAction();
+              boolean _tripleNotEquals_3 = (_action != null);
+              if (_tripleNotEquals_3) {
+                String _action_1 = character.getAction().getAction();
+                _builder.append(_action_1);
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              DescriptionStatement _description_1 = character.getDescription();
+              boolean _tripleNotEquals_4 = (_description_1 != null);
+              if (_tripleNotEquals_4) {
+                _builder.append("(");
+                String _description_2 = character.getDescription().getDescription();
+                _builder.append(_description_2);
+                _builder.append(")");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              PositionStatement _position = character.getPosition();
+              boolean _tripleNotEquals_5 = (_position != null);
+              if (_tripleNotEquals_5) {
+                _builder.append("[");
+                String _position_1 = character.getPosition().getPosition();
+                _builder.append(_position_1);
+                _builder.append("]");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            _builder.newLine();
+            _builder.append("</li>");
+            _builder.newLine();
+            _builder.newLine();
+          }
+        }
+        _builder.append("\t    ");
+        _builder.append("        ");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("      ");
-        _builder.append("<li class=\"list-group-item\">A second item</li>");
+        {
+          EList<SceneObject> _objects = scene.getObjects();
+          for(final SceneObject object : _objects) {
+            _builder.append("\t\t\t    \t        \t");
+            _builder.append("<li class=\"list-group-item\">");
+            _builder.newLine();
+            String _name_2 = object.getName();
+            _builder.append(_name_2);
+            _builder.append(" ");
+            String _value_2 = object.getValue();
+            _builder.append(_value_2);
+            _builder.append(" at ");
+            String _position_2 = object.getPosition().getPosition();
+            _builder.append(_position_2);
+            _builder.append("<br>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("(");
+            String _description_3 = object.getDescription().getDescription();
+            _builder.append(_description_3);
+            _builder.append(")");
+            _builder.newLineIfNotEmpty();
+            _builder.append("</li>");
+            _builder.newLine();
+          }
+        }
+        _builder.append("\t    ");
+        _builder.append("        ");
         _builder.newLine();
-        _builder.append("\t\t\t");
+        _builder.append("\t    ");
         _builder.append("      ");
-        _builder.append("<li class=\"list-group-item\">A third item</li>");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
         _builder.append("</ul>");
         _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
-        _builder.append("<div class=\"card-body\">");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("   ");
+        _builder.append("\t    ");
+        _builder.append("    ");
         _builder.append("</div>");
         _builder.newLine();
-        _builder.append("\t\t\t");
+        _builder.append("\t    ");
+        _builder.append("  ");
+        _builder.append("</div>");
+        _builder.newLine();
+        _builder.append("\t    ");
         _builder.append("</div>");
         _builder.newLine();
       }
     }
-    _builder.append("\t\t");
-    _builder.append("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N\" crossorigin=\"anonymous\"></script>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("</body>");
+    _builder.append("\t  ");
+    _builder.append("</div>");
     _builder.newLine();
     _builder.append("\t");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N\" crossorigin=\"anonymous\"></script>");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append("</body>");
+    _builder.newLine();
     _builder.append("</html>");
+    _builder.newLine();
     _builder.newLine();
     return _builder.toString();
   }

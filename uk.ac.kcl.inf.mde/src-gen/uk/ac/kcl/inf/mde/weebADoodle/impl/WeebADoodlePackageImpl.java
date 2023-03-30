@@ -187,9 +187,20 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
+  public EAttribute getBoard_Title()
+  {
+    return (EAttribute)boardEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getBoard_Scenes()
   {
-    return (EReference)boardEClass.getEStructuralFeatures().get(0);
+    return (EReference)boardEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -631,6 +642,7 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
 
     // Create classes and their features
     boardEClass = createEClass(BOARD);
+    createEAttribute(boardEClass, BOARD__TITLE);
     createEReference(boardEClass, BOARD__SCENES);
 
     sceneEClass = createEClass(SCENE);
@@ -713,6 +725,7 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
 
     // Initialize classes and features; add operations and parameters
     initEClass(boardEClass, Board.class, "Board", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBoard_Title(), ecorePackage.getEString(), "title", null, 0, 1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBoard_Scenes(), this.getScene(), null, "scenes", null, 0, -1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sceneEClass, Scene.class, "Scene", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

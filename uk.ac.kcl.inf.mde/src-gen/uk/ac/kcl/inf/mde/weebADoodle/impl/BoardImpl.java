@@ -5,6 +5,7 @@ package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.BoardImpl#getScenes <em>Scenes</em>}</li>
  * </ul>
  *
@@ -36,6 +39,26 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
  */
 public class BoardImpl extends MinimalEObjectImpl.Container implements Board
 {
+  /**
+   * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTitle()
+   * @generated
+   * @ordered
+   */
+  protected static final String TITLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTitle()
+   * @generated
+   * @ordered
+   */
+  protected String title = TITLE_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getScenes() <em>Scenes</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -65,6 +88,31 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   protected EClass eStaticClass()
   {
     return WeebADoodlePackage.Literals.BOARD;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getTitle()
+  {
+    return title;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTitle(String newTitle)
+  {
+    String oldTitle = title;
+    title = newTitle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.BOARD__TITLE, oldTitle, title));
   }
 
   /**
@@ -108,6 +156,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
+      case WeebADoodlePackage.BOARD__TITLE:
+        return getTitle();
       case WeebADoodlePackage.BOARD__SCENES:
         return getScenes();
     }
@@ -125,6 +175,9 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
+      case WeebADoodlePackage.BOARD__TITLE:
+        setTitle((String)newValue);
+        return;
       case WeebADoodlePackage.BOARD__SCENES:
         getScenes().clear();
         getScenes().addAll((Collection<? extends Scene>)newValue);
@@ -143,6 +196,9 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
+      case WeebADoodlePackage.BOARD__TITLE:
+        setTitle(TITLE_EDEFAULT);
+        return;
       case WeebADoodlePackage.BOARD__SCENES:
         getScenes().clear();
         return;
@@ -160,10 +216,29 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board
   {
     switch (featureID)
     {
+      case WeebADoodlePackage.BOARD__TITLE:
+        return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
       case WeebADoodlePackage.BOARD__SCENES:
         return scenes != null && !scenes.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (title: ");
+    result.append(title);
+    result.append(')');
+    return result.toString();
   }
 
 } //BoardImpl

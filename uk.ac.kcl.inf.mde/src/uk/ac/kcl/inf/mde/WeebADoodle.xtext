@@ -6,6 +6,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Board:
     'board' '{'
+    	'title:' title=STRING
         scenes+=Scene+
     '}'
 ;
@@ -26,10 +27,10 @@ Scene:
 Character:
     'character' '{'
         name=ID 'name:' value=STRING ';'
-        position = PositionStatement
+        position = PositionStatement?
         action = ActionStatement?
         dialogue = DialogueStatement?
-        description = DescriptionStatement
+        description = DescriptionStatement?
 
     '}'
 ;
@@ -69,11 +70,11 @@ PositionStatement:
 ;
 
 CameraShotStatement:
-	'camera:' cameraShot = STRING 'from' cameraAngle = STRING ';'
+	'camera:' cameraShot = STRING ('from' cameraAngle = STRING)? ';'
 ;
 
 LightingStatement:
-	'lighting:' source = STRING 'from' direction = STRING ';'
+	'lighting:' source = STRING ('from' direction = STRING)? ';'
 ;
 
 	

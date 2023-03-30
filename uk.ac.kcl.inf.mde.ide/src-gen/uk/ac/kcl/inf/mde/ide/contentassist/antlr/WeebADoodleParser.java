@@ -41,8 +41,11 @@ public class WeebADoodleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionStatementAccess().getGroup(), "rule__ActionStatement__Group__0");
 			builder.put(grammarAccess.getPositionStatementAccess().getGroup(), "rule__PositionStatement__Group__0");
 			builder.put(grammarAccess.getCameraShotStatementAccess().getGroup(), "rule__CameraShotStatement__Group__0");
+			builder.put(grammarAccess.getCameraShotStatementAccess().getGroup_2(), "rule__CameraShotStatement__Group_2__0");
 			builder.put(grammarAccess.getLightingStatementAccess().getGroup(), "rule__LightingStatement__Group__0");
-			builder.put(grammarAccess.getBoardAccess().getScenesAssignment_2(), "rule__Board__ScenesAssignment_2");
+			builder.put(grammarAccess.getLightingStatementAccess().getGroup_2(), "rule__LightingStatement__Group_2__0");
+			builder.put(grammarAccess.getBoardAccess().getTitleAssignment_3(), "rule__Board__TitleAssignment_3");
+			builder.put(grammarAccess.getBoardAccess().getScenesAssignment_4(), "rule__Board__ScenesAssignment_4");
 			builder.put(grammarAccess.getSceneAccess().getNameAssignment_2(), "rule__Scene__NameAssignment_2");
 			builder.put(grammarAccess.getSceneAccess().getValueAssignment_4(), "rule__Scene__ValueAssignment_4");
 			builder.put(grammarAccess.getSceneAccess().getBackgroundAssignment_7(), "rule__Scene__BackgroundAssignment_7");
@@ -67,9 +70,9 @@ public class WeebADoodleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionStatementAccess().getActionAssignment_1(), "rule__ActionStatement__ActionAssignment_1");
 			builder.put(grammarAccess.getPositionStatementAccess().getPositionAssignment_1(), "rule__PositionStatement__PositionAssignment_1");
 			builder.put(grammarAccess.getCameraShotStatementAccess().getCameraShotAssignment_1(), "rule__CameraShotStatement__CameraShotAssignment_1");
-			builder.put(grammarAccess.getCameraShotStatementAccess().getCameraAngleAssignment_3(), "rule__CameraShotStatement__CameraAngleAssignment_3");
+			builder.put(grammarAccess.getCameraShotStatementAccess().getCameraAngleAssignment_2_1(), "rule__CameraShotStatement__CameraAngleAssignment_2_1");
 			builder.put(grammarAccess.getLightingStatementAccess().getSourceAssignment_1(), "rule__LightingStatement__SourceAssignment_1");
-			builder.put(grammarAccess.getLightingStatementAccess().getDirectionAssignment_3(), "rule__LightingStatement__DirectionAssignment_3");
+			builder.put(grammarAccess.getLightingStatementAccess().getDirectionAssignment_2_1(), "rule__LightingStatement__DirectionAssignment_2_1");
 		}
 	}
 	

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Board#getTitle <em>Title</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Board#getScenes <em>Scenes</em>}</li>
  * </ul>
  *
@@ -25,6 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Board extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Title</em>' attribute.
+   * @see #setTitle(String)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getBoard_Title()
+   * @model
+   * @generated
+   */
+  String getTitle();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Board#getTitle <em>Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Title</em>' attribute.
+   * @see #getTitle()
+   * @generated
+   */
+  void setTitle(String value);
+
   /**
    * Returns the value of the '<em><b>Scenes</b></em>' containment reference list.
    * The list contents are of type {@link uk.ac.kcl.inf.mde.weebADoodle.Scene}.

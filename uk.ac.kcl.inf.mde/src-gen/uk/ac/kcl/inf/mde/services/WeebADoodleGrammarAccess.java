@@ -26,18 +26,23 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBoardKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cScenesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cScenesSceneParserRuleCall_2_0 = (RuleCall)cScenesAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cTitleKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cTitleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_3_0 = (RuleCall)cTitleAssignment_3.eContents().get(0);
+		private final Assignment cScenesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cScenesSceneParserRuleCall_4_0 = (RuleCall)cScenesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Board:
 		//    'board' '{'
+		//        'title:' title=STRING
 		//        scenes+=Scene+
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'board' '{'
+		//    'title:' title=STRING
 		//    scenes+=Scene+
 		//'}'
 		public Group getGroup() { return cGroup; }
@@ -48,14 +53,23 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
+		//'title:'
+		public Keyword getTitleKeyword_2() { return cTitleKeyword_2; }
+		
+		//title=STRING
+		public Assignment getTitleAssignment_3() { return cTitleAssignment_3; }
+		
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_3_0() { return cTitleSTRINGTerminalRuleCall_3_0; }
+		
 		//scenes+=Scene+
-		public Assignment getScenesAssignment_2() { return cScenesAssignment_2; }
+		public Assignment getScenesAssignment_4() { return cScenesAssignment_4; }
 		
 		//Scene
-		public RuleCall getScenesSceneParserRuleCall_2_0() { return cScenesSceneParserRuleCall_2_0; }
+		public RuleCall getScenesSceneParserRuleCall_4_0() { return cScenesSceneParserRuleCall_4_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class SceneElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mde.WeebADoodle.Scene");
@@ -181,20 +195,20 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Character:
 		//    'character' '{'
 		//        name=ID 'name:' value=STRING ';'
-		//        position = PositionStatement
+		//        position = PositionStatement?
 		//        action = ActionStatement?
 		//        dialogue = DialogueStatement?
-		//        description = DescriptionStatement
+		//        description = DescriptionStatement?
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'character' '{'
 		//    name=ID 'name:' value=STRING ';'
-		//    position = PositionStatement
+		//    position = PositionStatement?
 		//    action = ActionStatement?
 		//    dialogue = DialogueStatement?
-		//    description = DescriptionStatement
+		//    description = DescriptionStatement?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -222,7 +236,7 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		//';'
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 		
-		//position = PositionStatement
+		//position = PositionStatement?
 		public Assignment getPositionAssignment_6() { return cPositionAssignment_6; }
 		
 		//PositionStatement
@@ -240,7 +254,7 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		//DialogueStatement
 		public RuleCall getDialogueDialogueStatementParserRuleCall_8_0() { return cDialogueDialogueStatementParserRuleCall_8_0; }
 		
-		//description = DescriptionStatement
+		//description = DescriptionStatement?
 		public Assignment getDescriptionAssignment_9() { return cDescriptionAssignment_9; }
 		
 		//DescriptionStatement
@@ -495,17 +509,18 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cCameraKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cCameraShotAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cCameraShotSTRINGTerminalRuleCall_1_0 = (RuleCall)cCameraShotAssignment_1.eContents().get(0);
-		private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCameraAngleAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCameraAngleSTRINGTerminalRuleCall_3_0 = (RuleCall)cCameraAngleAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cFromKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cCameraAngleAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cCameraAngleSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cCameraAngleAssignment_2_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//CameraShotStatement:
-		//    'camera:' cameraShot = STRING 'from' cameraAngle = STRING ';'
+		//    'camera:' cameraShot = STRING ('from' cameraAngle = STRING)? ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'camera:' cameraShot = STRING 'from' cameraAngle = STRING ';'
+		//'camera:' cameraShot = STRING ('from' cameraAngle = STRING)? ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'camera:'
@@ -517,17 +532,20 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		//STRING
 		public RuleCall getCameraShotSTRINGTerminalRuleCall_1_0() { return cCameraShotSTRINGTerminalRuleCall_1_0; }
 		
+		//('from' cameraAngle = STRING)?
+		public Group getGroup_2() { return cGroup_2; }
+		
 		//'from'
-		public Keyword getFromKeyword_2() { return cFromKeyword_2; }
+		public Keyword getFromKeyword_2_0() { return cFromKeyword_2_0; }
 		
 		//cameraAngle = STRING
-		public Assignment getCameraAngleAssignment_3() { return cCameraAngleAssignment_3; }
+		public Assignment getCameraAngleAssignment_2_1() { return cCameraAngleAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getCameraAngleSTRINGTerminalRuleCall_3_0() { return cCameraAngleSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getCameraAngleSTRINGTerminalRuleCall_2_1_0() { return cCameraAngleSTRINGTerminalRuleCall_2_1_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class LightingStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mde.WeebADoodle.LightingStatement");
@@ -535,17 +553,18 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cLightingKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSourceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cSourceSTRINGTerminalRuleCall_1_0 = (RuleCall)cSourceAssignment_1.eContents().get(0);
-		private final Keyword cFromKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cDirectionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDirectionSTRINGTerminalRuleCall_3_0 = (RuleCall)cDirectionAssignment_3.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cFromKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cDirectionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cDirectionSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cDirectionAssignment_2_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//LightingStatement:
-		//    'lighting:' source = STRING 'from' direction = STRING ';'
+		//    'lighting:' source = STRING ('from' direction = STRING)? ';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'lighting:' source = STRING 'from' direction = STRING ';'
+		//'lighting:' source = STRING ('from' direction = STRING)? ';'
 		public Group getGroup() { return cGroup; }
 		
 		//'lighting:'
@@ -557,17 +576,20 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 		//STRING
 		public RuleCall getSourceSTRINGTerminalRuleCall_1_0() { return cSourceSTRINGTerminalRuleCall_1_0; }
 		
+		//('from' direction = STRING)?
+		public Group getGroup_2() { return cGroup_2; }
+		
 		//'from'
-		public Keyword getFromKeyword_2() { return cFromKeyword_2; }
+		public Keyword getFromKeyword_2_0() { return cFromKeyword_2_0; }
 		
 		//direction = STRING
-		public Assignment getDirectionAssignment_3() { return cDirectionAssignment_3; }
+		public Assignment getDirectionAssignment_2_1() { return cDirectionAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getDirectionSTRINGTerminalRuleCall_3_0() { return cDirectionSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getDirectionSTRINGTerminalRuleCall_2_1_0() { return cDirectionSTRINGTerminalRuleCall_2_1_0; }
 		
 		//';'
-		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
+		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	
 	
@@ -634,6 +656,7 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//Board:
 	//    'board' '{'
+	//        'title:' title=STRING
 	//        scenes+=Scene+
 	//    '}'
 	//;
@@ -665,10 +688,10 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 	//Character:
 	//    'character' '{'
 	//        name=ID 'name:' value=STRING ';'
-	//        position = PositionStatement
+	//        position = PositionStatement?
 	//        action = ActionStatement?
 	//        dialogue = DialogueStatement?
-	//        description = DescriptionStatement
+	//        description = DescriptionStatement?
 	//    '}'
 	//;
 	public CharacterElements getCharacterAccess() {
@@ -754,7 +777,7 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//CameraShotStatement:
-	//    'camera:' cameraShot = STRING 'from' cameraAngle = STRING ';'
+	//    'camera:' cameraShot = STRING ('from' cameraAngle = STRING)? ';'
 	//;
 	public CameraShotStatementElements getCameraShotStatementAccess() {
 		return pCameraShotStatement;
@@ -765,7 +788,7 @@ public class WeebADoodleGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//LightingStatement:
-	//    'lighting:' source = STRING 'from' direction = STRING ';'
+	//    'lighting:' source = STRING ('from' direction = STRING)? ';'
 	//;
 	public LightingStatementElements getLightingStatementAccess() {
 		return pLightingStatement;

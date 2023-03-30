@@ -7,6 +7,7 @@
   <genPackages prefix="WeebADoodle" basePackage="uk.ac.kcl.inf.mde" disposableProviderFactory="true"
       fileExtensions="weeb" ecorePackage="WeebADoodle.ecore#/">
     <genClasses ecoreClass="WeebADoodle.ecore#//Board">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Board/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Board/scenes"/>
     </genClasses>
     <genClasses ecoreClass="WeebADoodle.ecore#//Scene">

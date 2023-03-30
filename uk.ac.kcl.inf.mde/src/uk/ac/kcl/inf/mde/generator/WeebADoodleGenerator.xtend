@@ -42,14 +42,14 @@ class WeebADoodleGenerator extends AbstractGenerator {
 					
 					«FOR character : scene.characters»
 						«character.name» «character.value»
+						«IF character.dialogue !== null»
+						    Dialogue: «character.dialogue.dialogue»
+						«ENDIF»
 						«IF character.action !== null»
-						    «character.action.action»
+						    *«character.action.action»*
 						«ENDIF»
 						«IF character.position !== null»
-						    «character.position.position»
-						«ENDIF»
-						«IF character.dialogue !== null»
-						    «character.dialogue.dialogue»
+						    [«character.position.position»]
 						«ENDIF»
 						«IF character.description !== null»
 						    («character.description.description»)
@@ -58,9 +58,9 @@ class WeebADoodleGenerator extends AbstractGenerator {
 					«ENDFOR»
 					
 					«FOR object: scene.objects»
-						«object.name» «object.value»
-						«object.position.position»
-						«object.description.description»
+						Object: «object.name» «object.value»
+						[at «object.position.position»]
+						(«object.description.description»)
 					«ENDFOR»
 					
 					---
@@ -106,8 +106,8 @@ class WeebADoodleGenerator extends AbstractGenerator {
 			    	      Camera: «scene.settings.camera.cameraShot»
 			    	      «IF scene.settings.camera.cameraAngle !== null»
 			    	       from «scene.settings.camera.cameraAngle»
-			    	       «ENDIF»,
-			    	      
+			    	       «ENDIF»
+			    	      <br>
 			    	      Lighting: «scene.settings.lighting.source»
 			    	      «IF scene.settings.lighting.direction !== null»
    			    	       from «scene.settings.lighting.direction»
@@ -119,18 +119,18 @@ class WeebADoodleGenerator extends AbstractGenerator {
 			    	      <ul class="list-group list-group-flush">
 			    	        <li class="list-group-item">«scene.settings.description.description»</li>
 			    	        «FOR character : scene.characters»
-		    	        		<li class="list-group-item">«character.name» «character.value»: 
-		    	        		«IF character.dialogue !== null»
-							    	«character.dialogue.dialogue»
-								«ENDIF»
+		    	        		<li class="list-group-item">«character.name» «character.value»<br>
 								«IF character.action !== null»
-							    	«character.action.action»
+							    	*<i>«character.action.action»</i>*<br>
 								«ENDIF»
 								«IF character.description !== null»
-							    	(«character.description.description»)
+							    	(«character.description.description»)<br>
 								«ENDIF»
 								«IF character.position !== null»
-							    	[«character.position.position»]
+							    	[«character.position.position»]<br>
+								«ENDIF»
+								«IF character.dialogue !== null»
+							    	<p class="h6">Dialogue: «character.dialogue.dialogue»</p>
 								«ENDIF»
 								
 								</li>
@@ -139,7 +139,7 @@ class WeebADoodleGenerator extends AbstractGenerator {
 			    	        
 			    	        «FOR object: scene.objects»
 			    	        	<li class="list-group-item">
-        						«object.name» «object.value» at «object.position.position»<br>
+        						Object: «object.value» at «object.position.position»<br>
         						(«object.description.description»)
         						</li>
         					«ENDFOR»

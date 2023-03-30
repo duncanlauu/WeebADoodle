@@ -96,32 +96,37 @@ public class WeebADoodleGenerator extends AbstractGenerator {
             _builder.append(_value_1, "\t\t");
             _builder.newLineIfNotEmpty();
             {
-              ActionStatement _action = character.getAction();
-              boolean _tripleNotEquals = (_action != null);
+              DialogueStatement _dialogue = character.getDialogue();
+              boolean _tripleNotEquals = (_dialogue != null);
               if (_tripleNotEquals) {
                 _builder.append("\t\t");
+                _builder.append("Dialogue: ");
+                String _dialogue_1 = character.getDialogue().getDialogue();
+                _builder.append(_dialogue_1, "\t\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              ActionStatement _action = character.getAction();
+              boolean _tripleNotEquals_1 = (_action != null);
+              if (_tripleNotEquals_1) {
+                _builder.append("\t\t");
+                _builder.append("*");
                 String _action_1 = character.getAction().getAction();
                 _builder.append(_action_1, "\t\t");
+                _builder.append("*");
                 _builder.newLineIfNotEmpty();
               }
             }
             {
               PositionStatement _position = character.getPosition();
-              boolean _tripleNotEquals_1 = (_position != null);
-              if (_tripleNotEquals_1) {
-                _builder.append("\t\t");
-                String _position_1 = character.getPosition().getPosition();
-                _builder.append(_position_1, "\t\t");
-                _builder.newLineIfNotEmpty();
-              }
-            }
-            {
-              DialogueStatement _dialogue = character.getDialogue();
-              boolean _tripleNotEquals_2 = (_dialogue != null);
+              boolean _tripleNotEquals_2 = (_position != null);
               if (_tripleNotEquals_2) {
                 _builder.append("\t\t");
-                String _dialogue_1 = character.getDialogue().getDialogue();
-                _builder.append(_dialogue_1, "\t\t");
+                _builder.append("[");
+                String _position_1 = character.getPosition().getPosition();
+                _builder.append(_position_1, "\t\t");
+                _builder.append("]");
                 _builder.newLineIfNotEmpty();
               }
             }
@@ -147,6 +152,7 @@ public class WeebADoodleGenerator extends AbstractGenerator {
           EList<SceneObject> _objects = scene.getObjects();
           for(final SceneObject object : _objects) {
             _builder.append("\t\t");
+            _builder.append("Object: ");
             String _name_2 = object.getName();
             _builder.append(_name_2, "\t\t");
             _builder.append(" ");
@@ -154,12 +160,16 @@ public class WeebADoodleGenerator extends AbstractGenerator {
             _builder.append(_value_2, "\t\t");
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
+            _builder.append("[at ");
             String _position_2 = object.getPosition().getPosition();
             _builder.append(_position_2, "\t\t");
+            _builder.append("]");
             _builder.newLineIfNotEmpty();
             _builder.append("\t\t");
+            _builder.append("(");
             String _description_3 = object.getDescription().getDescription();
             _builder.append(_description_3, "\t\t");
+            _builder.append(")");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -310,14 +320,11 @@ public class WeebADoodleGenerator extends AbstractGenerator {
             String _cameraAngle_1 = scene.getSettings().getCamera().getCameraAngle();
             _builder.append(_cameraAngle_1, "\t          ");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t    ");
-            _builder.append("      ");
           }
         }
-        _builder.append(",");
-        _builder.newLineIfNotEmpty();
         _builder.append("\t    ");
         _builder.append("      ");
+        _builder.append("<br>");
         _builder.newLine();
         _builder.append("\t    ");
         _builder.append("      ");
@@ -369,45 +376,49 @@ public class WeebADoodleGenerator extends AbstractGenerator {
             _builder.append(" ");
             String _value_1 = character.getValue();
             _builder.append(_value_1, "\t\t    \t        \t\t");
-            _builder.append(": ");
+            _builder.append("<br>");
             _builder.newLineIfNotEmpty();
             {
-              DialogueStatement _dialogue = character.getDialogue();
-              boolean _tripleNotEquals_2 = (_dialogue != null);
-              if (_tripleNotEquals_2) {
-                String _dialogue_1 = character.getDialogue().getDialogue();
-                _builder.append(_dialogue_1);
-                _builder.newLineIfNotEmpty();
-              }
-            }
-            {
               ActionStatement _action = character.getAction();
-              boolean _tripleNotEquals_3 = (_action != null);
-              if (_tripleNotEquals_3) {
+              boolean _tripleNotEquals_2 = (_action != null);
+              if (_tripleNotEquals_2) {
+                _builder.append("*<i>");
                 String _action_1 = character.getAction().getAction();
                 _builder.append(_action_1);
+                _builder.append("</i>*<br>");
                 _builder.newLineIfNotEmpty();
               }
             }
             {
               DescriptionStatement _description_1 = character.getDescription();
-              boolean _tripleNotEquals_4 = (_description_1 != null);
-              if (_tripleNotEquals_4) {
+              boolean _tripleNotEquals_3 = (_description_1 != null);
+              if (_tripleNotEquals_3) {
                 _builder.append("(");
                 String _description_2 = character.getDescription().getDescription();
                 _builder.append(_description_2);
-                _builder.append(")");
+                _builder.append(")<br>");
                 _builder.newLineIfNotEmpty();
               }
             }
             {
               PositionStatement _position = character.getPosition();
-              boolean _tripleNotEquals_5 = (_position != null);
-              if (_tripleNotEquals_5) {
+              boolean _tripleNotEquals_4 = (_position != null);
+              if (_tripleNotEquals_4) {
                 _builder.append("[");
                 String _position_1 = character.getPosition().getPosition();
                 _builder.append(_position_1);
-                _builder.append("]");
+                _builder.append("]<br>");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            {
+              DialogueStatement _dialogue = character.getDialogue();
+              boolean _tripleNotEquals_5 = (_dialogue != null);
+              if (_tripleNotEquals_5) {
+                _builder.append("<p class=\"h6\">Dialogue: ");
+                String _dialogue_1 = character.getDialogue().getDialogue();
+                _builder.append(_dialogue_1);
+                _builder.append("</p>");
                 _builder.newLineIfNotEmpty();
               }
             }
@@ -426,9 +437,7 @@ public class WeebADoodleGenerator extends AbstractGenerator {
             _builder.append("\t\t\t    \t        \t");
             _builder.append("<li class=\"list-group-item\">");
             _builder.newLine();
-            String _name_2 = object.getName();
-            _builder.append(_name_2);
-            _builder.append(" ");
+            _builder.append("Object: ");
             String _value_2 = object.getValue();
             _builder.append(_value_2);
             _builder.append(" at ");

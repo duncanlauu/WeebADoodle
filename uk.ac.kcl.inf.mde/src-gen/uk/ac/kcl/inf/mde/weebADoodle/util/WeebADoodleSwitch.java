@@ -8,11 +8,16 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.ActionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.LightingStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Scene;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
-import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
@@ -78,10 +83,10 @@ public class WeebADoodleSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case WeebADoodlePackage.STORYBOARD:
+      case WeebADoodlePackage.BOARD:
       {
-        Storyboard storyboard = (Storyboard)theEObject;
-        T result = caseStoryboard(storyboard);
+        Board board = (Board)theEObject;
+        T result = caseBoard(board);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,10 +118,45 @@ public class WeebADoodleSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WeebADoodlePackage.DIRECTION:
+      case WeebADoodlePackage.DESCRIPTION_STATEMENT:
       {
-        Direction direction = (Direction)theEObject;
-        T result = caseDirection(direction);
+        DescriptionStatement descriptionStatement = (DescriptionStatement)theEObject;
+        T result = caseDescriptionStatement(descriptionStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.DIALOGUE_STATEMENT:
+      {
+        DialogueStatement dialogueStatement = (DialogueStatement)theEObject;
+        T result = caseDialogueStatement(dialogueStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.ACTION_STATEMENT:
+      {
+        ActionStatement actionStatement = (ActionStatement)theEObject;
+        T result = caseActionStatement(actionStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.POSITION_STATEMENT:
+      {
+        PositionStatement positionStatement = (PositionStatement)theEObject;
+        T result = casePositionStatement(positionStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.CAMERA_SHOT_STATEMENT:
+      {
+        CameraShotStatement cameraShotStatement = (CameraShotStatement)theEObject;
+        T result = caseCameraShotStatement(cameraShotStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WeebADoodlePackage.LIGHTING_STATEMENT:
+      {
+        LightingStatement lightingStatement = (LightingStatement)theEObject;
+        T result = caseLightingStatement(lightingStatement);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -125,17 +165,17 @@ public class WeebADoodleSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Storyboard</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Board</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Storyboard</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Board</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStoryboard(Storyboard object)
+  public T caseBoard(Board object)
   {
     return null;
   }
@@ -205,17 +245,97 @@ public class WeebADoodleSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Direction</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Description Statement</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Direction</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Description Statement</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDirection(Direction object)
+  public T caseDescriptionStatement(DescriptionStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dialogue Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dialogue Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDialogueStatement(DialogueStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionStatement(ActionStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Position Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Position Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePositionStatement(PositionStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Camera Shot Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Camera Shot Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCameraShotStatement(CameraShotStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Lighting Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Lighting Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLightingStatement(LightingStatement object)
   {
     return null;
   }

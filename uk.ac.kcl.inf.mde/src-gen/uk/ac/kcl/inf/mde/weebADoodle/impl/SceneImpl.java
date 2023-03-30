@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Direction;
 import uk.ac.kcl.inf.mde.weebADoodle.Scene;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
@@ -36,10 +35,9 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getValue <em>Value</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getBackground <em>Background</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getSettings <em>Settings</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getCharacters <em>Characters</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getObjects <em>Objects</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getSettings <em>Settings</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SceneImpl#getDirections <em>Directions</em>}</li>
  * </ul>
  *
  * @generated
@@ -107,6 +105,16 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
   protected String background = BACKGROUND_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSettings()
+   * @generated
+   * @ordered
+   */
+  protected Setting settings;
+
+  /**
    * The cached value of the '{@link #getCharacters() <em>Characters</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -125,26 +133,6 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
    * @ordered
    */
   protected EList<SceneObject> objects;
-
-  /**
-   * The cached value of the '{@link #getSettings() <em>Settings</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSettings()
-   * @generated
-   * @ordered
-   */
-  protected Setting settings;
-
-  /**
-   * The cached value of the '{@link #getDirections() <em>Directions</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDirections()
-   * @generated
-   * @ordered
-   */
-  protected Direction directions;
 
   /**
    * <!-- begin-user-doc -->
@@ -248,36 +236,6 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
    * @generated
    */
   @Override
-  public EList<uk.ac.kcl.inf.mde.weebADoodle.Character> getCharacters()
-  {
-    if (characters == null)
-    {
-      characters = new EObjectContainmentEList<uk.ac.kcl.inf.mde.weebADoodle.Character>(uk.ac.kcl.inf.mde.weebADoodle.Character.class, this, WeebADoodlePackage.SCENE__CHARACTERS);
-    }
-    return characters;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<SceneObject> getObjects()
-  {
-    if (objects == null)
-    {
-      objects = new EObjectContainmentEList<SceneObject>(SceneObject.class, this, WeebADoodlePackage.SCENE__OBJECTS);
-    }
-    return objects;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Setting getSettings()
   {
     return settings;
@@ -328,26 +286,13 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
    * @generated
    */
   @Override
-  public Direction getDirections()
+  public EList<uk.ac.kcl.inf.mde.weebADoodle.Character> getCharacters()
   {
-    return directions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetDirections(Direction newDirections, NotificationChain msgs)
-  {
-    Direction oldDirections = directions;
-    directions = newDirections;
-    if (eNotificationRequired())
+    if (characters == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE__DIRECTIONS, oldDirections, newDirections);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      characters = new EObjectContainmentEList<uk.ac.kcl.inf.mde.weebADoodle.Character>(uk.ac.kcl.inf.mde.weebADoodle.Character.class, this, WeebADoodlePackage.SCENE__CHARACTERS);
     }
-    return msgs;
+    return characters;
   }
 
   /**
@@ -356,20 +301,13 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
    * @generated
    */
   @Override
-  public void setDirections(Direction newDirections)
+  public EList<SceneObject> getObjects()
   {
-    if (newDirections != directions)
+    if (objects == null)
     {
-      NotificationChain msgs = null;
-      if (directions != null)
-        msgs = ((InternalEObject)directions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SCENE__DIRECTIONS, null, msgs);
-      if (newDirections != null)
-        msgs = ((InternalEObject)newDirections).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SCENE__DIRECTIONS, null, msgs);
-      msgs = basicSetDirections(newDirections, msgs);
-      if (msgs != null) msgs.dispatch();
+      objects = new EObjectContainmentEList<SceneObject>(SceneObject.class, this, WeebADoodlePackage.SCENE__OBJECTS);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE__DIRECTIONS, newDirections, newDirections));
+    return objects;
   }
 
   /**
@@ -382,14 +320,12 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
   {
     switch (featureID)
     {
+      case WeebADoodlePackage.SCENE__SETTINGS:
+        return basicSetSettings(null, msgs);
       case WeebADoodlePackage.SCENE__CHARACTERS:
         return ((InternalEList<?>)getCharacters()).basicRemove(otherEnd, msgs);
       case WeebADoodlePackage.SCENE__OBJECTS:
         return ((InternalEList<?>)getObjects()).basicRemove(otherEnd, msgs);
-      case WeebADoodlePackage.SCENE__SETTINGS:
-        return basicSetSettings(null, msgs);
-      case WeebADoodlePackage.SCENE__DIRECTIONS:
-        return basicSetDirections(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -410,14 +346,12 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
         return getValue();
       case WeebADoodlePackage.SCENE__BACKGROUND:
         return getBackground();
+      case WeebADoodlePackage.SCENE__SETTINGS:
+        return getSettings();
       case WeebADoodlePackage.SCENE__CHARACTERS:
         return getCharacters();
       case WeebADoodlePackage.SCENE__OBJECTS:
         return getObjects();
-      case WeebADoodlePackage.SCENE__SETTINGS:
-        return getSettings();
-      case WeebADoodlePackage.SCENE__DIRECTIONS:
-        return getDirections();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -442,6 +376,9 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
       case WeebADoodlePackage.SCENE__BACKGROUND:
         setBackground((String)newValue);
         return;
+      case WeebADoodlePackage.SCENE__SETTINGS:
+        setSettings((Setting)newValue);
+        return;
       case WeebADoodlePackage.SCENE__CHARACTERS:
         getCharacters().clear();
         getCharacters().addAll((Collection<? extends uk.ac.kcl.inf.mde.weebADoodle.Character>)newValue);
@@ -449,12 +386,6 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
       case WeebADoodlePackage.SCENE__OBJECTS:
         getObjects().clear();
         getObjects().addAll((Collection<? extends SceneObject>)newValue);
-        return;
-      case WeebADoodlePackage.SCENE__SETTINGS:
-        setSettings((Setting)newValue);
-        return;
-      case WeebADoodlePackage.SCENE__DIRECTIONS:
-        setDirections((Direction)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -479,17 +410,14 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
       case WeebADoodlePackage.SCENE__BACKGROUND:
         setBackground(BACKGROUND_EDEFAULT);
         return;
+      case WeebADoodlePackage.SCENE__SETTINGS:
+        setSettings((Setting)null);
+        return;
       case WeebADoodlePackage.SCENE__CHARACTERS:
         getCharacters().clear();
         return;
       case WeebADoodlePackage.SCENE__OBJECTS:
         getObjects().clear();
-        return;
-      case WeebADoodlePackage.SCENE__SETTINGS:
-        setSettings((Setting)null);
-        return;
-      case WeebADoodlePackage.SCENE__DIRECTIONS:
-        setDirections((Direction)null);
         return;
     }
     super.eUnset(featureID);
@@ -511,14 +439,12 @@ public class SceneImpl extends MinimalEObjectImpl.Container implements Scene
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case WeebADoodlePackage.SCENE__BACKGROUND:
         return BACKGROUND_EDEFAULT == null ? background != null : !BACKGROUND_EDEFAULT.equals(background);
+      case WeebADoodlePackage.SCENE__SETTINGS:
+        return settings != null;
       case WeebADoodlePackage.SCENE__CHARACTERS:
         return characters != null && !characters.isEmpty();
       case WeebADoodlePackage.SCENE__OBJECTS:
         return objects != null && !objects.isEmpty();
-      case WeebADoodlePackage.SCENE__SETTINGS:
-        return settings != null;
-      case WeebADoodlePackage.SCENE__DIRECTIONS:
-        return directions != null;
     }
     return super.eIsSet(featureID);
   }

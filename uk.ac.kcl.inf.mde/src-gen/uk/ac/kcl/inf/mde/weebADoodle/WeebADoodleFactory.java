@@ -24,13 +24,13 @@ public interface WeebADoodleFactory extends EFactory
   WeebADoodleFactory eINSTANCE = uk.ac.kcl.inf.mde.weebADoodle.impl.WeebADoodleFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Storyboard</em>'.
+   * Returns a new object of class '<em>Board</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Storyboard</em>'.
+   * @return a new object of class '<em>Board</em>'.
    * @generated
    */
-  Storyboard createStoryboard();
+  Board createBoard();
 
   /**
    * Returns a new object of class '<em>Scene</em>'.
@@ -69,13 +69,58 @@ public interface WeebADoodleFactory extends EFactory
   Setting createSetting();
 
   /**
-   * Returns a new object of class '<em>Direction</em>'.
+   * Returns a new object of class '<em>Description Statement</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Direction</em>'.
+   * @return a new object of class '<em>Description Statement</em>'.
    * @generated
    */
-  Direction createDirection();
+  DescriptionStatement createDescriptionStatement();
+
+  /**
+   * Returns a new object of class '<em>Dialogue Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dialogue Statement</em>'.
+   * @generated
+   */
+  DialogueStatement createDialogueStatement();
+
+  /**
+   * Returns a new object of class '<em>Action Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Statement</em>'.
+   * @generated
+   */
+  ActionStatement createActionStatement();
+
+  /**
+   * Returns a new object of class '<em>Position Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Position Statement</em>'.
+   * @generated
+   */
+  PositionStatement createPositionStatement();
+
+  /**
+   * Returns a new object of class '<em>Camera Shot Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Camera Shot Statement</em>'.
+   * @generated
+   */
+  CameraShotStatement createCameraShotStatement();
+
+  /**
+   * Returns a new object of class '<em>Lighting Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Lighting Statement</em>'.
+   * @generated
+   */
+  LightingStatement createLightingStatement();
 
   /**
    * Returns the package supported by this factory.

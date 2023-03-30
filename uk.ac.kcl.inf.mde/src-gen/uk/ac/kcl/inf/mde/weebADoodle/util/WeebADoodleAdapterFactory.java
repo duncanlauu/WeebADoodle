@@ -10,11 +10,16 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.ActionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.LightingStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Scene;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
-import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
@@ -81,9 +86,9 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
     new WeebADoodleSwitch<Adapter>()
     {
       @Override
-      public Adapter caseStoryboard(Storyboard object)
+      public Adapter caseBoard(Board object)
       {
-        return createStoryboardAdapter();
+        return createBoardAdapter();
       }
       @Override
       public Adapter caseScene(Scene object)
@@ -106,9 +111,34 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
         return createSettingAdapter();
       }
       @Override
-      public Adapter caseDirection(Direction object)
+      public Adapter caseDescriptionStatement(DescriptionStatement object)
       {
-        return createDirectionAdapter();
+        return createDescriptionStatementAdapter();
+      }
+      @Override
+      public Adapter caseDialogueStatement(DialogueStatement object)
+      {
+        return createDialogueStatementAdapter();
+      }
+      @Override
+      public Adapter caseActionStatement(ActionStatement object)
+      {
+        return createActionStatementAdapter();
+      }
+      @Override
+      public Adapter casePositionStatement(PositionStatement object)
+      {
+        return createPositionStatementAdapter();
+      }
+      @Override
+      public Adapter caseCameraShotStatement(CameraShotStatement object)
+      {
+        return createCameraShotStatementAdapter();
+      }
+      @Override
+      public Adapter caseLightingStatement(LightingStatement object)
+      {
+        return createLightingStatementAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -133,16 +163,16 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Storyboard <em>Storyboard</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Board <em>Board</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Storyboard
+   * @see uk.ac.kcl.inf.mde.weebADoodle.Board
    * @generated
    */
-  public Adapter createStoryboardAdapter()
+  public Adapter createBoardAdapter()
   {
     return null;
   }
@@ -208,16 +238,91 @@ public class WeebADoodleAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.Direction <em>Direction</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement <em>Description Statement</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.Direction
+   * @see uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement
    * @generated
    */
-  public Adapter createDirectionAdapter()
+  public Adapter createDescriptionStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement <em>Dialogue Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement
+   * @generated
+   */
+  public Adapter createDialogueStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.ActionStatement <em>Action Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.ActionStatement
+   * @generated
+   */
+  public Adapter createActionStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.PositionStatement <em>Position Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.PositionStatement
+   * @generated
+   */
+  public Adapter createPositionStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement <em>Camera Shot Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement
+   * @generated
+   */
+  public Adapter createCameraShotStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mde.weebADoodle.LightingStatement <em>Lighting Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.LightingStatement
+   * @generated
+   */
+  public Adapter createLightingStatementAdapter()
   {
     return null;
   }

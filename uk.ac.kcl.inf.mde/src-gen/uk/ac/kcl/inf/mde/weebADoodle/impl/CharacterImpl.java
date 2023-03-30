@@ -4,12 +4,18 @@
 package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.kcl.inf.mde.weebADoodle.ActionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
 /**
@@ -22,6 +28,7 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl#getPosition <em>Position</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl#getAction <em>Action</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl#getDialogue <em>Dialogue</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.CharacterImpl#getDescription <em>Description</em>}</li>
@@ -72,64 +79,44 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAction() <em>Action</em>}' attribute.
+   * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPosition()
+   * @generated
+   * @ordered
+   */
+  protected PositionStatement position;
+
+  /**
+   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAction()
    * @generated
    * @ordered
    */
-  protected static final String ACTION_EDEFAULT = null;
+  protected ActionStatement action;
 
   /**
-   * The cached value of the '{@link #getAction() <em>Action</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAction()
-   * @generated
-   * @ordered
-   */
-  protected String action = ACTION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDialogue() <em>Dialogue</em>}' attribute.
+   * The cached value of the '{@link #getDialogue() <em>Dialogue</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDialogue()
    * @generated
    * @ordered
    */
-  protected static final String DIALOGUE_EDEFAULT = null;
+  protected DialogueStatement dialogue;
 
   /**
-   * The cached value of the '{@link #getDialogue() <em>Dialogue</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDialogue()
-   * @generated
-   * @ordered
-   */
-  protected String dialogue = DIALOGUE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
+  protected DescriptionStatement description;
 
   /**
    * <!-- begin-user-doc -->
@@ -208,7 +195,57 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
    * @generated
    */
   @Override
-  public String getAction()
+  public PositionStatement getPosition()
+  {
+    return position;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPosition(PositionStatement newPosition, NotificationChain msgs)
+  {
+    PositionStatement oldPosition = position;
+    position = newPosition;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__POSITION, oldPosition, newPosition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPosition(PositionStatement newPosition)
+  {
+    if (newPosition != position)
+    {
+      NotificationChain msgs = null;
+      if (position != null)
+        msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__POSITION, null, msgs);
+      if (newPosition != null)
+        msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__POSITION, null, msgs);
+      msgs = basicSetPosition(newPosition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__POSITION, newPosition, newPosition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ActionStatement getAction()
   {
     return action;
   }
@@ -218,13 +255,16 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setAction(String newAction)
+  public NotificationChain basicSetAction(ActionStatement newAction, NotificationChain msgs)
   {
-    String oldAction = action;
+    ActionStatement oldAction = action;
     action = newAction;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__ACTION, oldAction, action));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__ACTION, oldAction, newAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -233,7 +273,29 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
    * @generated
    */
   @Override
-  public String getDialogue()
+  public void setAction(ActionStatement newAction)
+  {
+    if (newAction != action)
+    {
+      NotificationChain msgs = null;
+      if (action != null)
+        msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__ACTION, null, msgs);
+      if (newAction != null)
+        msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__ACTION, null, msgs);
+      msgs = basicSetAction(newAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__ACTION, newAction, newAction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DialogueStatement getDialogue()
   {
     return dialogue;
   }
@@ -243,13 +305,16 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDialogue(String newDialogue)
+  public NotificationChain basicSetDialogue(DialogueStatement newDialogue, NotificationChain msgs)
   {
-    String oldDialogue = dialogue;
+    DialogueStatement oldDialogue = dialogue;
     dialogue = newDialogue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__DIALOGUE, oldDialogue, dialogue));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__DIALOGUE, oldDialogue, newDialogue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -258,7 +323,29 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
    * @generated
    */
   @Override
-  public String getDescription()
+  public void setDialogue(DialogueStatement newDialogue)
+  {
+    if (newDialogue != dialogue)
+    {
+      NotificationChain msgs = null;
+      if (dialogue != null)
+        msgs = ((InternalEObject)dialogue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__DIALOGUE, null, msgs);
+      if (newDialogue != null)
+        msgs = ((InternalEObject)newDialogue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__DIALOGUE, null, msgs);
+      msgs = basicSetDialogue(newDialogue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__DIALOGUE, newDialogue, newDialogue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DescriptionStatement getDescription()
   {
     return description;
   }
@@ -268,13 +355,60 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDescription(String newDescription)
+  public NotificationChain basicSetDescription(DescriptionStatement newDescription, NotificationChain msgs)
   {
-    String oldDescription = description;
+    DescriptionStatement oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__DESCRIPTION, oldDescription, description));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(DescriptionStatement newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.CHARACTER__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.CHARACTER__DESCRIPTION, newDescription, newDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.CHARACTER__POSITION:
+        return basicSetPosition(null, msgs);
+      case WeebADoodlePackage.CHARACTER__ACTION:
+        return basicSetAction(null, msgs);
+      case WeebADoodlePackage.CHARACTER__DIALOGUE:
+        return basicSetDialogue(null, msgs);
+      case WeebADoodlePackage.CHARACTER__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -291,6 +425,8 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
         return getName();
       case WeebADoodlePackage.CHARACTER__VALUE:
         return getValue();
+      case WeebADoodlePackage.CHARACTER__POSITION:
+        return getPosition();
       case WeebADoodlePackage.CHARACTER__ACTION:
         return getAction();
       case WeebADoodlePackage.CHARACTER__DIALOGUE:
@@ -317,14 +453,17 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
       case WeebADoodlePackage.CHARACTER__VALUE:
         setValue((String)newValue);
         return;
+      case WeebADoodlePackage.CHARACTER__POSITION:
+        setPosition((PositionStatement)newValue);
+        return;
       case WeebADoodlePackage.CHARACTER__ACTION:
-        setAction((String)newValue);
+        setAction((ActionStatement)newValue);
         return;
       case WeebADoodlePackage.CHARACTER__DIALOGUE:
-        setDialogue((String)newValue);
+        setDialogue((DialogueStatement)newValue);
         return;
       case WeebADoodlePackage.CHARACTER__DESCRIPTION:
-        setDescription((String)newValue);
+        setDescription((DescriptionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -346,14 +485,17 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
       case WeebADoodlePackage.CHARACTER__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case WeebADoodlePackage.CHARACTER__POSITION:
+        setPosition((PositionStatement)null);
+        return;
       case WeebADoodlePackage.CHARACTER__ACTION:
-        setAction(ACTION_EDEFAULT);
+        setAction((ActionStatement)null);
         return;
       case WeebADoodlePackage.CHARACTER__DIALOGUE:
-        setDialogue(DIALOGUE_EDEFAULT);
+        setDialogue((DialogueStatement)null);
         return;
       case WeebADoodlePackage.CHARACTER__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
+        setDescription((DescriptionStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -373,12 +515,14 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case WeebADoodlePackage.CHARACTER__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case WeebADoodlePackage.CHARACTER__POSITION:
+        return position != null;
       case WeebADoodlePackage.CHARACTER__ACTION:
-        return ACTION_EDEFAULT == null ? action != null : !ACTION_EDEFAULT.equals(action);
+        return action != null;
       case WeebADoodlePackage.CHARACTER__DIALOGUE:
-        return DIALOGUE_EDEFAULT == null ? dialogue != null : !DIALOGUE_EDEFAULT.equals(dialogue);
+        return dialogue != null;
       case WeebADoodlePackage.CHARACTER__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+        return description != null;
     }
     return super.eIsSet(featureID);
   }
@@ -398,12 +542,6 @@ public class CharacterImpl extends MinimalEObjectImpl.Container implements uk.ac
     result.append(name);
     result.append(", value: ");
     result.append(value);
-    result.append(", action: ");
-    result.append(action);
-    result.append(", dialogue: ");
-    result.append(dialogue);
-    result.append(", description: ");
-    result.append(description);
     result.append(')');
     return result.toString();
   }

@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="weebADoodle" nsURI="http://www.ac.uk/kcl/inf/mde/WeebADoodle"
     nsPrefix="weebADoodle">
-  <eClassifiers xsi:type="ecore:EClass" name="Storyboard">
+  <eClassifiers xsi:type="ecore:EClass" name="Board">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenes" upperBound="-1"
         eType="#//Scene" containment="true"/>
   </eClassifiers>
@@ -10,38 +10,59 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="settings" eType="#//Setting"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="characters" upperBound="-1"
         eType="#//Character" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="objects" upperBound="-1"
         eType="#//SceneObject" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="settings" eType="#//Setting"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="directions" eType="#//Direction"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Character">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dialogue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//ActionStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dialogue" eType="#//DialogueStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//DescriptionStatement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SceneObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//DescriptionStatement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Setting">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cameraShot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cameraAngle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lighting" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="camera" eType="#//CameraShotStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lighting" eType="#//LightingStatement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//DescriptionStatement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Direction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetCharacter" eType="#//Character"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetObject" eType="#//SceneObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="movement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DialogueStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dialogue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CameraShotStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cameraShot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cameraAngle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LightingStatement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -4,51 +4,76 @@ generate weebADoodle "http://www.ac.uk/kcl/inf/mde/WeebADoodle"
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-Storyboard:
+Board:
     'board' '{'
-    	scenes+=Scene+
-    '}';
+        scenes+=Scene+
+    '}'
+;
+
 
 Scene:
-    'scene'
-    '{'
-        'name' name=ID ':' value=STRING ';'
+    'scene' '{'
+        name=ID ':' value=STRING ';'
         'background:' background=STRING ';'
+        settings=Setting
         characters+=Character*
         objects+=SceneObject*
-        settings=Setting
-        directions=Direction?
-    '}';
+
+    '}'
+;
+
 
 Character:
-    'character'
-    '{'
-        'name' name=ID ':' value=STRING ';'
-        'action:' action=STRING ';'
-        'dialogue:' dialogue=STRING ';'
-        'description:' description=STRING ';'
-    '}';
+    'character' '{'
+        name=ID 'name:' value=STRING ';'
+        position = PositionStatement
+        action = ActionStatement?
+        dialogue = DialogueStatement?
+        description = DescriptionStatement
+
+    '}'
+;
+
 
 SceneObject:
-    'object'
-    '{'
-        'name' name=ID ':' value=STRING ';'
-        'position:' position=STRING ';'
-        'description:' description=STRING ';'
-    '}';
+    'object' '{'
+        name=ID 'name:' value=STRING ';'
+        position = PositionStatement
+        description = DescriptionStatement
+    '}'
+;
+
 
 Setting:
-    'setting'
-    '{'
-        'camera_shot:' cameraShot=STRING ';'
-        'camera_angle:' cameraAngle=STRING ';'
-        'lighting:' lighting=STRING ';'
-        'description:' description=STRING ';'
-    '}';
+    'setting' '{'
+       	camera = CameraShotStatement
+        lighting = LightingStatement
+        description = DescriptionStatement
+    '}'
+;
 
-Direction:
-    'direction' '{'
-        ('character' targetCharacter=[Character|ID] | 'object' targetObject=[SceneObject|ID]) 'movement:' movement=STRING 'description:' description=STRING ';'
-    '}';
-	
+DescriptionStatement:
+	'description:' description=STRING ';'
+;
+
+DialogueStatement:
+	'dialogue:' dialogue=STRING ';'
+;
+
+ActionStatement:
+	'action:' action=STRING ';'
+;
+
+PositionStatement:
+	'position:' position=STRING ';'
+;
+
+CameraShotStatement:
+	'camera:' cameraShot = STRING 'from' cameraAngle = STRING ';'
+;
+
+LightingStatement:
+	'lighting:' source = STRING 'from' direction = STRING ';'
+;
+
 	

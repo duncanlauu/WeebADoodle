@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraShot <em>Camera Shot</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraAngle <em>Camera Angle</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCamera <em>Camera</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting <em>Lighting</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription <em>Description</em>}</li>
  * </ul>
@@ -27,91 +26,69 @@ import org.eclipse.emf.ecore.EObject;
 public interface Setting extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Camera Shot</b></em>' attribute.
+   * Returns the value of the '<em><b>Camera</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Camera Shot</em>' attribute.
-   * @see #setCameraShot(String)
-   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_CameraShot()
-   * @model
+   * @return the value of the '<em>Camera</em>' containment reference.
+   * @see #setCamera(CameraShotStatement)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_Camera()
+   * @model containment="true"
    * @generated
    */
-  String getCameraShot();
+  CameraShotStatement getCamera();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraShot <em>Camera Shot</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCamera <em>Camera</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Camera Shot</em>' attribute.
-   * @see #getCameraShot()
+   * @param value the new value of the '<em>Camera</em>' containment reference.
+   * @see #getCamera()
    * @generated
    */
-  void setCameraShot(String value);
+  void setCamera(CameraShotStatement value);
 
   /**
-   * Returns the value of the '<em><b>Camera Angle</b></em>' attribute.
+   * Returns the value of the '<em><b>Lighting</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Camera Angle</em>' attribute.
-   * @see #setCameraAngle(String)
-   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_CameraAngle()
-   * @model
-   * @generated
-   */
-  String getCameraAngle();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getCameraAngle <em>Camera Angle</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Camera Angle</em>' attribute.
-   * @see #getCameraAngle()
-   * @generated
-   */
-  void setCameraAngle(String value);
-
-  /**
-   * Returns the value of the '<em><b>Lighting</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Lighting</em>' attribute.
-   * @see #setLighting(String)
+   * @return the value of the '<em>Lighting</em>' containment reference.
+   * @see #setLighting(LightingStatement)
    * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_Lighting()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getLighting();
+  LightingStatement getLighting();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting <em>Lighting</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getLighting <em>Lighting</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Lighting</em>' attribute.
+   * @param value the new value of the '<em>Lighting</em>' containment reference.
    * @see #getLighting()
    * @generated
    */
-  void setLighting(String value);
+  void setLighting(LightingStatement value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(DescriptionStatement)
    * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSetting_Description()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDescription();
+  DescriptionStatement getDescription();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Setting#getDescription <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
+   * @param value the new value of the '<em>Description</em>' containment reference.
    * @see #getDescription()
    * @generated
    */
-  void setDescription(String value);
+  void setDescription(DescriptionStatement value);
 
 } // Setting

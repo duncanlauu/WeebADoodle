@@ -10,11 +10,16 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.ActionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.LightingStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Scene;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
-import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodleFactory;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
@@ -31,7 +36,7 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass storyboardEClass = null;
+  private EClass boardEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,7 +71,42 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass directionEClass = null;
+  private EClass descriptionStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dialogueStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass positionStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass cameraShotStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass lightingStatementEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -136,9 +176,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EClass getStoryboard()
+  public EClass getBoard()
   {
-    return storyboardEClass;
+    return boardEClass;
   }
 
   /**
@@ -147,9 +187,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getStoryboard_Scenes()
+  public EReference getBoard_Scenes()
   {
-    return (EReference)storyboardEClass.getEStructuralFeatures().get(0);
+    return (EReference)boardEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -202,7 +242,7 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getScene_Characters()
+  public EReference getScene_Settings()
   {
     return (EReference)sceneEClass.getEStructuralFeatures().get(3);
   }
@@ -213,7 +253,7 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getScene_Objects()
+  public EReference getScene_Characters()
   {
     return (EReference)sceneEClass.getEStructuralFeatures().get(4);
   }
@@ -224,20 +264,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getScene_Settings()
+  public EReference getScene_Objects()
   {
     return (EReference)sceneEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getScene_Directions()
-  {
-    return (EReference)sceneEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -279,9 +308,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getCharacter_Action()
+  public EReference getCharacter_Position()
   {
-    return (EAttribute)characterEClass.getEStructuralFeatures().get(2);
+    return (EReference)characterEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -290,9 +319,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getCharacter_Dialogue()
+  public EReference getCharacter_Action()
   {
-    return (EAttribute)characterEClass.getEStructuralFeatures().get(3);
+    return (EReference)characterEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -301,9 +330,20 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getCharacter_Description()
+  public EReference getCharacter_Dialogue()
   {
-    return (EAttribute)characterEClass.getEStructuralFeatures().get(4);
+    return (EReference)characterEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCharacter_Description()
+  {
+    return (EReference)characterEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -345,9 +385,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getSceneObject_Position()
+  public EReference getSceneObject_Position()
   {
-    return (EAttribute)sceneObjectEClass.getEStructuralFeatures().get(2);
+    return (EReference)sceneObjectEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -356,9 +396,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getSceneObject_Description()
+  public EReference getSceneObject_Description()
   {
-    return (EAttribute)sceneObjectEClass.getEStructuralFeatures().get(3);
+    return (EReference)sceneObjectEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -378,9 +418,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getSetting_CameraShot()
+  public EReference getSetting_Camera()
   {
-    return (EAttribute)settingEClass.getEStructuralFeatures().get(0);
+    return (EReference)settingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -389,9 +429,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getSetting_CameraAngle()
+  public EReference getSetting_Lighting()
   {
-    return (EAttribute)settingEClass.getEStructuralFeatures().get(1);
+    return (EReference)settingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -400,9 +440,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getSetting_Lighting()
+  public EReference getSetting_Description()
   {
-    return (EAttribute)settingEClass.getEStructuralFeatures().get(2);
+    return (EReference)settingEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -411,9 +451,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getSetting_Description()
+  public EClass getDescriptionStatement()
   {
-    return (EAttribute)settingEClass.getEStructuralFeatures().get(3);
+    return descriptionStatementEClass;
   }
 
   /**
@@ -422,9 +462,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EClass getDirection()
+  public EAttribute getDescriptionStatement_Description()
   {
-    return directionEClass;
+    return (EAttribute)descriptionStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -433,9 +473,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getDirection_TargetCharacter()
+  public EClass getDialogueStatement()
   {
-    return (EReference)directionEClass.getEStructuralFeatures().get(0);
+    return dialogueStatementEClass;
   }
 
   /**
@@ -444,9 +484,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EReference getDirection_TargetObject()
+  public EAttribute getDialogueStatement_Dialogue()
   {
-    return (EReference)directionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)dialogueStatementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -455,9 +495,9 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getDirection_Movement()
+  public EClass getActionStatement()
   {
-    return (EAttribute)directionEClass.getEStructuralFeatures().get(2);
+    return actionStatementEClass;
   }
 
   /**
@@ -466,9 +506,97 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
    * @generated
    */
   @Override
-  public EAttribute getDirection_Description()
+  public EAttribute getActionStatement_Action()
   {
-    return (EAttribute)directionEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)actionStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getPositionStatement()
+  {
+    return positionStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getPositionStatement_Position()
+  {
+    return (EAttribute)positionStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCameraShotStatement()
+  {
+    return cameraShotStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCameraShotStatement_CameraShot()
+  {
+    return (EAttribute)cameraShotStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCameraShotStatement_CameraAngle()
+  {
+    return (EAttribute)cameraShotStatementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLightingStatement()
+  {
+    return lightingStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLightingStatement_Source()
+  {
+    return (EAttribute)lightingStatementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLightingStatement_Direction()
+  {
+    return (EAttribute)lightingStatementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -502,42 +630,55 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
     isCreated = true;
 
     // Create classes and their features
-    storyboardEClass = createEClass(STORYBOARD);
-    createEReference(storyboardEClass, STORYBOARD__SCENES);
+    boardEClass = createEClass(BOARD);
+    createEReference(boardEClass, BOARD__SCENES);
 
     sceneEClass = createEClass(SCENE);
     createEAttribute(sceneEClass, SCENE__NAME);
     createEAttribute(sceneEClass, SCENE__VALUE);
     createEAttribute(sceneEClass, SCENE__BACKGROUND);
+    createEReference(sceneEClass, SCENE__SETTINGS);
     createEReference(sceneEClass, SCENE__CHARACTERS);
     createEReference(sceneEClass, SCENE__OBJECTS);
-    createEReference(sceneEClass, SCENE__SETTINGS);
-    createEReference(sceneEClass, SCENE__DIRECTIONS);
 
     characterEClass = createEClass(CHARACTER);
     createEAttribute(characterEClass, CHARACTER__NAME);
     createEAttribute(characterEClass, CHARACTER__VALUE);
-    createEAttribute(characterEClass, CHARACTER__ACTION);
-    createEAttribute(characterEClass, CHARACTER__DIALOGUE);
-    createEAttribute(characterEClass, CHARACTER__DESCRIPTION);
+    createEReference(characterEClass, CHARACTER__POSITION);
+    createEReference(characterEClass, CHARACTER__ACTION);
+    createEReference(characterEClass, CHARACTER__DIALOGUE);
+    createEReference(characterEClass, CHARACTER__DESCRIPTION);
 
     sceneObjectEClass = createEClass(SCENE_OBJECT);
     createEAttribute(sceneObjectEClass, SCENE_OBJECT__NAME);
     createEAttribute(sceneObjectEClass, SCENE_OBJECT__VALUE);
-    createEAttribute(sceneObjectEClass, SCENE_OBJECT__POSITION);
-    createEAttribute(sceneObjectEClass, SCENE_OBJECT__DESCRIPTION);
+    createEReference(sceneObjectEClass, SCENE_OBJECT__POSITION);
+    createEReference(sceneObjectEClass, SCENE_OBJECT__DESCRIPTION);
 
     settingEClass = createEClass(SETTING);
-    createEAttribute(settingEClass, SETTING__CAMERA_SHOT);
-    createEAttribute(settingEClass, SETTING__CAMERA_ANGLE);
-    createEAttribute(settingEClass, SETTING__LIGHTING);
-    createEAttribute(settingEClass, SETTING__DESCRIPTION);
+    createEReference(settingEClass, SETTING__CAMERA);
+    createEReference(settingEClass, SETTING__LIGHTING);
+    createEReference(settingEClass, SETTING__DESCRIPTION);
 
-    directionEClass = createEClass(DIRECTION);
-    createEReference(directionEClass, DIRECTION__TARGET_CHARACTER);
-    createEReference(directionEClass, DIRECTION__TARGET_OBJECT);
-    createEAttribute(directionEClass, DIRECTION__MOVEMENT);
-    createEAttribute(directionEClass, DIRECTION__DESCRIPTION);
+    descriptionStatementEClass = createEClass(DESCRIPTION_STATEMENT);
+    createEAttribute(descriptionStatementEClass, DESCRIPTION_STATEMENT__DESCRIPTION);
+
+    dialogueStatementEClass = createEClass(DIALOGUE_STATEMENT);
+    createEAttribute(dialogueStatementEClass, DIALOGUE_STATEMENT__DIALOGUE);
+
+    actionStatementEClass = createEClass(ACTION_STATEMENT);
+    createEAttribute(actionStatementEClass, ACTION_STATEMENT__ACTION);
+
+    positionStatementEClass = createEClass(POSITION_STATEMENT);
+    createEAttribute(positionStatementEClass, POSITION_STATEMENT__POSITION);
+
+    cameraShotStatementEClass = createEClass(CAMERA_SHOT_STATEMENT);
+    createEAttribute(cameraShotStatementEClass, CAMERA_SHOT_STATEMENT__CAMERA_SHOT);
+    createEAttribute(cameraShotStatementEClass, CAMERA_SHOT_STATEMENT__CAMERA_ANGLE);
+
+    lightingStatementEClass = createEClass(LIGHTING_STATEMENT);
+    createEAttribute(lightingStatementEClass, LIGHTING_STATEMENT__SOURCE);
+    createEAttribute(lightingStatementEClass, LIGHTING_STATEMENT__DIRECTION);
   }
 
   /**
@@ -571,42 +712,55 @@ public class WeebADoodlePackageImpl extends EPackageImpl implements WeebADoodleP
     // Add supertypes to classes
 
     // Initialize classes and features; add operations and parameters
-    initEClass(storyboardEClass, Storyboard.class, "Storyboard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStoryboard_Scenes(), this.getScene(), null, "scenes", null, 0, -1, Storyboard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(boardEClass, Board.class, "Board", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBoard_Scenes(), this.getScene(), null, "scenes", null, 0, -1, Board.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sceneEClass, Scene.class, "Scene", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScene_Name(), ecorePackage.getEString(), "name", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScene_Value(), ecorePackage.getEString(), "value", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScene_Background(), ecorePackage.getEString(), "background", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScene_Settings(), this.getSetting(), null, "settings", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScene_Characters(), this.getCharacter(), null, "characters", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScene_Objects(), this.getSceneObject(), null, "objects", null, 0, -1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScene_Settings(), this.getSetting(), null, "settings", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScene_Directions(), this.getDirection(), null, "directions", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(characterEClass, uk.ac.kcl.inf.mde.weebADoodle.Character.class, "Character", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCharacter_Name(), ecorePackage.getEString(), "name", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCharacter_Value(), ecorePackage.getEString(), "value", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCharacter_Action(), ecorePackage.getEString(), "action", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCharacter_Dialogue(), ecorePackage.getEString(), "dialogue", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCharacter_Description(), ecorePackage.getEString(), "description", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacter_Position(), this.getPositionStatement(), null, "position", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacter_Action(), this.getActionStatement(), null, "action", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacter_Dialogue(), this.getDialogueStatement(), null, "dialogue", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCharacter_Description(), this.getDescriptionStatement(), null, "description", null, 0, 1, uk.ac.kcl.inf.mde.weebADoodle.Character.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sceneObjectEClass, SceneObject.class, "SceneObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSceneObject_Name(), ecorePackage.getEString(), "name", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSceneObject_Value(), ecorePackage.getEString(), "value", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSceneObject_Position(), ecorePackage.getEString(), "position", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSceneObject_Description(), ecorePackage.getEString(), "description", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSceneObject_Position(), this.getPositionStatement(), null, "position", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSceneObject_Description(), this.getDescriptionStatement(), null, "description", null, 0, 1, SceneObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(settingEClass, Setting.class, "Setting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSetting_CameraShot(), ecorePackage.getEString(), "cameraShot", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSetting_CameraAngle(), ecorePackage.getEString(), "cameraAngle", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSetting_Lighting(), ecorePackage.getEString(), "lighting", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSetting_Description(), ecorePackage.getEString(), "description", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSetting_Camera(), this.getCameraShotStatement(), null, "camera", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSetting_Lighting(), this.getLightingStatement(), null, "lighting", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSetting_Description(), this.getDescriptionStatement(), null, "description", null, 0, 1, Setting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(directionEClass, Direction.class, "Direction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDirection_TargetCharacter(), this.getCharacter(), null, "targetCharacter", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDirection_TargetObject(), this.getSceneObject(), null, "targetObject", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDirection_Movement(), ecorePackage.getEString(), "movement", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDirection_Description(), ecorePackage.getEString(), "description", null, 0, 1, Direction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(descriptionStatementEClass, DescriptionStatement.class, "DescriptionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDescriptionStatement_Description(), ecorePackage.getEString(), "description", null, 0, 1, DescriptionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dialogueStatementEClass, DialogueStatement.class, "DialogueStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDialogueStatement_Dialogue(), ecorePackage.getEString(), "dialogue", null, 0, 1, DialogueStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionStatementEClass, ActionStatement.class, "ActionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionStatement_Action(), ecorePackage.getEString(), "action", null, 0, 1, ActionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(positionStatementEClass, PositionStatement.class, "PositionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPositionStatement_Position(), ecorePackage.getEString(), "position", null, 0, 1, PositionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(cameraShotStatementEClass, CameraShotStatement.class, "CameraShotStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCameraShotStatement_CameraShot(), ecorePackage.getEString(), "cameraShot", null, 0, 1, CameraShotStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCameraShotStatement_CameraAngle(), ecorePackage.getEString(), "cameraAngle", null, 0, 1, CameraShotStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(lightingStatementEClass, LightingStatement.class, "LightingStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLightingStatement_Source(), ecorePackage.getEString(), "source", null, 0, 1, LightingStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLightingStatement_Direction(), ecorePackage.getEString(), "direction", null, 0, 1, LightingStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -31,40 +31,45 @@ public class WeebADoodleParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WeebADoodleGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getDirectionAccess().getAlternatives_2(), "rule__Direction__Alternatives_2");
-			builder.put(grammarAccess.getStoryboardAccess().getGroup(), "rule__Storyboard__Group__0");
+			builder.put(grammarAccess.getBoardAccess().getGroup(), "rule__Board__Group__0");
 			builder.put(grammarAccess.getSceneAccess().getGroup(), "rule__Scene__Group__0");
 			builder.put(grammarAccess.getCharacterAccess().getGroup(), "rule__Character__Group__0");
 			builder.put(grammarAccess.getSceneObjectAccess().getGroup(), "rule__SceneObject__Group__0");
 			builder.put(grammarAccess.getSettingAccess().getGroup(), "rule__Setting__Group__0");
-			builder.put(grammarAccess.getDirectionAccess().getGroup(), "rule__Direction__Group__0");
-			builder.put(grammarAccess.getDirectionAccess().getGroup_2_0(), "rule__Direction__Group_2_0__0");
-			builder.put(grammarAccess.getDirectionAccess().getGroup_2_1(), "rule__Direction__Group_2_1__0");
-			builder.put(grammarAccess.getStoryboardAccess().getScenesAssignment_2(), "rule__Storyboard__ScenesAssignment_2");
-			builder.put(grammarAccess.getSceneAccess().getNameAssignment_3(), "rule__Scene__NameAssignment_3");
-			builder.put(grammarAccess.getSceneAccess().getValueAssignment_5(), "rule__Scene__ValueAssignment_5");
-			builder.put(grammarAccess.getSceneAccess().getBackgroundAssignment_8(), "rule__Scene__BackgroundAssignment_8");
+			builder.put(grammarAccess.getDescriptionStatementAccess().getGroup(), "rule__DescriptionStatement__Group__0");
+			builder.put(grammarAccess.getDialogueStatementAccess().getGroup(), "rule__DialogueStatement__Group__0");
+			builder.put(grammarAccess.getActionStatementAccess().getGroup(), "rule__ActionStatement__Group__0");
+			builder.put(grammarAccess.getPositionStatementAccess().getGroup(), "rule__PositionStatement__Group__0");
+			builder.put(grammarAccess.getCameraShotStatementAccess().getGroup(), "rule__CameraShotStatement__Group__0");
+			builder.put(grammarAccess.getLightingStatementAccess().getGroup(), "rule__LightingStatement__Group__0");
+			builder.put(grammarAccess.getBoardAccess().getScenesAssignment_2(), "rule__Board__ScenesAssignment_2");
+			builder.put(grammarAccess.getSceneAccess().getNameAssignment_2(), "rule__Scene__NameAssignment_2");
+			builder.put(grammarAccess.getSceneAccess().getValueAssignment_4(), "rule__Scene__ValueAssignment_4");
+			builder.put(grammarAccess.getSceneAccess().getBackgroundAssignment_7(), "rule__Scene__BackgroundAssignment_7");
+			builder.put(grammarAccess.getSceneAccess().getSettingsAssignment_9(), "rule__Scene__SettingsAssignment_9");
 			builder.put(grammarAccess.getSceneAccess().getCharactersAssignment_10(), "rule__Scene__CharactersAssignment_10");
 			builder.put(grammarAccess.getSceneAccess().getObjectsAssignment_11(), "rule__Scene__ObjectsAssignment_11");
-			builder.put(grammarAccess.getSceneAccess().getSettingsAssignment_12(), "rule__Scene__SettingsAssignment_12");
-			builder.put(grammarAccess.getSceneAccess().getDirectionsAssignment_13(), "rule__Scene__DirectionsAssignment_13");
-			builder.put(grammarAccess.getCharacterAccess().getNameAssignment_3(), "rule__Character__NameAssignment_3");
-			builder.put(grammarAccess.getCharacterAccess().getValueAssignment_5(), "rule__Character__ValueAssignment_5");
-			builder.put(grammarAccess.getCharacterAccess().getActionAssignment_8(), "rule__Character__ActionAssignment_8");
-			builder.put(grammarAccess.getCharacterAccess().getDialogueAssignment_11(), "rule__Character__DialogueAssignment_11");
-			builder.put(grammarAccess.getCharacterAccess().getDescriptionAssignment_14(), "rule__Character__DescriptionAssignment_14");
-			builder.put(grammarAccess.getSceneObjectAccess().getNameAssignment_3(), "rule__SceneObject__NameAssignment_3");
-			builder.put(grammarAccess.getSceneObjectAccess().getValueAssignment_5(), "rule__SceneObject__ValueAssignment_5");
-			builder.put(grammarAccess.getSceneObjectAccess().getPositionAssignment_8(), "rule__SceneObject__PositionAssignment_8");
-			builder.put(grammarAccess.getSceneObjectAccess().getDescriptionAssignment_11(), "rule__SceneObject__DescriptionAssignment_11");
-			builder.put(grammarAccess.getSettingAccess().getCameraShotAssignment_3(), "rule__Setting__CameraShotAssignment_3");
-			builder.put(grammarAccess.getSettingAccess().getCameraAngleAssignment_6(), "rule__Setting__CameraAngleAssignment_6");
-			builder.put(grammarAccess.getSettingAccess().getLightingAssignment_9(), "rule__Setting__LightingAssignment_9");
-			builder.put(grammarAccess.getSettingAccess().getDescriptionAssignment_12(), "rule__Setting__DescriptionAssignment_12");
-			builder.put(grammarAccess.getDirectionAccess().getTargetCharacterAssignment_2_0_1(), "rule__Direction__TargetCharacterAssignment_2_0_1");
-			builder.put(grammarAccess.getDirectionAccess().getTargetObjectAssignment_2_1_1(), "rule__Direction__TargetObjectAssignment_2_1_1");
-			builder.put(grammarAccess.getDirectionAccess().getMovementAssignment_4(), "rule__Direction__MovementAssignment_4");
-			builder.put(grammarAccess.getDirectionAccess().getDescriptionAssignment_6(), "rule__Direction__DescriptionAssignment_6");
+			builder.put(grammarAccess.getCharacterAccess().getNameAssignment_2(), "rule__Character__NameAssignment_2");
+			builder.put(grammarAccess.getCharacterAccess().getValueAssignment_4(), "rule__Character__ValueAssignment_4");
+			builder.put(grammarAccess.getCharacterAccess().getPositionAssignment_6(), "rule__Character__PositionAssignment_6");
+			builder.put(grammarAccess.getCharacterAccess().getActionAssignment_7(), "rule__Character__ActionAssignment_7");
+			builder.put(grammarAccess.getCharacterAccess().getDialogueAssignment_8(), "rule__Character__DialogueAssignment_8");
+			builder.put(grammarAccess.getCharacterAccess().getDescriptionAssignment_9(), "rule__Character__DescriptionAssignment_9");
+			builder.put(grammarAccess.getSceneObjectAccess().getNameAssignment_2(), "rule__SceneObject__NameAssignment_2");
+			builder.put(grammarAccess.getSceneObjectAccess().getValueAssignment_4(), "rule__SceneObject__ValueAssignment_4");
+			builder.put(grammarAccess.getSceneObjectAccess().getPositionAssignment_6(), "rule__SceneObject__PositionAssignment_6");
+			builder.put(grammarAccess.getSceneObjectAccess().getDescriptionAssignment_7(), "rule__SceneObject__DescriptionAssignment_7");
+			builder.put(grammarAccess.getSettingAccess().getCameraAssignment_2(), "rule__Setting__CameraAssignment_2");
+			builder.put(grammarAccess.getSettingAccess().getLightingAssignment_3(), "rule__Setting__LightingAssignment_3");
+			builder.put(grammarAccess.getSettingAccess().getDescriptionAssignment_4(), "rule__Setting__DescriptionAssignment_4");
+			builder.put(grammarAccess.getDescriptionStatementAccess().getDescriptionAssignment_1(), "rule__DescriptionStatement__DescriptionAssignment_1");
+			builder.put(grammarAccess.getDialogueStatementAccess().getDialogueAssignment_1(), "rule__DialogueStatement__DialogueAssignment_1");
+			builder.put(grammarAccess.getActionStatementAccess().getActionAssignment_1(), "rule__ActionStatement__ActionAssignment_1");
+			builder.put(grammarAccess.getPositionStatementAccess().getPositionAssignment_1(), "rule__PositionStatement__PositionAssignment_1");
+			builder.put(grammarAccess.getCameraShotStatementAccess().getCameraShotAssignment_1(), "rule__CameraShotStatement__CameraShotAssignment_1");
+			builder.put(grammarAccess.getCameraShotStatementAccess().getCameraAngleAssignment_3(), "rule__CameraShotStatement__CameraAngleAssignment_3");
+			builder.put(grammarAccess.getLightingStatementAccess().getSourceAssignment_1(), "rule__LightingStatement__SourceAssignment_1");
+			builder.put(grammarAccess.getLightingStatementAccess().getDirectionAssignment_3(), "rule__LightingStatement__DirectionAssignment_3");
 		}
 	}
 	

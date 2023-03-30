@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getValue <em>Value</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getPosition <em>Position</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getAction <em>Action</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDialogue <em>Dialogue</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDescription <em>Description</em>}</li>
@@ -72,69 +73,91 @@ public interface Character extends EObject
   void setValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Action</b></em>' attribute.
+   * Returns the value of the '<em><b>Position</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Action</em>' attribute.
-   * @see #setAction(String)
-   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getCharacter_Action()
-   * @model
+   * @return the value of the '<em>Position</em>' containment reference.
+   * @see #setPosition(PositionStatement)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getCharacter_Position()
+   * @model containment="true"
    * @generated
    */
-  String getAction();
+  PositionStatement getPosition();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getAction <em>Action</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getPosition <em>Position</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Action</em>' attribute.
+   * @param value the new value of the '<em>Position</em>' containment reference.
+   * @see #getPosition()
+   * @generated
+   */
+  void setPosition(PositionStatement value);
+
+  /**
+   * Returns the value of the '<em><b>Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Action</em>' containment reference.
+   * @see #setAction(ActionStatement)
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getCharacter_Action()
+   * @model containment="true"
+   * @generated
+   */
+  ActionStatement getAction();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getAction <em>Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Action</em>' containment reference.
    * @see #getAction()
    * @generated
    */
-  void setAction(String value);
+  void setAction(ActionStatement value);
 
   /**
-   * Returns the value of the '<em><b>Dialogue</b></em>' attribute.
+   * Returns the value of the '<em><b>Dialogue</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dialogue</em>' attribute.
-   * @see #setDialogue(String)
+   * @return the value of the '<em>Dialogue</em>' containment reference.
+   * @see #setDialogue(DialogueStatement)
    * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getCharacter_Dialogue()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDialogue();
+  DialogueStatement getDialogue();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDialogue <em>Dialogue</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDialogue <em>Dialogue</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Dialogue</em>' attribute.
+   * @param value the new value of the '<em>Dialogue</em>' containment reference.
    * @see #getDialogue()
    * @generated
    */
-  void setDialogue(String value);
+  void setDialogue(DialogueStatement value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(DescriptionStatement)
    * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getCharacter_Description()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDescription();
+  DescriptionStatement getDescription();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Character#getDescription <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
+   * @param value the new value of the '<em>Description</em>' containment reference.
    * @see #getDescription()
    * @generated
    */
-  void setDescription(String value);
+  void setDescription(DescriptionStatement value);
 
 } // Character

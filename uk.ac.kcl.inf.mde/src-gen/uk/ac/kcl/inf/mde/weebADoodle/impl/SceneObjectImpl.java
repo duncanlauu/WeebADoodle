@@ -4,12 +4,16 @@
 package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
@@ -72,44 +76,24 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
+   * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPosition()
    * @generated
    * @ordered
    */
-  protected static final String POSITION_EDEFAULT = null;
+  protected PositionStatement position;
 
   /**
-   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPosition()
-   * @generated
-   * @ordered
-   */
-  protected String position = POSITION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
+  protected DescriptionStatement description;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,7 +172,7 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
    * @generated
    */
   @Override
-  public String getPosition()
+  public PositionStatement getPosition()
   {
     return position;
   }
@@ -198,13 +182,16 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setPosition(String newPosition)
+  public NotificationChain basicSetPosition(PositionStatement newPosition, NotificationChain msgs)
   {
-    String oldPosition = position;
+    PositionStatement oldPosition = position;
     position = newPosition;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE_OBJECT__POSITION, oldPosition, position));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE_OBJECT__POSITION, oldPosition, newPosition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -213,7 +200,29 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
    * @generated
    */
   @Override
-  public String getDescription()
+  public void setPosition(PositionStatement newPosition)
+  {
+    if (newPosition != position)
+    {
+      NotificationChain msgs = null;
+      if (position != null)
+        msgs = ((InternalEObject)position).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SCENE_OBJECT__POSITION, null, msgs);
+      if (newPosition != null)
+        msgs = ((InternalEObject)newPosition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SCENE_OBJECT__POSITION, null, msgs);
+      msgs = basicSetPosition(newPosition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE_OBJECT__POSITION, newPosition, newPosition));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DescriptionStatement getDescription()
   {
     return description;
   }
@@ -223,13 +232,56 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDescription(String newDescription)
+  public NotificationChain basicSetDescription(DescriptionStatement newDescription, NotificationChain msgs)
   {
-    String oldDescription = description;
+    DescriptionStatement oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION, oldDescription, description));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(DescriptionStatement newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION, newDescription, newDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.SCENE_OBJECT__POSITION:
+        return basicSetPosition(null, msgs);
+      case WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -271,10 +323,10 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
         setValue((String)newValue);
         return;
       case WeebADoodlePackage.SCENE_OBJECT__POSITION:
-        setPosition((String)newValue);
+        setPosition((PositionStatement)newValue);
         return;
       case WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION:
-        setDescription((String)newValue);
+        setDescription((DescriptionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -297,10 +349,10 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
         setValue(VALUE_EDEFAULT);
         return;
       case WeebADoodlePackage.SCENE_OBJECT__POSITION:
-        setPosition(POSITION_EDEFAULT);
+        setPosition((PositionStatement)null);
         return;
       case WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
+        setDescription((DescriptionStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -321,9 +373,9 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
       case WeebADoodlePackage.SCENE_OBJECT__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case WeebADoodlePackage.SCENE_OBJECT__POSITION:
-        return POSITION_EDEFAULT == null ? position != null : !POSITION_EDEFAULT.equals(position);
+        return position != null;
       case WeebADoodlePackage.SCENE_OBJECT__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+        return description != null;
     }
     return super.eIsSet(featureID);
   }
@@ -343,10 +395,6 @@ public class SceneObjectImpl extends MinimalEObjectImpl.Container implements Sce
     result.append(name);
     result.append(", value: ");
     result.append(value);
-    result.append(", position: ");
-    result.append(position);
-    result.append(", description: ");
-    result.append(description);
     result.append(')');
     return result.toString();
   }

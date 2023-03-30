@@ -6,42 +6,55 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="WeebADoodle" basePackage="uk.ac.kcl.inf.mde" disposableProviderFactory="true"
       fileExtensions="weeb" ecorePackage="WeebADoodle.ecore#/">
-    <genClasses ecoreClass="WeebADoodle.ecore#//Storyboard">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Storyboard/scenes"/>
+    <genClasses ecoreClass="WeebADoodle.ecore#//Board">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Board/scenes"/>
     </genClasses>
     <genClasses ecoreClass="WeebADoodle.ecore#//Scene">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Scene/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Scene/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Scene/background"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Scene/settings"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Scene/characters"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Scene/objects"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Scene/settings"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Scene/directions"/>
     </genClasses>
     <genClasses ecoreClass="WeebADoodle.ecore#//Character">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Character/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Character/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Character/action"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Character/dialogue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Character/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Character/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Character/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Character/dialogue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Character/description"/>
     </genClasses>
     <genClasses ecoreClass="WeebADoodle.ecore#//SceneObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//SceneObject/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//SceneObject/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//SceneObject/position"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//SceneObject/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//SceneObject/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//SceneObject/description"/>
     </genClasses>
     <genClasses ecoreClass="WeebADoodle.ecore#//Setting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Setting/cameraShot"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Setting/cameraAngle"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Setting/lighting"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Setting/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Setting/camera"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Setting/lighting"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Setting/description"/>
     </genClasses>
-    <genClasses ecoreClass="WeebADoodle.ecore#//Direction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Direction/targetCharacter"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WeebADoodle.ecore#//Direction/targetObject"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Direction/movement"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//Direction/description"/>
+    <genClasses ecoreClass="WeebADoodle.ecore#//DescriptionStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//DescriptionStatement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="WeebADoodle.ecore#//DialogueStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//DialogueStatement/dialogue"/>
+    </genClasses>
+    <genClasses ecoreClass="WeebADoodle.ecore#//ActionStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//ActionStatement/action"/>
+    </genClasses>
+    <genClasses ecoreClass="WeebADoodle.ecore#//PositionStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//PositionStatement/position"/>
+    </genClasses>
+    <genClasses ecoreClass="WeebADoodle.ecore#//CameraShotStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//CameraShotStatement/cameraShot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//CameraShotStatement/cameraAngle"/>
+    </genClasses>
+    <genClasses ecoreClass="WeebADoodle.ecore#//LightingStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//LightingStatement/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WeebADoodle.ecore#//LightingStatement/direction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

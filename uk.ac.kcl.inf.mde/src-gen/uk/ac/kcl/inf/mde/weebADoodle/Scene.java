@@ -19,10 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getName <em>Name</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getValue <em>Value</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getBackground <em>Background</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getSettings <em>Settings</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getCharacters <em>Characters</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getObjects <em>Objects</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getSettings <em>Settings</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getDirections <em>Directions</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getScene()
@@ -98,30 +97,6 @@ public interface Scene extends EObject
   void setBackground(String value);
 
   /**
-   * Returns the value of the '<em><b>Characters</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.mde.weebADoodle.Character}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Characters</em>' containment reference list.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getScene_Characters()
-   * @model containment="true"
-   * @generated
-   */
-  EList<uk.ac.kcl.inf.mde.weebADoodle.Character> getCharacters();
-
-  /**
-   * Returns the value of the '<em><b>Objects</b></em>' containment reference list.
-   * The list contents are of type {@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Objects</em>' containment reference list.
-   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getScene_Objects()
-   * @model containment="true"
-   * @generated
-   */
-  EList<SceneObject> getObjects();
-
-  /**
    * Returns the value of the '<em><b>Settings</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -144,25 +119,27 @@ public interface Scene extends EObject
   void setSettings(Setting value);
 
   /**
-   * Returns the value of the '<em><b>Directions</b></em>' containment reference.
+   * Returns the value of the '<em><b>Characters</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.mde.weebADoodle.Character}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Directions</em>' containment reference.
-   * @see #setDirections(Direction)
-   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getScene_Directions()
+   * @return the value of the '<em>Characters</em>' containment reference list.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getScene_Characters()
    * @model containment="true"
    * @generated
    */
-  Direction getDirections();
+  EList<uk.ac.kcl.inf.mde.weebADoodle.Character> getCharacters();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.Scene#getDirections <em>Directions</em>}' containment reference.
+   * Returns the value of the '<em><b>Objects</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Directions</em>' containment reference.
-   * @see #getDirections()
+   * @return the value of the '<em>Objects</em>' containment reference list.
+   * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getScene_Objects()
+   * @model containment="true"
    * @generated
    */
-  void setDirections(Direction value);
+  EList<SceneObject> getObjects();
 
 } // Scene

@@ -11,11 +11,16 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import uk.ac.kcl.inf.mde.weebADoodle.Direction;
+import uk.ac.kcl.inf.mde.weebADoodle.ActionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.Board;
+import uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DialogueStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.LightingStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.PositionStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Scene;
 import uk.ac.kcl.inf.mde.weebADoodle.SceneObject;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
-import uk.ac.kcl.inf.mde.weebADoodle.Storyboard;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodleFactory;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
@@ -71,12 +76,17 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
   {
     switch (eClass.getClassifierID())
     {
-      case WeebADoodlePackage.STORYBOARD: return createStoryboard();
+      case WeebADoodlePackage.BOARD: return createBoard();
       case WeebADoodlePackage.SCENE: return createScene();
       case WeebADoodlePackage.CHARACTER: return createCharacter();
       case WeebADoodlePackage.SCENE_OBJECT: return createSceneObject();
       case WeebADoodlePackage.SETTING: return createSetting();
-      case WeebADoodlePackage.DIRECTION: return createDirection();
+      case WeebADoodlePackage.DESCRIPTION_STATEMENT: return createDescriptionStatement();
+      case WeebADoodlePackage.DIALOGUE_STATEMENT: return createDialogueStatement();
+      case WeebADoodlePackage.ACTION_STATEMENT: return createActionStatement();
+      case WeebADoodlePackage.POSITION_STATEMENT: return createPositionStatement();
+      case WeebADoodlePackage.CAMERA_SHOT_STATEMENT: return createCameraShotStatement();
+      case WeebADoodlePackage.LIGHTING_STATEMENT: return createLightingStatement();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,10 +98,10 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
    * @generated
    */
   @Override
-  public Storyboard createStoryboard()
+  public Board createBoard()
   {
-    StoryboardImpl storyboard = new StoryboardImpl();
-    return storyboard;
+    BoardImpl board = new BoardImpl();
+    return board;
   }
 
   /**
@@ -148,10 +158,70 @@ public class WeebADoodleFactoryImpl extends EFactoryImpl implements WeebADoodleF
    * @generated
    */
   @Override
-  public Direction createDirection()
+  public DescriptionStatement createDescriptionStatement()
   {
-    DirectionImpl direction = new DirectionImpl();
-    return direction;
+    DescriptionStatementImpl descriptionStatement = new DescriptionStatementImpl();
+    return descriptionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DialogueStatement createDialogueStatement()
+  {
+    DialogueStatementImpl dialogueStatement = new DialogueStatementImpl();
+    return dialogueStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ActionStatement createActionStatement()
+  {
+    ActionStatementImpl actionStatement = new ActionStatementImpl();
+    return actionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public PositionStatement createPositionStatement()
+  {
+    PositionStatementImpl positionStatement = new PositionStatementImpl();
+    return positionStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CameraShotStatement createCameraShotStatement()
+  {
+    CameraShotStatementImpl cameraShotStatement = new CameraShotStatementImpl();
+    return cameraShotStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LightingStatement createLightingStatement()
+  {
+    LightingStatementImpl lightingStatement = new LightingStatementImpl();
+    return lightingStatement;
   }
 
   /**

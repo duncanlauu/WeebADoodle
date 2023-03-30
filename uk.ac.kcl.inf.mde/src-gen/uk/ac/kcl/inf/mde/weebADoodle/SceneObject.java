@@ -71,47 +71,47 @@ public interface SceneObject extends EObject
   void setValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Position</b></em>' attribute.
+   * Returns the value of the '<em><b>Position</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Position</em>' attribute.
-   * @see #setPosition(String)
+   * @return the value of the '<em>Position</em>' containment reference.
+   * @see #setPosition(PositionStatement)
    * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSceneObject_Position()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getPosition();
+  PositionStatement getPosition();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getPosition <em>Position</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getPosition <em>Position</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Position</em>' attribute.
+   * @param value the new value of the '<em>Position</em>' containment reference.
    * @see #getPosition()
    * @generated
    */
-  void setPosition(String value);
+  void setPosition(PositionStatement value);
 
   /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
+   * Returns the value of the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
+   * @return the value of the '<em>Description</em>' containment reference.
+   * @see #setDescription(DescriptionStatement)
    * @see uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage#getSceneObject_Description()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getDescription();
+  DescriptionStatement getDescription();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mde.weebADoodle.SceneObject#getDescription <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
+   * @param value the new value of the '<em>Description</em>' containment reference.
    * @see #getDescription()
    * @generated
    */
-  void setDescription(String value);
+  void setDescription(DescriptionStatement value);
 
 } // SceneObject

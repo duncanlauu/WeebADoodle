@@ -4,12 +4,17 @@
 package uk.ac.kcl.inf.mde.weebADoodle.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import uk.ac.kcl.inf.mde.weebADoodle.CameraShotStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.DescriptionStatement;
+import uk.ac.kcl.inf.mde.weebADoodle.LightingStatement;
 import uk.ac.kcl.inf.mde.weebADoodle.Setting;
 import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 
@@ -21,8 +26,7 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getCameraShot <em>Camera Shot</em>}</li>
- *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getCameraAngle <em>Camera Angle</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getCamera <em>Camera</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getLighting <em>Lighting</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mde.weebADoodle.impl.SettingImpl#getDescription <em>Description</em>}</li>
  * </ul>
@@ -32,84 +36,34 @@ import uk.ac.kcl.inf.mde.weebADoodle.WeebADoodlePackage;
 public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
 {
   /**
-   * The default value of the '{@link #getCameraShot() <em>Camera Shot</em>}' attribute.
+   * The cached value of the '{@link #getCamera() <em>Camera</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCameraShot()
+   * @see #getCamera()
    * @generated
    * @ordered
    */
-  protected static final String CAMERA_SHOT_EDEFAULT = null;
+  protected CameraShotStatement camera;
 
   /**
-   * The cached value of the '{@link #getCameraShot() <em>Camera Shot</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCameraShot()
-   * @generated
-   * @ordered
-   */
-  protected String cameraShot = CAMERA_SHOT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCameraAngle() <em>Camera Angle</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCameraAngle()
-   * @generated
-   * @ordered
-   */
-  protected static final String CAMERA_ANGLE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCameraAngle() <em>Camera Angle</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCameraAngle()
-   * @generated
-   * @ordered
-   */
-  protected String cameraAngle = CAMERA_ANGLE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getLighting() <em>Lighting</em>}' attribute.
+   * The cached value of the '{@link #getLighting() <em>Lighting</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLighting()
    * @generated
    * @ordered
    */
-  protected static final String LIGHTING_EDEFAULT = null;
+  protected LightingStatement lighting;
 
   /**
-   * The cached value of the '{@link #getLighting() <em>Lighting</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLighting()
-   * @generated
-   * @ordered
-   */
-  protected String lighting = LIGHTING_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
+  protected DescriptionStatement description;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,9 +92,9 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * @generated
    */
   @Override
-  public String getCameraShot()
+  public CameraShotStatement getCamera()
   {
-    return cameraShot;
+    return camera;
   }
 
   /**
@@ -148,13 +102,16 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setCameraShot(String newCameraShot)
+  public NotificationChain basicSetCamera(CameraShotStatement newCamera, NotificationChain msgs)
   {
-    String oldCameraShot = cameraShot;
-    cameraShot = newCameraShot;
+    CameraShotStatement oldCamera = camera;
+    camera = newCamera;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__CAMERA_SHOT, oldCameraShot, cameraShot));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__CAMERA, oldCamera, newCamera);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -163,9 +120,20 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * @generated
    */
   @Override
-  public String getCameraAngle()
+  public void setCamera(CameraShotStatement newCamera)
   {
-    return cameraAngle;
+    if (newCamera != camera)
+    {
+      NotificationChain msgs = null;
+      if (camera != null)
+        msgs = ((InternalEObject)camera).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SETTING__CAMERA, null, msgs);
+      if (newCamera != null)
+        msgs = ((InternalEObject)newCamera).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SETTING__CAMERA, null, msgs);
+      msgs = basicSetCamera(newCamera, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__CAMERA, newCamera, newCamera));
   }
 
   /**
@@ -174,21 +142,7 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * @generated
    */
   @Override
-  public void setCameraAngle(String newCameraAngle)
-  {
-    String oldCameraAngle = cameraAngle;
-    cameraAngle = newCameraAngle;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__CAMERA_ANGLE, oldCameraAngle, cameraAngle));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getLighting()
+  public LightingStatement getLighting()
   {
     return lighting;
   }
@@ -198,13 +152,16 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setLighting(String newLighting)
+  public NotificationChain basicSetLighting(LightingStatement newLighting, NotificationChain msgs)
   {
-    String oldLighting = lighting;
+    LightingStatement oldLighting = lighting;
     lighting = newLighting;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__LIGHTING, oldLighting, lighting));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__LIGHTING, oldLighting, newLighting);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -213,7 +170,29 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * @generated
    */
   @Override
-  public String getDescription()
+  public void setLighting(LightingStatement newLighting)
+  {
+    if (newLighting != lighting)
+    {
+      NotificationChain msgs = null;
+      if (lighting != null)
+        msgs = ((InternalEObject)lighting).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SETTING__LIGHTING, null, msgs);
+      if (newLighting != null)
+        msgs = ((InternalEObject)newLighting).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SETTING__LIGHTING, null, msgs);
+      msgs = basicSetLighting(newLighting, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__LIGHTING, newLighting, newLighting));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public DescriptionStatement getDescription()
   {
     return description;
   }
@@ -223,13 +202,58 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDescription(String newDescription)
+  public NotificationChain basicSetDescription(DescriptionStatement newDescription, NotificationChain msgs)
   {
-    String oldDescription = description;
+    DescriptionStatement oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__DESCRIPTION, oldDescription, description));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDescription(DescriptionStatement newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SETTING__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WeebADoodlePackage.SETTING__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WeebADoodlePackage.SETTING__DESCRIPTION, newDescription, newDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case WeebADoodlePackage.SETTING__CAMERA:
+        return basicSetCamera(null, msgs);
+      case WeebADoodlePackage.SETTING__LIGHTING:
+        return basicSetLighting(null, msgs);
+      case WeebADoodlePackage.SETTING__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -242,10 +266,8 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
-        return getCameraShot();
-      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
-        return getCameraAngle();
+      case WeebADoodlePackage.SETTING__CAMERA:
+        return getCamera();
       case WeebADoodlePackage.SETTING__LIGHTING:
         return getLighting();
       case WeebADoodlePackage.SETTING__DESCRIPTION:
@@ -264,17 +286,14 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
-        setCameraShot((String)newValue);
-        return;
-      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
-        setCameraAngle((String)newValue);
+      case WeebADoodlePackage.SETTING__CAMERA:
+        setCamera((CameraShotStatement)newValue);
         return;
       case WeebADoodlePackage.SETTING__LIGHTING:
-        setLighting((String)newValue);
+        setLighting((LightingStatement)newValue);
         return;
       case WeebADoodlePackage.SETTING__DESCRIPTION:
-        setDescription((String)newValue);
+        setDescription((DescriptionStatement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -290,17 +309,14 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
-        setCameraShot(CAMERA_SHOT_EDEFAULT);
-        return;
-      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
-        setCameraAngle(CAMERA_ANGLE_EDEFAULT);
+      case WeebADoodlePackage.SETTING__CAMERA:
+        setCamera((CameraShotStatement)null);
         return;
       case WeebADoodlePackage.SETTING__LIGHTING:
-        setLighting(LIGHTING_EDEFAULT);
+        setLighting((LightingStatement)null);
         return;
       case WeebADoodlePackage.SETTING__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
+        setDescription((DescriptionStatement)null);
         return;
     }
     super.eUnset(featureID);
@@ -316,39 +332,14 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   {
     switch (featureID)
     {
-      case WeebADoodlePackage.SETTING__CAMERA_SHOT:
-        return CAMERA_SHOT_EDEFAULT == null ? cameraShot != null : !CAMERA_SHOT_EDEFAULT.equals(cameraShot);
-      case WeebADoodlePackage.SETTING__CAMERA_ANGLE:
-        return CAMERA_ANGLE_EDEFAULT == null ? cameraAngle != null : !CAMERA_ANGLE_EDEFAULT.equals(cameraAngle);
+      case WeebADoodlePackage.SETTING__CAMERA:
+        return camera != null;
       case WeebADoodlePackage.SETTING__LIGHTING:
-        return LIGHTING_EDEFAULT == null ? lighting != null : !LIGHTING_EDEFAULT.equals(lighting);
+        return lighting != null;
       case WeebADoodlePackage.SETTING__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+        return description != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (cameraShot: ");
-    result.append(cameraShot);
-    result.append(", cameraAngle: ");
-    result.append(cameraAngle);
-    result.append(", lighting: ");
-    result.append(lighting);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
   }
 
 } //SettingImpl

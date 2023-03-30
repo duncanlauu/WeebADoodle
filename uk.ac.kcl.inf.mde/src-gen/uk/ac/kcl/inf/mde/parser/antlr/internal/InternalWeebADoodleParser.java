@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'board'", "'{'", "'}'", "'scene'", "'name'", "':'", "';'", "'background:'", "'character'", "'action:'", "'dialogue:'", "'description:'", "'object'", "'position:'", "'setting'", "'camera_shot:'", "'camera_angle:'", "'lighting:'", "'direction'", "'movement:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'board'", "'{'", "'}'", "'scene'", "':'", "';'", "'background:'", "'character'", "'name:'", "'object'", "'setting'", "'description:'", "'dialogue:'", "'action:'", "'position:'", "'camera:'", "'from'", "'lighting:'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -35,7 +35,6 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int T__30=30;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -43,7 +42,6 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=6;
-    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -80,7 +78,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
         @Override
         protected String getFirstRuleName() {
-        	return "Storyboard";
+        	return "Board";
        	}
 
        	@Override
@@ -91,25 +89,25 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start "entryRuleStoryboard"
-    // InternalWeebADoodle.g:64:1: entryRuleStoryboard returns [EObject current=null] : iv_ruleStoryboard= ruleStoryboard EOF ;
-    public final EObject entryRuleStoryboard() throws RecognitionException {
+    // $ANTLR start "entryRuleBoard"
+    // InternalWeebADoodle.g:64:1: entryRuleBoard returns [EObject current=null] : iv_ruleBoard= ruleBoard EOF ;
+    public final EObject entryRuleBoard() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleStoryboard = null;
+        EObject iv_ruleBoard = null;
 
 
         try {
-            // InternalWeebADoodle.g:64:51: (iv_ruleStoryboard= ruleStoryboard EOF )
-            // InternalWeebADoodle.g:65:2: iv_ruleStoryboard= ruleStoryboard EOF
+            // InternalWeebADoodle.g:64:46: (iv_ruleBoard= ruleBoard EOF )
+            // InternalWeebADoodle.g:65:2: iv_ruleBoard= ruleBoard EOF
             {
-             newCompositeNode(grammarAccess.getStoryboardRule()); 
+             newCompositeNode(grammarAccess.getBoardRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleStoryboard=ruleStoryboard();
+            iv_ruleBoard=ruleBoard();
 
             state._fsp--;
 
-             current =iv_ruleStoryboard; 
+             current =iv_ruleBoard; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -124,12 +122,12 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleStoryboard"
+    // $ANTLR end "entryRuleBoard"
 
 
-    // $ANTLR start "ruleStoryboard"
-    // InternalWeebADoodle.g:71:1: ruleStoryboard returns [EObject current=null] : (otherlv_0= 'board' otherlv_1= '{' ( (lv_scenes_2_0= ruleScene ) )+ otherlv_3= '}' ) ;
-    public final EObject ruleStoryboard() throws RecognitionException {
+    // $ANTLR start "ruleBoard"
+    // InternalWeebADoodle.g:71:1: ruleBoard returns [EObject current=null] : (otherlv_0= 'board' otherlv_1= '{' ( (lv_scenes_2_0= ruleScene ) )+ otherlv_3= '}' ) ;
+    public final EObject ruleBoard() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -150,11 +148,11 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getStoryboardAccess().getBoardKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getBoardAccess().getBoardKeyword_0());
             		
             otherlv_1=(Token)match(input,12,FOLLOW_4); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getStoryboardAccess().getLeftCurlyBracketKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getBoardAccess().getLeftCurlyBracketKeyword_1());
             		
             // InternalWeebADoodle.g:87:3: ( (lv_scenes_2_0= ruleScene ) )+
             int cnt1=0;
@@ -176,7 +174,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             	    // InternalWeebADoodle.g:89:5: lv_scenes_2_0= ruleScene
             	    {
 
-            	    					newCompositeNode(grammarAccess.getStoryboardAccess().getScenesSceneParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getBoardAccess().getScenesSceneParserRuleCall_2_0());
             	    				
             	    pushFollow(FOLLOW_5);
             	    lv_scenes_2_0=ruleScene();
@@ -185,7 +183,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
             	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getStoryboardRule());
+            	    						current = createModelElementForParent(grammarAccess.getBoardRule());
             	    					}
             	    					add(
             	    						current,
@@ -212,7 +210,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             otherlv_3=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getStoryboardAccess().getRightCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getBoardAccess().getRightCurlyBracketKeyword_3());
             		
 
             }
@@ -233,7 +231,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleStoryboard"
+    // $ANTLR end "ruleBoard"
 
 
     // $ANTLR start "entryRuleScene"
@@ -273,39 +271,36 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScene"
-    // InternalWeebADoodle.g:121:1: ruleScene returns [EObject current=null] : (otherlv_0= 'scene' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'background:' ( (lv_background_8_0= RULE_STRING ) ) otherlv_9= ';' ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* ( (lv_settings_12_0= ruleSetting ) ) ( (lv_directions_13_0= ruleDirection ) )? otherlv_14= '}' ) ;
+    // InternalWeebADoodle.g:121:1: ruleScene returns [EObject current=null] : (otherlv_0= 'scene' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' otherlv_6= 'background:' ( (lv_background_7_0= RULE_STRING ) ) otherlv_8= ';' ( (lv_settings_9_0= ruleSetting ) ) ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* otherlv_12= '}' ) ;
     public final EObject ruleScene() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_name_3_0=null;
-        Token otherlv_4=null;
-        Token lv_value_5_0=null;
+        Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        Token lv_value_4_0=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token lv_background_8_0=null;
-        Token otherlv_9=null;
-        Token otherlv_14=null;
+        Token lv_background_7_0=null;
+        Token otherlv_8=null;
+        Token otherlv_12=null;
+        EObject lv_settings_9_0 = null;
+
         EObject lv_characters_10_0 = null;
 
         EObject lv_objects_11_0 = null;
-
-        EObject lv_settings_12_0 = null;
-
-        EObject lv_directions_13_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalWeebADoodle.g:127:2: ( (otherlv_0= 'scene' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'background:' ( (lv_background_8_0= RULE_STRING ) ) otherlv_9= ';' ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* ( (lv_settings_12_0= ruleSetting ) ) ( (lv_directions_13_0= ruleDirection ) )? otherlv_14= '}' ) )
-            // InternalWeebADoodle.g:128:2: (otherlv_0= 'scene' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'background:' ( (lv_background_8_0= RULE_STRING ) ) otherlv_9= ';' ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* ( (lv_settings_12_0= ruleSetting ) ) ( (lv_directions_13_0= ruleDirection ) )? otherlv_14= '}' )
+            // InternalWeebADoodle.g:127:2: ( (otherlv_0= 'scene' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' otherlv_6= 'background:' ( (lv_background_7_0= RULE_STRING ) ) otherlv_8= ';' ( (lv_settings_9_0= ruleSetting ) ) ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* otherlv_12= '}' ) )
+            // InternalWeebADoodle.g:128:2: (otherlv_0= 'scene' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' otherlv_6= 'background:' ( (lv_background_7_0= RULE_STRING ) ) otherlv_8= ';' ( (lv_settings_9_0= ruleSetting ) ) ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* otherlv_12= '}' )
             {
-            // InternalWeebADoodle.g:128:2: (otherlv_0= 'scene' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'background:' ( (lv_background_8_0= RULE_STRING ) ) otherlv_9= ';' ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* ( (lv_settings_12_0= ruleSetting ) ) ( (lv_directions_13_0= ruleDirection ) )? otherlv_14= '}' )
-            // InternalWeebADoodle.g:129:3: otherlv_0= 'scene' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'background:' ( (lv_background_8_0= RULE_STRING ) ) otherlv_9= ';' ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* ( (lv_settings_12_0= ruleSetting ) ) ( (lv_directions_13_0= ruleDirection ) )? otherlv_14= '}'
+            // InternalWeebADoodle.g:128:2: (otherlv_0= 'scene' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' otherlv_6= 'background:' ( (lv_background_7_0= RULE_STRING ) ) otherlv_8= ';' ( (lv_settings_9_0= ruleSetting ) ) ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* otherlv_12= '}' )
+            // InternalWeebADoodle.g:129:3: otherlv_0= 'scene' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' otherlv_6= 'background:' ( (lv_background_7_0= RULE_STRING ) ) otherlv_8= ';' ( (lv_settings_9_0= ruleSetting ) ) ( (lv_characters_10_0= ruleCharacter ) )* ( (lv_objects_11_0= ruleSceneObject ) )* otherlv_12= '}'
             {
             otherlv_0=(Token)match(input,14,FOLLOW_3); 
 
@@ -315,19 +310,15 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSceneAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,15,FOLLOW_7); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getSceneAccess().getNameKeyword_2());
-            		
-            // InternalWeebADoodle.g:141:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalWeebADoodle.g:142:4: (lv_name_3_0= RULE_ID )
+            // InternalWeebADoodle.g:137:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalWeebADoodle.g:138:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalWeebADoodle.g:142:4: (lv_name_3_0= RULE_ID )
-            // InternalWeebADoodle.g:143:5: lv_name_3_0= RULE_ID
+            // InternalWeebADoodle.g:138:4: (lv_name_2_0= RULE_ID )
+            // InternalWeebADoodle.g:139:5: lv_name_2_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_7); 
 
-            					newLeafNode(lv_name_3_0, grammarAccess.getSceneAccess().getNameIDTerminalRuleCall_3_0());
+            					newLeafNode(lv_name_2_0, grammarAccess.getSceneAccess().getNameIDTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -336,7 +327,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_3_0,
+            						lv_name_2_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -345,19 +336,19 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,16,FOLLOW_9); 
+            otherlv_3=(Token)match(input,15,FOLLOW_8); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getSceneAccess().getColonKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getSceneAccess().getColonKeyword_3());
             		
-            // InternalWeebADoodle.g:163:3: ( (lv_value_5_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:164:4: (lv_value_5_0= RULE_STRING )
+            // InternalWeebADoodle.g:159:3: ( (lv_value_4_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:160:4: (lv_value_4_0= RULE_STRING )
             {
-            // InternalWeebADoodle.g:164:4: (lv_value_5_0= RULE_STRING )
-            // InternalWeebADoodle.g:165:5: lv_value_5_0= RULE_STRING
+            // InternalWeebADoodle.g:160:4: (lv_value_4_0= RULE_STRING )
+            // InternalWeebADoodle.g:161:5: lv_value_4_0= RULE_STRING
             {
-            lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            lv_value_4_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
-            					newLeafNode(lv_value_5_0, grammarAccess.getSceneAccess().getValueSTRINGTerminalRuleCall_5_0());
+            					newLeafNode(lv_value_4_0, grammarAccess.getSceneAccess().getValueSTRINGTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -366,7 +357,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"value",
-            						lv_value_5_0,
+            						lv_value_4_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -375,23 +366,23 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,17,FOLLOW_11); 
+            otherlv_5=(Token)match(input,16,FOLLOW_10); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getSceneAccess().getSemicolonKeyword_6());
+            			newLeafNode(otherlv_5, grammarAccess.getSceneAccess().getSemicolonKeyword_5());
             		
-            otherlv_7=(Token)match(input,18,FOLLOW_9); 
+            otherlv_6=(Token)match(input,17,FOLLOW_8); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getSceneAccess().getBackgroundKeyword_7());
+            			newLeafNode(otherlv_6, grammarAccess.getSceneAccess().getBackgroundKeyword_6());
             		
-            // InternalWeebADoodle.g:189:3: ( (lv_background_8_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:190:4: (lv_background_8_0= RULE_STRING )
+            // InternalWeebADoodle.g:185:3: ( (lv_background_7_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:186:4: (lv_background_7_0= RULE_STRING )
             {
-            // InternalWeebADoodle.g:190:4: (lv_background_8_0= RULE_STRING )
-            // InternalWeebADoodle.g:191:5: lv_background_8_0= RULE_STRING
+            // InternalWeebADoodle.g:186:4: (lv_background_7_0= RULE_STRING )
+            // InternalWeebADoodle.g:187:5: lv_background_7_0= RULE_STRING
             {
-            lv_background_8_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            lv_background_7_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
-            					newLeafNode(lv_background_8_0, grammarAccess.getSceneAccess().getBackgroundSTRINGTerminalRuleCall_8_0());
+            					newLeafNode(lv_background_7_0, grammarAccess.getSceneAccess().getBackgroundSTRINGTerminalRuleCall_7_0());
             				
 
             					if (current==null) {
@@ -400,7 +391,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"background",
-            						lv_background_8_0,
+            						lv_background_7_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -409,27 +400,58 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,17,FOLLOW_12); 
+            otherlv_8=(Token)match(input,16,FOLLOW_11); 
 
-            			newLeafNode(otherlv_9, grammarAccess.getSceneAccess().getSemicolonKeyword_9());
+            			newLeafNode(otherlv_8, grammarAccess.getSceneAccess().getSemicolonKeyword_8());
             		
-            // InternalWeebADoodle.g:211:3: ( (lv_characters_10_0= ruleCharacter ) )*
+            // InternalWeebADoodle.g:207:3: ( (lv_settings_9_0= ruleSetting ) )
+            // InternalWeebADoodle.g:208:4: (lv_settings_9_0= ruleSetting )
+            {
+            // InternalWeebADoodle.g:208:4: (lv_settings_9_0= ruleSetting )
+            // InternalWeebADoodle.g:209:5: lv_settings_9_0= ruleSetting
+            {
+
+            					newCompositeNode(grammarAccess.getSceneAccess().getSettingsSettingParserRuleCall_9_0());
+            				
+            pushFollow(FOLLOW_12);
+            lv_settings_9_0=ruleSetting();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getSceneRule());
+            					}
+            					set(
+            						current,
+            						"settings",
+            						lv_settings_9_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.Setting");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalWeebADoodle.g:226:3: ( (lv_characters_10_0= ruleCharacter ) )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==19) ) {
+                if ( (LA2_0==18) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalWeebADoodle.g:212:4: (lv_characters_10_0= ruleCharacter )
+            	    // InternalWeebADoodle.g:227:4: (lv_characters_10_0= ruleCharacter )
             	    {
-            	    // InternalWeebADoodle.g:212:4: (lv_characters_10_0= ruleCharacter )
-            	    // InternalWeebADoodle.g:213:5: lv_characters_10_0= ruleCharacter
+            	    // InternalWeebADoodle.g:227:4: (lv_characters_10_0= ruleCharacter )
+            	    // InternalWeebADoodle.g:228:5: lv_characters_10_0= ruleCharacter
             	    {
 
             	    					newCompositeNode(grammarAccess.getSceneAccess().getCharactersCharacterParserRuleCall_10_0());
@@ -462,28 +484,28 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalWeebADoodle.g:230:3: ( (lv_objects_11_0= ruleSceneObject ) )*
+            // InternalWeebADoodle.g:245:3: ( (lv_objects_11_0= ruleSceneObject ) )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==23) ) {
+                if ( (LA3_0==20) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalWeebADoodle.g:231:4: (lv_objects_11_0= ruleSceneObject )
+            	    // InternalWeebADoodle.g:246:4: (lv_objects_11_0= ruleSceneObject )
             	    {
-            	    // InternalWeebADoodle.g:231:4: (lv_objects_11_0= ruleSceneObject )
-            	    // InternalWeebADoodle.g:232:5: lv_objects_11_0= ruleSceneObject
+            	    // InternalWeebADoodle.g:246:4: (lv_objects_11_0= ruleSceneObject )
+            	    // InternalWeebADoodle.g:247:5: lv_objects_11_0= ruleSceneObject
             	    {
 
             	    					newCompositeNode(grammarAccess.getSceneAccess().getObjectsSceneObjectParserRuleCall_11_0());
             	    				
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_13);
             	    lv_objects_11_0=ruleSceneObject();
 
             	    state._fsp--;
@@ -511,82 +533,9 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalWeebADoodle.g:249:3: ( (lv_settings_12_0= ruleSetting ) )
-            // InternalWeebADoodle.g:250:4: (lv_settings_12_0= ruleSetting )
-            {
-            // InternalWeebADoodle.g:250:4: (lv_settings_12_0= ruleSetting )
-            // InternalWeebADoodle.g:251:5: lv_settings_12_0= ruleSetting
-            {
+            otherlv_12=(Token)match(input,13,FOLLOW_2); 
 
-            					newCompositeNode(grammarAccess.getSceneAccess().getSettingsSettingParserRuleCall_12_0());
-            				
-            pushFollow(FOLLOW_13);
-            lv_settings_12_0=ruleSetting();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getSceneRule());
-            					}
-            					set(
-            						current,
-            						"settings",
-            						lv_settings_12_0,
-            						"uk.ac.kcl.inf.mde.WeebADoodle.Setting");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalWeebADoodle.g:268:3: ( (lv_directions_13_0= ruleDirection ) )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==29) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalWeebADoodle.g:269:4: (lv_directions_13_0= ruleDirection )
-                    {
-                    // InternalWeebADoodle.g:269:4: (lv_directions_13_0= ruleDirection )
-                    // InternalWeebADoodle.g:270:5: lv_directions_13_0= ruleDirection
-                    {
-
-                    					newCompositeNode(grammarAccess.getSceneAccess().getDirectionsDirectionParserRuleCall_13_0());
-                    				
-                    pushFollow(FOLLOW_14);
-                    lv_directions_13_0=ruleDirection();
-
-                    state._fsp--;
-
-
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getSceneRule());
-                    					}
-                    					set(
-                    						current,
-                    						"directions",
-                    						lv_directions_13_0,
-                    						"uk.ac.kcl.inf.mde.WeebADoodle.Direction");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_14=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_14, grammarAccess.getSceneAccess().getRightCurlyBracketKeyword_14());
+            			newLeafNode(otherlv_12, grammarAccess.getSceneAccess().getRightCurlyBracketKeyword_12());
             		
 
             }
@@ -611,7 +560,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCharacter"
-    // InternalWeebADoodle.g:295:1: entryRuleCharacter returns [EObject current=null] : iv_ruleCharacter= ruleCharacter EOF ;
+    // InternalWeebADoodle.g:272:1: entryRuleCharacter returns [EObject current=null] : iv_ruleCharacter= ruleCharacter EOF ;
     public final EObject entryRuleCharacter() throws RecognitionException {
         EObject current = null;
 
@@ -619,8 +568,8 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWeebADoodle.g:295:50: (iv_ruleCharacter= ruleCharacter EOF )
-            // InternalWeebADoodle.g:296:2: iv_ruleCharacter= ruleCharacter EOF
+            // InternalWeebADoodle.g:272:50: (iv_ruleCharacter= ruleCharacter EOF )
+            // InternalWeebADoodle.g:273:2: iv_ruleCharacter= ruleCharacter EOF
             {
              newCompositeNode(grammarAccess.getCharacterRule()); 
             pushFollow(FOLLOW_1);
@@ -647,39 +596,37 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCharacter"
-    // InternalWeebADoodle.g:302:1: ruleCharacter returns [EObject current=null] : (otherlv_0= 'character' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'action:' ( (lv_action_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'dialogue:' ( (lv_dialogue_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= 'description:' ( (lv_description_14_0= RULE_STRING ) ) otherlv_15= ';' otherlv_16= '}' ) ;
+    // InternalWeebADoodle.g:279:1: ruleCharacter returns [EObject current=null] : (otherlv_0= 'character' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_action_7_0= ruleActionStatement ) )? ( (lv_dialogue_8_0= ruleDialogueStatement ) )? ( (lv_description_9_0= ruleDescriptionStatement ) ) otherlv_10= '}' ) ;
     public final EObject ruleCharacter() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_name_3_0=null;
-        Token otherlv_4=null;
-        Token lv_value_5_0=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token lv_action_8_0=null;
-        Token otherlv_9=null;
+        Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        Token lv_value_4_0=null;
+        Token otherlv_5=null;
         Token otherlv_10=null;
-        Token lv_dialogue_11_0=null;
-        Token otherlv_12=null;
-        Token otherlv_13=null;
-        Token lv_description_14_0=null;
-        Token otherlv_15=null;
-        Token otherlv_16=null;
+        EObject lv_position_6_0 = null;
+
+        EObject lv_action_7_0 = null;
+
+        EObject lv_dialogue_8_0 = null;
+
+        EObject lv_description_9_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalWeebADoodle.g:308:2: ( (otherlv_0= 'character' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'action:' ( (lv_action_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'dialogue:' ( (lv_dialogue_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= 'description:' ( (lv_description_14_0= RULE_STRING ) ) otherlv_15= ';' otherlv_16= '}' ) )
-            // InternalWeebADoodle.g:309:2: (otherlv_0= 'character' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'action:' ( (lv_action_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'dialogue:' ( (lv_dialogue_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= 'description:' ( (lv_description_14_0= RULE_STRING ) ) otherlv_15= ';' otherlv_16= '}' )
+            // InternalWeebADoodle.g:285:2: ( (otherlv_0= 'character' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_action_7_0= ruleActionStatement ) )? ( (lv_dialogue_8_0= ruleDialogueStatement ) )? ( (lv_description_9_0= ruleDescriptionStatement ) ) otherlv_10= '}' ) )
+            // InternalWeebADoodle.g:286:2: (otherlv_0= 'character' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_action_7_0= ruleActionStatement ) )? ( (lv_dialogue_8_0= ruleDialogueStatement ) )? ( (lv_description_9_0= ruleDescriptionStatement ) ) otherlv_10= '}' )
             {
-            // InternalWeebADoodle.g:309:2: (otherlv_0= 'character' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'action:' ( (lv_action_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'dialogue:' ( (lv_dialogue_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= 'description:' ( (lv_description_14_0= RULE_STRING ) ) otherlv_15= ';' otherlv_16= '}' )
-            // InternalWeebADoodle.g:310:3: otherlv_0= 'character' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'action:' ( (lv_action_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'dialogue:' ( (lv_dialogue_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= 'description:' ( (lv_description_14_0= RULE_STRING ) ) otherlv_15= ';' otherlv_16= '}'
+            // InternalWeebADoodle.g:286:2: (otherlv_0= 'character' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_action_7_0= ruleActionStatement ) )? ( (lv_dialogue_8_0= ruleDialogueStatement ) )? ( (lv_description_9_0= ruleDescriptionStatement ) ) otherlv_10= '}' )
+            // InternalWeebADoodle.g:287:3: otherlv_0= 'character' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_action_7_0= ruleActionStatement ) )? ( (lv_dialogue_8_0= ruleDialogueStatement ) )? ( (lv_description_9_0= ruleDescriptionStatement ) ) otherlv_10= '}'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_3); 
+            otherlv_0=(Token)match(input,18,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCharacterAccess().getCharacterKeyword_0());
             		
@@ -687,19 +634,15 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getCharacterAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,15,FOLLOW_7); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getCharacterAccess().getNameKeyword_2());
-            		
-            // InternalWeebADoodle.g:322:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalWeebADoodle.g:323:4: (lv_name_3_0= RULE_ID )
+            // InternalWeebADoodle.g:295:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalWeebADoodle.g:296:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalWeebADoodle.g:323:4: (lv_name_3_0= RULE_ID )
-            // InternalWeebADoodle.g:324:5: lv_name_3_0= RULE_ID
+            // InternalWeebADoodle.g:296:4: (lv_name_2_0= RULE_ID )
+            // InternalWeebADoodle.g:297:5: lv_name_2_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
-            					newLeafNode(lv_name_3_0, grammarAccess.getCharacterAccess().getNameIDTerminalRuleCall_3_0());
+            					newLeafNode(lv_name_2_0, grammarAccess.getCharacterAccess().getNameIDTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -708,7 +651,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_3_0,
+            						lv_name_2_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -717,19 +660,19 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,16,FOLLOW_9); 
+            otherlv_3=(Token)match(input,19,FOLLOW_8); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getCharacterAccess().getColonKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getCharacterAccess().getNameKeyword_3());
             		
-            // InternalWeebADoodle.g:344:3: ( (lv_value_5_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:345:4: (lv_value_5_0= RULE_STRING )
+            // InternalWeebADoodle.g:317:3: ( (lv_value_4_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:318:4: (lv_value_4_0= RULE_STRING )
             {
-            // InternalWeebADoodle.g:345:4: (lv_value_5_0= RULE_STRING )
-            // InternalWeebADoodle.g:346:5: lv_value_5_0= RULE_STRING
+            // InternalWeebADoodle.g:318:4: (lv_value_4_0= RULE_STRING )
+            // InternalWeebADoodle.g:319:5: lv_value_4_0= RULE_STRING
             {
-            lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            lv_value_4_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
-            					newLeafNode(lv_value_5_0, grammarAccess.getCharacterAccess().getValueSTRINGTerminalRuleCall_5_0());
+            					newLeafNode(lv_value_4_0, grammarAccess.getCharacterAccess().getValueSTRINGTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -738,7 +681,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"value",
-            						lv_value_5_0,
+            						lv_value_4_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -747,33 +690,34 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,17,FOLLOW_15); 
+            otherlv_5=(Token)match(input,16,FOLLOW_15); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getCharacterAccess().getSemicolonKeyword_6());
+            			newLeafNode(otherlv_5, grammarAccess.getCharacterAccess().getSemicolonKeyword_5());
             		
-            otherlv_7=(Token)match(input,20,FOLLOW_9); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getCharacterAccess().getActionKeyword_7());
-            		
-            // InternalWeebADoodle.g:370:3: ( (lv_action_8_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:371:4: (lv_action_8_0= RULE_STRING )
+            // InternalWeebADoodle.g:339:3: ( (lv_position_6_0= rulePositionStatement ) )
+            // InternalWeebADoodle.g:340:4: (lv_position_6_0= rulePositionStatement )
             {
-            // InternalWeebADoodle.g:371:4: (lv_action_8_0= RULE_STRING )
-            // InternalWeebADoodle.g:372:5: lv_action_8_0= RULE_STRING
+            // InternalWeebADoodle.g:340:4: (lv_position_6_0= rulePositionStatement )
+            // InternalWeebADoodle.g:341:5: lv_position_6_0= rulePositionStatement
             {
-            lv_action_8_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_action_8_0, grammarAccess.getCharacterAccess().getActionSTRINGTerminalRuleCall_8_0());
+            					newCompositeNode(grammarAccess.getCharacterAccess().getPositionPositionStatementParserRuleCall_6_0());
             				
+            pushFollow(FOLLOW_16);
+            lv_position_6_0=rulePositionStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getCharacterRule());
+            						current = createModelElementForParent(grammarAccess.getCharacterRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
-            						"action",
-            						lv_action_8_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"position",
+            						lv_position_6_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.PositionStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -781,67 +725,114 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,17,FOLLOW_16); 
+            // InternalWeebADoodle.g:358:3: ( (lv_action_7_0= ruleActionStatement ) )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            			newLeafNode(otherlv_9, grammarAccess.getCharacterAccess().getSemicolonKeyword_9());
-            		
-            otherlv_10=(Token)match(input,21,FOLLOW_9); 
+            if ( (LA4_0==24) ) {
+                alt4=1;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalWeebADoodle.g:359:4: (lv_action_7_0= ruleActionStatement )
+                    {
+                    // InternalWeebADoodle.g:359:4: (lv_action_7_0= ruleActionStatement )
+                    // InternalWeebADoodle.g:360:5: lv_action_7_0= ruleActionStatement
+                    {
 
-            			newLeafNode(otherlv_10, grammarAccess.getCharacterAccess().getDialogueKeyword_10());
-            		
-            // InternalWeebADoodle.g:396:3: ( (lv_dialogue_11_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:397:4: (lv_dialogue_11_0= RULE_STRING )
+                    					newCompositeNode(grammarAccess.getCharacterAccess().getActionActionStatementParserRuleCall_7_0());
+                    				
+                    pushFollow(FOLLOW_16);
+                    lv_action_7_0=ruleActionStatement();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getCharacterRule());
+                    					}
+                    					set(
+                    						current,
+                    						"action",
+                    						lv_action_7_0,
+                    						"uk.ac.kcl.inf.mde.WeebADoodle.ActionStatement");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalWeebADoodle.g:377:3: ( (lv_dialogue_8_0= ruleDialogueStatement ) )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==23) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalWeebADoodle.g:378:4: (lv_dialogue_8_0= ruleDialogueStatement )
+                    {
+                    // InternalWeebADoodle.g:378:4: (lv_dialogue_8_0= ruleDialogueStatement )
+                    // InternalWeebADoodle.g:379:5: lv_dialogue_8_0= ruleDialogueStatement
+                    {
+
+                    					newCompositeNode(grammarAccess.getCharacterAccess().getDialogueDialogueStatementParserRuleCall_8_0());
+                    				
+                    pushFollow(FOLLOW_16);
+                    lv_dialogue_8_0=ruleDialogueStatement();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getCharacterRule());
+                    					}
+                    					set(
+                    						current,
+                    						"dialogue",
+                    						lv_dialogue_8_0,
+                    						"uk.ac.kcl.inf.mde.WeebADoodle.DialogueStatement");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalWeebADoodle.g:396:3: ( (lv_description_9_0= ruleDescriptionStatement ) )
+            // InternalWeebADoodle.g:397:4: (lv_description_9_0= ruleDescriptionStatement )
             {
-            // InternalWeebADoodle.g:397:4: (lv_dialogue_11_0= RULE_STRING )
-            // InternalWeebADoodle.g:398:5: lv_dialogue_11_0= RULE_STRING
+            // InternalWeebADoodle.g:397:4: (lv_description_9_0= ruleDescriptionStatement )
+            // InternalWeebADoodle.g:398:5: lv_description_9_0= ruleDescriptionStatement
             {
-            lv_dialogue_11_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_dialogue_11_0, grammarAccess.getCharacterAccess().getDialogueSTRINGTerminalRuleCall_11_0());
+            					newCompositeNode(grammarAccess.getCharacterAccess().getDescriptionDescriptionStatementParserRuleCall_9_0());
             				
+            pushFollow(FOLLOW_17);
+            lv_description_9_0=ruleDescriptionStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getCharacterRule());
+            						current = createModelElementForParent(grammarAccess.getCharacterRule());
             					}
-            					setWithLastConsumed(
-            						current,
-            						"dialogue",
-            						lv_dialogue_11_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_12=(Token)match(input,17,FOLLOW_17); 
-
-            			newLeafNode(otherlv_12, grammarAccess.getCharacterAccess().getSemicolonKeyword_12());
-            		
-            otherlv_13=(Token)match(input,22,FOLLOW_9); 
-
-            			newLeafNode(otherlv_13, grammarAccess.getCharacterAccess().getDescriptionKeyword_13());
-            		
-            // InternalWeebADoodle.g:422:3: ( (lv_description_14_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:423:4: (lv_description_14_0= RULE_STRING )
-            {
-            // InternalWeebADoodle.g:423:4: (lv_description_14_0= RULE_STRING )
-            // InternalWeebADoodle.g:424:5: lv_description_14_0= RULE_STRING
-            {
-            lv_description_14_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
-
-            					newLeafNode(lv_description_14_0, grammarAccess.getCharacterAccess().getDescriptionSTRINGTerminalRuleCall_14_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCharacterRule());
-            					}
-            					setWithLastConsumed(
+            					set(
             						current,
             						"description",
-            						lv_description_14_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						lv_description_9_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.DescriptionStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -849,13 +840,9 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,17,FOLLOW_14); 
+            otherlv_10=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_15, grammarAccess.getCharacterAccess().getSemicolonKeyword_15());
-            		
-            otherlv_16=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_16, grammarAccess.getCharacterAccess().getRightCurlyBracketKeyword_16());
+            			newLeafNode(otherlv_10, grammarAccess.getCharacterAccess().getRightCurlyBracketKeyword_10());
             		
 
             }
@@ -880,7 +867,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSceneObject"
-    // InternalWeebADoodle.g:452:1: entryRuleSceneObject returns [EObject current=null] : iv_ruleSceneObject= ruleSceneObject EOF ;
+    // InternalWeebADoodle.g:423:1: entryRuleSceneObject returns [EObject current=null] : iv_ruleSceneObject= ruleSceneObject EOF ;
     public final EObject entryRuleSceneObject() throws RecognitionException {
         EObject current = null;
 
@@ -888,8 +875,8 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWeebADoodle.g:452:52: (iv_ruleSceneObject= ruleSceneObject EOF )
-            // InternalWeebADoodle.g:453:2: iv_ruleSceneObject= ruleSceneObject EOF
+            // InternalWeebADoodle.g:423:52: (iv_ruleSceneObject= ruleSceneObject EOF )
+            // InternalWeebADoodle.g:424:2: iv_ruleSceneObject= ruleSceneObject EOF
             {
              newCompositeNode(grammarAccess.getSceneObjectRule()); 
             pushFollow(FOLLOW_1);
@@ -916,36 +903,33 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSceneObject"
-    // InternalWeebADoodle.g:459:1: ruleSceneObject returns [EObject current=null] : (otherlv_0= 'object' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'position:' ( (lv_position_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'description:' ( (lv_description_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= '}' ) ;
+    // InternalWeebADoodle.g:430:1: ruleSceneObject returns [EObject current=null] : (otherlv_0= 'object' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_description_7_0= ruleDescriptionStatement ) ) otherlv_8= '}' ) ;
     public final EObject ruleSceneObject() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_name_3_0=null;
-        Token otherlv_4=null;
-        Token lv_value_5_0=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
-        Token lv_position_8_0=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token lv_description_11_0=null;
-        Token otherlv_12=null;
-        Token otherlv_13=null;
+        Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        Token lv_value_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_8=null;
+        EObject lv_position_6_0 = null;
+
+        EObject lv_description_7_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalWeebADoodle.g:465:2: ( (otherlv_0= 'object' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'position:' ( (lv_position_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'description:' ( (lv_description_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= '}' ) )
-            // InternalWeebADoodle.g:466:2: (otherlv_0= 'object' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'position:' ( (lv_position_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'description:' ( (lv_description_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= '}' )
+            // InternalWeebADoodle.g:436:2: ( (otherlv_0= 'object' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_description_7_0= ruleDescriptionStatement ) ) otherlv_8= '}' ) )
+            // InternalWeebADoodle.g:437:2: (otherlv_0= 'object' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_description_7_0= ruleDescriptionStatement ) ) otherlv_8= '}' )
             {
-            // InternalWeebADoodle.g:466:2: (otherlv_0= 'object' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'position:' ( (lv_position_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'description:' ( (lv_description_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= '}' )
-            // InternalWeebADoodle.g:467:3: otherlv_0= 'object' otherlv_1= '{' otherlv_2= 'name' ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ':' ( (lv_value_5_0= RULE_STRING ) ) otherlv_6= ';' otherlv_7= 'position:' ( (lv_position_8_0= RULE_STRING ) ) otherlv_9= ';' otherlv_10= 'description:' ( (lv_description_11_0= RULE_STRING ) ) otherlv_12= ';' otherlv_13= '}'
+            // InternalWeebADoodle.g:437:2: (otherlv_0= 'object' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_description_7_0= ruleDescriptionStatement ) ) otherlv_8= '}' )
+            // InternalWeebADoodle.g:438:3: otherlv_0= 'object' otherlv_1= '{' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'name:' ( (lv_value_4_0= RULE_STRING ) ) otherlv_5= ';' ( (lv_position_6_0= rulePositionStatement ) ) ( (lv_description_7_0= ruleDescriptionStatement ) ) otherlv_8= '}'
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_3); 
+            otherlv_0=(Token)match(input,20,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSceneObjectAccess().getObjectKeyword_0());
             		
@@ -953,19 +937,15 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSceneObjectAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,15,FOLLOW_7); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getSceneObjectAccess().getNameKeyword_2());
-            		
-            // InternalWeebADoodle.g:479:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalWeebADoodle.g:480:4: (lv_name_3_0= RULE_ID )
+            // InternalWeebADoodle.g:446:3: ( (lv_name_2_0= RULE_ID ) )
+            // InternalWeebADoodle.g:447:4: (lv_name_2_0= RULE_ID )
             {
-            // InternalWeebADoodle.g:480:4: (lv_name_3_0= RULE_ID )
-            // InternalWeebADoodle.g:481:5: lv_name_3_0= RULE_ID
+            // InternalWeebADoodle.g:447:4: (lv_name_2_0= RULE_ID )
+            // InternalWeebADoodle.g:448:5: lv_name_2_0= RULE_ID
             {
-            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
-            					newLeafNode(lv_name_3_0, grammarAccess.getSceneObjectAccess().getNameIDTerminalRuleCall_3_0());
+            					newLeafNode(lv_name_2_0, grammarAccess.getSceneObjectAccess().getNameIDTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -974,7 +954,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_3_0,
+            						lv_name_2_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -983,19 +963,19 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,16,FOLLOW_9); 
+            otherlv_3=(Token)match(input,19,FOLLOW_8); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getSceneObjectAccess().getColonKeyword_4());
+            			newLeafNode(otherlv_3, grammarAccess.getSceneObjectAccess().getNameKeyword_3());
             		
-            // InternalWeebADoodle.g:501:3: ( (lv_value_5_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:502:4: (lv_value_5_0= RULE_STRING )
+            // InternalWeebADoodle.g:468:3: ( (lv_value_4_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:469:4: (lv_value_4_0= RULE_STRING )
             {
-            // InternalWeebADoodle.g:502:4: (lv_value_5_0= RULE_STRING )
-            // InternalWeebADoodle.g:503:5: lv_value_5_0= RULE_STRING
+            // InternalWeebADoodle.g:469:4: (lv_value_4_0= RULE_STRING )
+            // InternalWeebADoodle.g:470:5: lv_value_4_0= RULE_STRING
             {
-            lv_value_5_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            lv_value_4_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
-            					newLeafNode(lv_value_5_0, grammarAccess.getSceneObjectAccess().getValueSTRINGTerminalRuleCall_5_0());
+            					newLeafNode(lv_value_4_0, grammarAccess.getSceneObjectAccess().getValueSTRINGTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
@@ -1004,7 +984,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"value",
-            						lv_value_5_0,
+            						lv_value_4_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1013,33 +993,34 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,17,FOLLOW_18); 
+            otherlv_5=(Token)match(input,16,FOLLOW_15); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getSceneObjectAccess().getSemicolonKeyword_6());
+            			newLeafNode(otherlv_5, grammarAccess.getSceneObjectAccess().getSemicolonKeyword_5());
             		
-            otherlv_7=(Token)match(input,24,FOLLOW_9); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getSceneObjectAccess().getPositionKeyword_7());
-            		
-            // InternalWeebADoodle.g:527:3: ( (lv_position_8_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:528:4: (lv_position_8_0= RULE_STRING )
+            // InternalWeebADoodle.g:490:3: ( (lv_position_6_0= rulePositionStatement ) )
+            // InternalWeebADoodle.g:491:4: (lv_position_6_0= rulePositionStatement )
             {
-            // InternalWeebADoodle.g:528:4: (lv_position_8_0= RULE_STRING )
-            // InternalWeebADoodle.g:529:5: lv_position_8_0= RULE_STRING
+            // InternalWeebADoodle.g:491:4: (lv_position_6_0= rulePositionStatement )
+            // InternalWeebADoodle.g:492:5: lv_position_6_0= rulePositionStatement
             {
-            lv_position_8_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_position_8_0, grammarAccess.getSceneObjectAccess().getPositionSTRINGTerminalRuleCall_8_0());
+            					newCompositeNode(grammarAccess.getSceneObjectAccess().getPositionPositionStatementParserRuleCall_6_0());
             				
+            pushFollow(FOLLOW_16);
+            lv_position_6_0=rulePositionStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSceneObjectRule());
+            						current = createModelElementForParent(grammarAccess.getSceneObjectRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
             						"position",
-            						lv_position_8_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						lv_position_6_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.PositionStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -1047,33 +1028,30 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,17,FOLLOW_17); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getSceneObjectAccess().getSemicolonKeyword_9());
-            		
-            otherlv_10=(Token)match(input,22,FOLLOW_9); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getSceneObjectAccess().getDescriptionKeyword_10());
-            		
-            // InternalWeebADoodle.g:553:3: ( (lv_description_11_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:554:4: (lv_description_11_0= RULE_STRING )
+            // InternalWeebADoodle.g:509:3: ( (lv_description_7_0= ruleDescriptionStatement ) )
+            // InternalWeebADoodle.g:510:4: (lv_description_7_0= ruleDescriptionStatement )
             {
-            // InternalWeebADoodle.g:554:4: (lv_description_11_0= RULE_STRING )
-            // InternalWeebADoodle.g:555:5: lv_description_11_0= RULE_STRING
+            // InternalWeebADoodle.g:510:4: (lv_description_7_0= ruleDescriptionStatement )
+            // InternalWeebADoodle.g:511:5: lv_description_7_0= ruleDescriptionStatement
             {
-            lv_description_11_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_description_11_0, grammarAccess.getSceneObjectAccess().getDescriptionSTRINGTerminalRuleCall_11_0());
+            					newCompositeNode(grammarAccess.getSceneObjectAccess().getDescriptionDescriptionStatementParserRuleCall_7_0());
             				
+            pushFollow(FOLLOW_17);
+            lv_description_7_0=ruleDescriptionStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSceneObjectRule());
+            						current = createModelElementForParent(grammarAccess.getSceneObjectRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
             						"description",
-            						lv_description_11_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						lv_description_7_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.DescriptionStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -1081,13 +1059,9 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,17,FOLLOW_14); 
+            otherlv_8=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_12, grammarAccess.getSceneObjectAccess().getSemicolonKeyword_12());
-            		
-            otherlv_13=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_13, grammarAccess.getSceneObjectAccess().getRightCurlyBracketKeyword_13());
+            			newLeafNode(otherlv_8, grammarAccess.getSceneObjectAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -1112,7 +1086,7 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSetting"
-    // InternalWeebADoodle.g:583:1: entryRuleSetting returns [EObject current=null] : iv_ruleSetting= ruleSetting EOF ;
+    // InternalWeebADoodle.g:536:1: entryRuleSetting returns [EObject current=null] : iv_ruleSetting= ruleSetting EOF ;
     public final EObject entryRuleSetting() throws RecognitionException {
         EObject current = null;
 
@@ -1120,8 +1094,8 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWeebADoodle.g:583:48: (iv_ruleSetting= ruleSetting EOF )
-            // InternalWeebADoodle.g:584:2: iv_ruleSetting= ruleSetting EOF
+            // InternalWeebADoodle.g:536:48: (iv_ruleSetting= ruleSetting EOF )
+            // InternalWeebADoodle.g:537:2: iv_ruleSetting= ruleSetting EOF
             {
              newCompositeNode(grammarAccess.getSettingRule()); 
             pushFollow(FOLLOW_1);
@@ -1148,67 +1122,62 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetting"
-    // InternalWeebADoodle.g:590:1: ruleSetting returns [EObject current=null] : (otherlv_0= 'setting' otherlv_1= '{' otherlv_2= 'camera_shot:' ( (lv_cameraShot_3_0= RULE_STRING ) ) otherlv_4= ';' otherlv_5= 'camera_angle:' ( (lv_cameraAngle_6_0= RULE_STRING ) ) otherlv_7= ';' otherlv_8= 'lighting:' ( (lv_lighting_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= 'description:' ( (lv_description_12_0= RULE_STRING ) ) otherlv_13= ';' otherlv_14= '}' ) ;
+    // InternalWeebADoodle.g:543:1: ruleSetting returns [EObject current=null] : (otherlv_0= 'setting' otherlv_1= '{' ( (lv_camera_2_0= ruleCameraShotStatement ) ) ( (lv_lighting_3_0= ruleLightingStatement ) ) ( (lv_description_4_0= ruleDescriptionStatement ) ) otherlv_5= '}' ) ;
     public final EObject ruleSetting() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token lv_cameraShot_3_0=null;
-        Token otherlv_4=null;
         Token otherlv_5=null;
-        Token lv_cameraAngle_6_0=null;
-        Token otherlv_7=null;
-        Token otherlv_8=null;
-        Token lv_lighting_9_0=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token lv_description_12_0=null;
-        Token otherlv_13=null;
-        Token otherlv_14=null;
+        EObject lv_camera_2_0 = null;
+
+        EObject lv_lighting_3_0 = null;
+
+        EObject lv_description_4_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalWeebADoodle.g:596:2: ( (otherlv_0= 'setting' otherlv_1= '{' otherlv_2= 'camera_shot:' ( (lv_cameraShot_3_0= RULE_STRING ) ) otherlv_4= ';' otherlv_5= 'camera_angle:' ( (lv_cameraAngle_6_0= RULE_STRING ) ) otherlv_7= ';' otherlv_8= 'lighting:' ( (lv_lighting_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= 'description:' ( (lv_description_12_0= RULE_STRING ) ) otherlv_13= ';' otherlv_14= '}' ) )
-            // InternalWeebADoodle.g:597:2: (otherlv_0= 'setting' otherlv_1= '{' otherlv_2= 'camera_shot:' ( (lv_cameraShot_3_0= RULE_STRING ) ) otherlv_4= ';' otherlv_5= 'camera_angle:' ( (lv_cameraAngle_6_0= RULE_STRING ) ) otherlv_7= ';' otherlv_8= 'lighting:' ( (lv_lighting_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= 'description:' ( (lv_description_12_0= RULE_STRING ) ) otherlv_13= ';' otherlv_14= '}' )
+            // InternalWeebADoodle.g:549:2: ( (otherlv_0= 'setting' otherlv_1= '{' ( (lv_camera_2_0= ruleCameraShotStatement ) ) ( (lv_lighting_3_0= ruleLightingStatement ) ) ( (lv_description_4_0= ruleDescriptionStatement ) ) otherlv_5= '}' ) )
+            // InternalWeebADoodle.g:550:2: (otherlv_0= 'setting' otherlv_1= '{' ( (lv_camera_2_0= ruleCameraShotStatement ) ) ( (lv_lighting_3_0= ruleLightingStatement ) ) ( (lv_description_4_0= ruleDescriptionStatement ) ) otherlv_5= '}' )
             {
-            // InternalWeebADoodle.g:597:2: (otherlv_0= 'setting' otherlv_1= '{' otherlv_2= 'camera_shot:' ( (lv_cameraShot_3_0= RULE_STRING ) ) otherlv_4= ';' otherlv_5= 'camera_angle:' ( (lv_cameraAngle_6_0= RULE_STRING ) ) otherlv_7= ';' otherlv_8= 'lighting:' ( (lv_lighting_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= 'description:' ( (lv_description_12_0= RULE_STRING ) ) otherlv_13= ';' otherlv_14= '}' )
-            // InternalWeebADoodle.g:598:3: otherlv_0= 'setting' otherlv_1= '{' otherlv_2= 'camera_shot:' ( (lv_cameraShot_3_0= RULE_STRING ) ) otherlv_4= ';' otherlv_5= 'camera_angle:' ( (lv_cameraAngle_6_0= RULE_STRING ) ) otherlv_7= ';' otherlv_8= 'lighting:' ( (lv_lighting_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= 'description:' ( (lv_description_12_0= RULE_STRING ) ) otherlv_13= ';' otherlv_14= '}'
+            // InternalWeebADoodle.g:550:2: (otherlv_0= 'setting' otherlv_1= '{' ( (lv_camera_2_0= ruleCameraShotStatement ) ) ( (lv_lighting_3_0= ruleLightingStatement ) ) ( (lv_description_4_0= ruleDescriptionStatement ) ) otherlv_5= '}' )
+            // InternalWeebADoodle.g:551:3: otherlv_0= 'setting' otherlv_1= '{' ( (lv_camera_2_0= ruleCameraShotStatement ) ) ( (lv_lighting_3_0= ruleLightingStatement ) ) ( (lv_description_4_0= ruleDescriptionStatement ) ) otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_3); 
+            otherlv_0=(Token)match(input,21,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSettingAccess().getSettingKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_19); 
+            otherlv_1=(Token)match(input,12,FOLLOW_18); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSettingAccess().getLeftCurlyBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,26,FOLLOW_9); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getSettingAccess().getCamera_shotKeyword_2());
-            		
-            // InternalWeebADoodle.g:610:3: ( (lv_cameraShot_3_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:611:4: (lv_cameraShot_3_0= RULE_STRING )
+            // InternalWeebADoodle.g:559:3: ( (lv_camera_2_0= ruleCameraShotStatement ) )
+            // InternalWeebADoodle.g:560:4: (lv_camera_2_0= ruleCameraShotStatement )
             {
-            // InternalWeebADoodle.g:611:4: (lv_cameraShot_3_0= RULE_STRING )
-            // InternalWeebADoodle.g:612:5: lv_cameraShot_3_0= RULE_STRING
+            // InternalWeebADoodle.g:560:4: (lv_camera_2_0= ruleCameraShotStatement )
+            // InternalWeebADoodle.g:561:5: lv_camera_2_0= ruleCameraShotStatement
             {
-            lv_cameraShot_3_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_cameraShot_3_0, grammarAccess.getSettingAccess().getCameraShotSTRINGTerminalRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getSettingAccess().getCameraCameraShotStatementParserRuleCall_2_0());
             				
+            pushFollow(FOLLOW_19);
+            lv_camera_2_0=ruleCameraShotStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSettingRule());
+            						current = createModelElementForParent(grammarAccess.getSettingRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
-            						"cameraShot",
-            						lv_cameraShot_3_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"camera",
+            						lv_camera_2_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.CameraShotStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -1216,67 +1185,30 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_20); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getSettingAccess().getSemicolonKeyword_4());
-            		
-            otherlv_5=(Token)match(input,27,FOLLOW_9); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getSettingAccess().getCamera_angleKeyword_5());
-            		
-            // InternalWeebADoodle.g:636:3: ( (lv_cameraAngle_6_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:637:4: (lv_cameraAngle_6_0= RULE_STRING )
+            // InternalWeebADoodle.g:578:3: ( (lv_lighting_3_0= ruleLightingStatement ) )
+            // InternalWeebADoodle.g:579:4: (lv_lighting_3_0= ruleLightingStatement )
             {
-            // InternalWeebADoodle.g:637:4: (lv_cameraAngle_6_0= RULE_STRING )
-            // InternalWeebADoodle.g:638:5: lv_cameraAngle_6_0= RULE_STRING
+            // InternalWeebADoodle.g:579:4: (lv_lighting_3_0= ruleLightingStatement )
+            // InternalWeebADoodle.g:580:5: lv_lighting_3_0= ruleLightingStatement
             {
-            lv_cameraAngle_6_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_cameraAngle_6_0, grammarAccess.getSettingAccess().getCameraAngleSTRINGTerminalRuleCall_6_0());
+            					newCompositeNode(grammarAccess.getSettingAccess().getLightingLightingStatementParserRuleCall_3_0());
             				
+            pushFollow(FOLLOW_16);
+            lv_lighting_3_0=ruleLightingStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSettingRule());
+            						current = createModelElementForParent(grammarAccess.getSettingRule());
             					}
-            					setWithLastConsumed(
-            						current,
-            						"cameraAngle",
-            						lv_cameraAngle_6_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_7=(Token)match(input,17,FOLLOW_21); 
-
-            			newLeafNode(otherlv_7, grammarAccess.getSettingAccess().getSemicolonKeyword_7());
-            		
-            otherlv_8=(Token)match(input,28,FOLLOW_9); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getSettingAccess().getLightingKeyword_8());
-            		
-            // InternalWeebADoodle.g:662:3: ( (lv_lighting_9_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:663:4: (lv_lighting_9_0= RULE_STRING )
-            {
-            // InternalWeebADoodle.g:663:4: (lv_lighting_9_0= RULE_STRING )
-            // InternalWeebADoodle.g:664:5: lv_lighting_9_0= RULE_STRING
-            {
-            lv_lighting_9_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
-
-            					newLeafNode(lv_lighting_9_0, grammarAccess.getSettingAccess().getLightingSTRINGTerminalRuleCall_9_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getSettingRule());
-            					}
-            					setWithLastConsumed(
+            					set(
             						current,
             						"lighting",
-            						lv_lighting_9_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						lv_lighting_3_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.LightingStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -1284,33 +1216,30 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,17,FOLLOW_17); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getSettingAccess().getSemicolonKeyword_10());
-            		
-            otherlv_11=(Token)match(input,22,FOLLOW_9); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getSettingAccess().getDescriptionKeyword_11());
-            		
-            // InternalWeebADoodle.g:688:3: ( (lv_description_12_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:689:4: (lv_description_12_0= RULE_STRING )
+            // InternalWeebADoodle.g:597:3: ( (lv_description_4_0= ruleDescriptionStatement ) )
+            // InternalWeebADoodle.g:598:4: (lv_description_4_0= ruleDescriptionStatement )
             {
-            // InternalWeebADoodle.g:689:4: (lv_description_12_0= RULE_STRING )
-            // InternalWeebADoodle.g:690:5: lv_description_12_0= RULE_STRING
+            // InternalWeebADoodle.g:598:4: (lv_description_4_0= ruleDescriptionStatement )
+            // InternalWeebADoodle.g:599:5: lv_description_4_0= ruleDescriptionStatement
             {
-            lv_description_12_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_description_12_0, grammarAccess.getSettingAccess().getDescriptionSTRINGTerminalRuleCall_12_0());
+            					newCompositeNode(grammarAccess.getSettingAccess().getDescriptionDescriptionStatementParserRuleCall_4_0());
             				
+            pushFollow(FOLLOW_17);
+            lv_description_4_0=ruleDescriptionStatement();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getSettingRule());
+            						current = createModelElementForParent(grammarAccess.getSettingRule());
             					}
-            					setWithLastConsumed(
+            					set(
             						current,
             						"description",
-            						lv_description_12_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						lv_description_4_0,
+            						"uk.ac.kcl.inf.mde.WeebADoodle.DescriptionStatement");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -1318,13 +1247,9 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_13=(Token)match(input,17,FOLLOW_14); 
+            otherlv_5=(Token)match(input,13,FOLLOW_2); 
 
-            			newLeafNode(otherlv_13, grammarAccess.getSettingAccess().getSemicolonKeyword_13());
-            		
-            otherlv_14=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_14, grammarAccess.getSettingAccess().getRightCurlyBracketKeyword_14());
+            			newLeafNode(otherlv_5, grammarAccess.getSettingAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -1348,25 +1273,25 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSetting"
 
 
-    // $ANTLR start "entryRuleDirection"
-    // InternalWeebADoodle.g:718:1: entryRuleDirection returns [EObject current=null] : iv_ruleDirection= ruleDirection EOF ;
-    public final EObject entryRuleDirection() throws RecognitionException {
+    // $ANTLR start "entryRuleDescriptionStatement"
+    // InternalWeebADoodle.g:624:1: entryRuleDescriptionStatement returns [EObject current=null] : iv_ruleDescriptionStatement= ruleDescriptionStatement EOF ;
+    public final EObject entryRuleDescriptionStatement() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleDirection = null;
+        EObject iv_ruleDescriptionStatement = null;
 
 
         try {
-            // InternalWeebADoodle.g:718:50: (iv_ruleDirection= ruleDirection EOF )
-            // InternalWeebADoodle.g:719:2: iv_ruleDirection= ruleDirection EOF
+            // InternalWeebADoodle.g:624:61: (iv_ruleDescriptionStatement= ruleDescriptionStatement EOF )
+            // InternalWeebADoodle.g:625:2: iv_ruleDescriptionStatement= ruleDescriptionStatement EOF
             {
-             newCompositeNode(grammarAccess.getDirectionRule()); 
+             newCompositeNode(grammarAccess.getDescriptionStatementRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleDirection=ruleDirection();
+            iv_ruleDescriptionStatement=ruleDescriptionStatement();
 
             state._fsp--;
 
-             current =iv_ruleDirection; 
+             current =iv_ruleDescriptionStatement; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1381,191 +1306,50 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleDirection"
+    // $ANTLR end "entryRuleDescriptionStatement"
 
 
-    // $ANTLR start "ruleDirection"
-    // InternalWeebADoodle.g:725:1: ruleDirection returns [EObject current=null] : (otherlv_0= 'direction' otherlv_1= '{' ( (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) ) ) otherlv_6= 'movement:' ( (lv_movement_7_0= RULE_STRING ) ) otherlv_8= 'description:' ( (lv_description_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= '}' ) ;
-    public final EObject ruleDirection() throws RecognitionException {
+    // $ANTLR start "ruleDescriptionStatement"
+    // InternalWeebADoodle.g:631:1: ruleDescriptionStatement returns [EObject current=null] : (otherlv_0= 'description:' ( (lv_description_1_0= RULE_STRING ) ) otherlv_2= ';' ) ;
+    public final EObject ruleDescriptionStatement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
+        Token lv_description_1_0=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_6=null;
-        Token lv_movement_7_0=null;
-        Token otherlv_8=null;
-        Token lv_description_9_0=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
 
 
         	enterRule();
 
         try {
-            // InternalWeebADoodle.g:731:2: ( (otherlv_0= 'direction' otherlv_1= '{' ( (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) ) ) otherlv_6= 'movement:' ( (lv_movement_7_0= RULE_STRING ) ) otherlv_8= 'description:' ( (lv_description_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= '}' ) )
-            // InternalWeebADoodle.g:732:2: (otherlv_0= 'direction' otherlv_1= '{' ( (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) ) ) otherlv_6= 'movement:' ( (lv_movement_7_0= RULE_STRING ) ) otherlv_8= 'description:' ( (lv_description_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= '}' )
+            // InternalWeebADoodle.g:637:2: ( (otherlv_0= 'description:' ( (lv_description_1_0= RULE_STRING ) ) otherlv_2= ';' ) )
+            // InternalWeebADoodle.g:638:2: (otherlv_0= 'description:' ( (lv_description_1_0= RULE_STRING ) ) otherlv_2= ';' )
             {
-            // InternalWeebADoodle.g:732:2: (otherlv_0= 'direction' otherlv_1= '{' ( (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) ) ) otherlv_6= 'movement:' ( (lv_movement_7_0= RULE_STRING ) ) otherlv_8= 'description:' ( (lv_description_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= '}' )
-            // InternalWeebADoodle.g:733:3: otherlv_0= 'direction' otherlv_1= '{' ( (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) ) ) otherlv_6= 'movement:' ( (lv_movement_7_0= RULE_STRING ) ) otherlv_8= 'description:' ( (lv_description_9_0= RULE_STRING ) ) otherlv_10= ';' otherlv_11= '}'
+            // InternalWeebADoodle.g:638:2: (otherlv_0= 'description:' ( (lv_description_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            // InternalWeebADoodle.g:639:3: otherlv_0= 'description:' ( (lv_description_1_0= RULE_STRING ) ) otherlv_2= ';'
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_3); 
+            otherlv_0=(Token)match(input,22,FOLLOW_8); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getDirectionAccess().getDirectionKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getDescriptionStatementAccess().getDescriptionKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_22); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getDirectionAccess().getLeftCurlyBracketKeyword_1());
-            		
-            // InternalWeebADoodle.g:741:3: ( (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) ) | (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==19) ) {
-                alt5=1;
-            }
-            else if ( (LA5_0==23) ) {
-                alt5=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
-
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // InternalWeebADoodle.g:742:4: (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) )
-                    {
-                    // InternalWeebADoodle.g:742:4: (otherlv_2= 'character' ( (otherlv_3= RULE_ID ) ) )
-                    // InternalWeebADoodle.g:743:5: otherlv_2= 'character' ( (otherlv_3= RULE_ID ) )
-                    {
-                    otherlv_2=(Token)match(input,19,FOLLOW_7); 
-
-                    					newLeafNode(otherlv_2, grammarAccess.getDirectionAccess().getCharacterKeyword_2_0_0());
-                    				
-                    // InternalWeebADoodle.g:747:5: ( (otherlv_3= RULE_ID ) )
-                    // InternalWeebADoodle.g:748:6: (otherlv_3= RULE_ID )
-                    {
-                    // InternalWeebADoodle.g:748:6: (otherlv_3= RULE_ID )
-                    // InternalWeebADoodle.g:749:7: otherlv_3= RULE_ID
-                    {
-
-                    							if (current==null) {
-                    								current = createModelElement(grammarAccess.getDirectionRule());
-                    							}
-                    						
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_23); 
-
-                    							newLeafNode(otherlv_3, grammarAccess.getDirectionAccess().getTargetCharacterCharacterCrossReference_2_0_1_0());
-                    						
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalWeebADoodle.g:762:4: (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) )
-                    {
-                    // InternalWeebADoodle.g:762:4: (otherlv_4= 'object' ( (otherlv_5= RULE_ID ) ) )
-                    // InternalWeebADoodle.g:763:5: otherlv_4= 'object' ( (otherlv_5= RULE_ID ) )
-                    {
-                    otherlv_4=(Token)match(input,23,FOLLOW_7); 
-
-                    					newLeafNode(otherlv_4, grammarAccess.getDirectionAccess().getObjectKeyword_2_1_0());
-                    				
-                    // InternalWeebADoodle.g:767:5: ( (otherlv_5= RULE_ID ) )
-                    // InternalWeebADoodle.g:768:6: (otherlv_5= RULE_ID )
-                    {
-                    // InternalWeebADoodle.g:768:6: (otherlv_5= RULE_ID )
-                    // InternalWeebADoodle.g:769:7: otherlv_5= RULE_ID
-                    {
-
-                    							if (current==null) {
-                    								current = createModelElement(grammarAccess.getDirectionRule());
-                    							}
-                    						
-                    otherlv_5=(Token)match(input,RULE_ID,FOLLOW_23); 
-
-                    							newLeafNode(otherlv_5, grammarAccess.getDirectionAccess().getTargetObjectSceneObjectCrossReference_2_1_1_0());
-                    						
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_6=(Token)match(input,30,FOLLOW_9); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getDirectionAccess().getMovementKeyword_3());
-            		
-            // InternalWeebADoodle.g:786:3: ( (lv_movement_7_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:787:4: (lv_movement_7_0= RULE_STRING )
+            // InternalWeebADoodle.g:643:3: ( (lv_description_1_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:644:4: (lv_description_1_0= RULE_STRING )
             {
-            // InternalWeebADoodle.g:787:4: (lv_movement_7_0= RULE_STRING )
-            // InternalWeebADoodle.g:788:5: lv_movement_7_0= RULE_STRING
+            // InternalWeebADoodle.g:644:4: (lv_description_1_0= RULE_STRING )
+            // InternalWeebADoodle.g:645:5: lv_description_1_0= RULE_STRING
             {
-            lv_movement_7_0=(Token)match(input,RULE_STRING,FOLLOW_17); 
+            lv_description_1_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
-            					newLeafNode(lv_movement_7_0, grammarAccess.getDirectionAccess().getMovementSTRINGTerminalRuleCall_4_0());
+            					newLeafNode(lv_description_1_0, grammarAccess.getDescriptionStatementAccess().getDescriptionSTRINGTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getDirectionRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"movement",
-            						lv_movement_7_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,22,FOLLOW_9); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getDirectionAccess().getDescriptionKeyword_5());
-            		
-            // InternalWeebADoodle.g:808:3: ( (lv_description_9_0= RULE_STRING ) )
-            // InternalWeebADoodle.g:809:4: (lv_description_9_0= RULE_STRING )
-            {
-            // InternalWeebADoodle.g:809:4: (lv_description_9_0= RULE_STRING )
-            // InternalWeebADoodle.g:810:5: lv_description_9_0= RULE_STRING
-            {
-            lv_description_9_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
-
-            					newLeafNode(lv_description_9_0, grammarAccess.getDirectionAccess().getDescriptionSTRINGTerminalRuleCall_6_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getDirectionRule());
+            						current = createModelElement(grammarAccess.getDescriptionStatementRule());
             					}
             					setWithLastConsumed(
             						current,
             						"description",
-            						lv_description_9_0,
+            						lv_description_1_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1574,13 +1358,9 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,17,FOLLOW_14); 
+            otherlv_2=(Token)match(input,16,FOLLOW_2); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getDirectionAccess().getSemicolonKeyword_7());
-            		
-            otherlv_11=(Token)match(input,13,FOLLOW_2); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getDirectionAccess().getRightCurlyBracketKeyword_8());
+            			newLeafNode(otherlv_2, grammarAccess.getDescriptionStatementAccess().getSemicolonKeyword_2());
             		
 
             }
@@ -1601,7 +1381,626 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleDirection"
+    // $ANTLR end "ruleDescriptionStatement"
+
+
+    // $ANTLR start "entryRuleDialogueStatement"
+    // InternalWeebADoodle.g:669:1: entryRuleDialogueStatement returns [EObject current=null] : iv_ruleDialogueStatement= ruleDialogueStatement EOF ;
+    public final EObject entryRuleDialogueStatement() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleDialogueStatement = null;
+
+
+        try {
+            // InternalWeebADoodle.g:669:58: (iv_ruleDialogueStatement= ruleDialogueStatement EOF )
+            // InternalWeebADoodle.g:670:2: iv_ruleDialogueStatement= ruleDialogueStatement EOF
+            {
+             newCompositeNode(grammarAccess.getDialogueStatementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDialogueStatement=ruleDialogueStatement();
+
+            state._fsp--;
+
+             current =iv_ruleDialogueStatement; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDialogueStatement"
+
+
+    // $ANTLR start "ruleDialogueStatement"
+    // InternalWeebADoodle.g:676:1: ruleDialogueStatement returns [EObject current=null] : (otherlv_0= 'dialogue:' ( (lv_dialogue_1_0= RULE_STRING ) ) otherlv_2= ';' ) ;
+    public final EObject ruleDialogueStatement() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_dialogue_1_0=null;
+        Token otherlv_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWeebADoodle.g:682:2: ( (otherlv_0= 'dialogue:' ( (lv_dialogue_1_0= RULE_STRING ) ) otherlv_2= ';' ) )
+            // InternalWeebADoodle.g:683:2: (otherlv_0= 'dialogue:' ( (lv_dialogue_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            {
+            // InternalWeebADoodle.g:683:2: (otherlv_0= 'dialogue:' ( (lv_dialogue_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            // InternalWeebADoodle.g:684:3: otherlv_0= 'dialogue:' ( (lv_dialogue_1_0= RULE_STRING ) ) otherlv_2= ';'
+            {
+            otherlv_0=(Token)match(input,23,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getDialogueStatementAccess().getDialogueKeyword_0());
+            		
+            // InternalWeebADoodle.g:688:3: ( (lv_dialogue_1_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:689:4: (lv_dialogue_1_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:689:4: (lv_dialogue_1_0= RULE_STRING )
+            // InternalWeebADoodle.g:690:5: lv_dialogue_1_0= RULE_STRING
+            {
+            lv_dialogue_1_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_dialogue_1_0, grammarAccess.getDialogueStatementAccess().getDialogueSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getDialogueStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"dialogue",
+            						lv_dialogue_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getDialogueStatementAccess().getSemicolonKeyword_2());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDialogueStatement"
+
+
+    // $ANTLR start "entryRuleActionStatement"
+    // InternalWeebADoodle.g:714:1: entryRuleActionStatement returns [EObject current=null] : iv_ruleActionStatement= ruleActionStatement EOF ;
+    public final EObject entryRuleActionStatement() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleActionStatement = null;
+
+
+        try {
+            // InternalWeebADoodle.g:714:56: (iv_ruleActionStatement= ruleActionStatement EOF )
+            // InternalWeebADoodle.g:715:2: iv_ruleActionStatement= ruleActionStatement EOF
+            {
+             newCompositeNode(grammarAccess.getActionStatementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleActionStatement=ruleActionStatement();
+
+            state._fsp--;
+
+             current =iv_ruleActionStatement; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleActionStatement"
+
+
+    // $ANTLR start "ruleActionStatement"
+    // InternalWeebADoodle.g:721:1: ruleActionStatement returns [EObject current=null] : (otherlv_0= 'action:' ( (lv_action_1_0= RULE_STRING ) ) otherlv_2= ';' ) ;
+    public final EObject ruleActionStatement() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_action_1_0=null;
+        Token otherlv_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWeebADoodle.g:727:2: ( (otherlv_0= 'action:' ( (lv_action_1_0= RULE_STRING ) ) otherlv_2= ';' ) )
+            // InternalWeebADoodle.g:728:2: (otherlv_0= 'action:' ( (lv_action_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            {
+            // InternalWeebADoodle.g:728:2: (otherlv_0= 'action:' ( (lv_action_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            // InternalWeebADoodle.g:729:3: otherlv_0= 'action:' ( (lv_action_1_0= RULE_STRING ) ) otherlv_2= ';'
+            {
+            otherlv_0=(Token)match(input,24,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getActionStatementAccess().getActionKeyword_0());
+            		
+            // InternalWeebADoodle.g:733:3: ( (lv_action_1_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:734:4: (lv_action_1_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:734:4: (lv_action_1_0= RULE_STRING )
+            // InternalWeebADoodle.g:735:5: lv_action_1_0= RULE_STRING
+            {
+            lv_action_1_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_action_1_0, grammarAccess.getActionStatementAccess().getActionSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getActionStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"action",
+            						lv_action_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getActionStatementAccess().getSemicolonKeyword_2());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleActionStatement"
+
+
+    // $ANTLR start "entryRulePositionStatement"
+    // InternalWeebADoodle.g:759:1: entryRulePositionStatement returns [EObject current=null] : iv_rulePositionStatement= rulePositionStatement EOF ;
+    public final EObject entryRulePositionStatement() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePositionStatement = null;
+
+
+        try {
+            // InternalWeebADoodle.g:759:58: (iv_rulePositionStatement= rulePositionStatement EOF )
+            // InternalWeebADoodle.g:760:2: iv_rulePositionStatement= rulePositionStatement EOF
+            {
+             newCompositeNode(grammarAccess.getPositionStatementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePositionStatement=rulePositionStatement();
+
+            state._fsp--;
+
+             current =iv_rulePositionStatement; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePositionStatement"
+
+
+    // $ANTLR start "rulePositionStatement"
+    // InternalWeebADoodle.g:766:1: rulePositionStatement returns [EObject current=null] : (otherlv_0= 'position:' ( (lv_position_1_0= RULE_STRING ) ) otherlv_2= ';' ) ;
+    public final EObject rulePositionStatement() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_position_1_0=null;
+        Token otherlv_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWeebADoodle.g:772:2: ( (otherlv_0= 'position:' ( (lv_position_1_0= RULE_STRING ) ) otherlv_2= ';' ) )
+            // InternalWeebADoodle.g:773:2: (otherlv_0= 'position:' ( (lv_position_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            {
+            // InternalWeebADoodle.g:773:2: (otherlv_0= 'position:' ( (lv_position_1_0= RULE_STRING ) ) otherlv_2= ';' )
+            // InternalWeebADoodle.g:774:3: otherlv_0= 'position:' ( (lv_position_1_0= RULE_STRING ) ) otherlv_2= ';'
+            {
+            otherlv_0=(Token)match(input,25,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getPositionStatementAccess().getPositionKeyword_0());
+            		
+            // InternalWeebADoodle.g:778:3: ( (lv_position_1_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:779:4: (lv_position_1_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:779:4: (lv_position_1_0= RULE_STRING )
+            // InternalWeebADoodle.g:780:5: lv_position_1_0= RULE_STRING
+            {
+            lv_position_1_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_position_1_0, grammarAccess.getPositionStatementAccess().getPositionSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPositionStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"position",
+            						lv_position_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getPositionStatementAccess().getSemicolonKeyword_2());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePositionStatement"
+
+
+    // $ANTLR start "entryRuleCameraShotStatement"
+    // InternalWeebADoodle.g:804:1: entryRuleCameraShotStatement returns [EObject current=null] : iv_ruleCameraShotStatement= ruleCameraShotStatement EOF ;
+    public final EObject entryRuleCameraShotStatement() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCameraShotStatement = null;
+
+
+        try {
+            // InternalWeebADoodle.g:804:60: (iv_ruleCameraShotStatement= ruleCameraShotStatement EOF )
+            // InternalWeebADoodle.g:805:2: iv_ruleCameraShotStatement= ruleCameraShotStatement EOF
+            {
+             newCompositeNode(grammarAccess.getCameraShotStatementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCameraShotStatement=ruleCameraShotStatement();
+
+            state._fsp--;
+
+             current =iv_ruleCameraShotStatement; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCameraShotStatement"
+
+
+    // $ANTLR start "ruleCameraShotStatement"
+    // InternalWeebADoodle.g:811:1: ruleCameraShotStatement returns [EObject current=null] : (otherlv_0= 'camera:' ( (lv_cameraShot_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_cameraAngle_3_0= RULE_STRING ) ) otherlv_4= ';' ) ;
+    public final EObject ruleCameraShotStatement() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_cameraShot_1_0=null;
+        Token otherlv_2=null;
+        Token lv_cameraAngle_3_0=null;
+        Token otherlv_4=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWeebADoodle.g:817:2: ( (otherlv_0= 'camera:' ( (lv_cameraShot_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_cameraAngle_3_0= RULE_STRING ) ) otherlv_4= ';' ) )
+            // InternalWeebADoodle.g:818:2: (otherlv_0= 'camera:' ( (lv_cameraShot_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_cameraAngle_3_0= RULE_STRING ) ) otherlv_4= ';' )
+            {
+            // InternalWeebADoodle.g:818:2: (otherlv_0= 'camera:' ( (lv_cameraShot_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_cameraAngle_3_0= RULE_STRING ) ) otherlv_4= ';' )
+            // InternalWeebADoodle.g:819:3: otherlv_0= 'camera:' ( (lv_cameraShot_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_cameraAngle_3_0= RULE_STRING ) ) otherlv_4= ';'
+            {
+            otherlv_0=(Token)match(input,26,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getCameraShotStatementAccess().getCameraKeyword_0());
+            		
+            // InternalWeebADoodle.g:823:3: ( (lv_cameraShot_1_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:824:4: (lv_cameraShot_1_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:824:4: (lv_cameraShot_1_0= RULE_STRING )
+            // InternalWeebADoodle.g:825:5: lv_cameraShot_1_0= RULE_STRING
+            {
+            lv_cameraShot_1_0=(Token)match(input,RULE_STRING,FOLLOW_20); 
+
+            					newLeafNode(lv_cameraShot_1_0, grammarAccess.getCameraShotStatementAccess().getCameraShotSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getCameraShotStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"cameraShot",
+            						lv_cameraShot_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,27,FOLLOW_8); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getCameraShotStatementAccess().getFromKeyword_2());
+            		
+            // InternalWeebADoodle.g:845:3: ( (lv_cameraAngle_3_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:846:4: (lv_cameraAngle_3_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:846:4: (lv_cameraAngle_3_0= RULE_STRING )
+            // InternalWeebADoodle.g:847:5: lv_cameraAngle_3_0= RULE_STRING
+            {
+            lv_cameraAngle_3_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_cameraAngle_3_0, grammarAccess.getCameraShotStatementAccess().getCameraAngleSTRINGTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getCameraShotStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"cameraAngle",
+            						lv_cameraAngle_3_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getCameraShotStatementAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCameraShotStatement"
+
+
+    // $ANTLR start "entryRuleLightingStatement"
+    // InternalWeebADoodle.g:871:1: entryRuleLightingStatement returns [EObject current=null] : iv_ruleLightingStatement= ruleLightingStatement EOF ;
+    public final EObject entryRuleLightingStatement() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLightingStatement = null;
+
+
+        try {
+            // InternalWeebADoodle.g:871:58: (iv_ruleLightingStatement= ruleLightingStatement EOF )
+            // InternalWeebADoodle.g:872:2: iv_ruleLightingStatement= ruleLightingStatement EOF
+            {
+             newCompositeNode(grammarAccess.getLightingStatementRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleLightingStatement=ruleLightingStatement();
+
+            state._fsp--;
+
+             current =iv_ruleLightingStatement; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLightingStatement"
+
+
+    // $ANTLR start "ruleLightingStatement"
+    // InternalWeebADoodle.g:878:1: ruleLightingStatement returns [EObject current=null] : (otherlv_0= 'lighting:' ( (lv_source_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_direction_3_0= RULE_STRING ) ) otherlv_4= ';' ) ;
+    public final EObject ruleLightingStatement() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_source_1_0=null;
+        Token otherlv_2=null;
+        Token lv_direction_3_0=null;
+        Token otherlv_4=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWeebADoodle.g:884:2: ( (otherlv_0= 'lighting:' ( (lv_source_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_direction_3_0= RULE_STRING ) ) otherlv_4= ';' ) )
+            // InternalWeebADoodle.g:885:2: (otherlv_0= 'lighting:' ( (lv_source_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_direction_3_0= RULE_STRING ) ) otherlv_4= ';' )
+            {
+            // InternalWeebADoodle.g:885:2: (otherlv_0= 'lighting:' ( (lv_source_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_direction_3_0= RULE_STRING ) ) otherlv_4= ';' )
+            // InternalWeebADoodle.g:886:3: otherlv_0= 'lighting:' ( (lv_source_1_0= RULE_STRING ) ) otherlv_2= 'from' ( (lv_direction_3_0= RULE_STRING ) ) otherlv_4= ';'
+            {
+            otherlv_0=(Token)match(input,28,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getLightingStatementAccess().getLightingKeyword_0());
+            		
+            // InternalWeebADoodle.g:890:3: ( (lv_source_1_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:891:4: (lv_source_1_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:891:4: (lv_source_1_0= RULE_STRING )
+            // InternalWeebADoodle.g:892:5: lv_source_1_0= RULE_STRING
+            {
+            lv_source_1_0=(Token)match(input,RULE_STRING,FOLLOW_20); 
+
+            					newLeafNode(lv_source_1_0, grammarAccess.getLightingStatementAccess().getSourceSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getLightingStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"source",
+            						lv_source_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,27,FOLLOW_8); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getLightingStatementAccess().getFromKeyword_2());
+            		
+            // InternalWeebADoodle.g:912:3: ( (lv_direction_3_0= RULE_STRING ) )
+            // InternalWeebADoodle.g:913:4: (lv_direction_3_0= RULE_STRING )
+            {
+            // InternalWeebADoodle.g:913:4: (lv_direction_3_0= RULE_STRING )
+            // InternalWeebADoodle.g:914:5: lv_direction_3_0= RULE_STRING
+            {
+            lv_direction_3_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
+
+            					newLeafNode(lv_direction_3_0, grammarAccess.getLightingStatementAccess().getDirectionSTRINGTerminalRuleCall_3_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getLightingStatementRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"direction",
+            						lv_direction_3_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_4=(Token)match(input,16,FOLLOW_2); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getLightingStatementAccess().getSemicolonKeyword_4());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLightingStatement"
 
     // Delegated rules
 
@@ -1613,23 +2012,20 @@ public class InternalWeebADoodleParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000002880000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000020002000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000142000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000102000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001C00000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000880000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000040000000L});
 
 }

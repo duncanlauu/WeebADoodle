@@ -30,17 +30,17 @@ To create a storyboard using the custom language, follow these steps:
 
 Template:
 
-	board {
-        
-        scene{
-		    Scene1 : "testScene" ;
-		    background: "Background" ; 
-
-		    setting {
-			    camera: "cameraShot" from "right ";
-			    lighting: "Source" from "left";
-			    description: "Description" ;
-		    }
+    board {
+	
+    title: "testBoard"
+	scene {
+		Scene1 : "testScene" ;
+		background: "Background" ; 
+		setting {
+			camera: "cameraShot" ;
+			lighting: "Source" ;
+			description: "Description" ;
+		}
 		
 		character {
 			Char1 name: "Name1" ;
@@ -55,8 +55,8 @@ Template:
 			position: "Position" ;
 			description: "Description" ;
 		}	
-    }
 	}
+    }
         
 
 

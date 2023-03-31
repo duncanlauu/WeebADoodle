@@ -1,0 +1,187 @@
+
+		Script Title: The Matrix
+		
+		Scene1 Opening 1-1
+		BG: Dark
+		Setting: A blinding cursor pulses in the electric darkness like a heart coursing with phosphorous light, burning beneath the derma of black-neon glass. Data slashes across the screen, information flashing faster then we can read.
+		Camera: Fade in the middle
+		Lighting: Dim green light flickering computer screen
+		
+		VO1 Man
+		Dialogue: Yeah?
+		(Off screen.)
+		
+		VO2 Woman
+		Dialogue: Is everything in place?
+		(Off screen.)
+		
+		
+		Object: O1 Computer
+		[at center of screen]
+		(On screen: 'Trace program: running.')
+		
+		---
+		
+		Scene2 Opening 1-2
+		BG: Dark
+		Setting: We listen to the phone conversation as though we were on a third line. The man's name is Cypher. The woman, Trinity.
+		Camera: Close up at computer 
+		Lighting: Dim 
+		
+		VO2 Trinity
+		Dialogue: I said, is everything in place?
+		
+		VO1 Cypher
+		Dialogue: You weren't supposed to relieve me.
+		
+		
+		
+		---
+		
+		Scene3 Opening 1-3
+		BG: Dark
+		Setting: The entire screen with racing columns of numbers. Shimmering like green-electric rivers, they rush at a 10-digit phone number in the top corner.
+		Camera: Close up at computer 
+		Lighting: Dim 
+		
+		VO2 Trinity
+		Dialogue: I know but I felt like taking a shift.
+		
+		VO1 Cypher
+		Dialogue: You like him, don't you? You like watching him?
+		
+		
+		Object: O1 Computer
+		[at center of screen]
+		(The area code is identified. The first three numbers suddenly fixed, leaving only seven flowing columns.)
+		
+		---
+		
+		Scene4 Opening 1-3
+		BG: Dark
+		Setting: Each area digit is matched, one by one, snapping into place like the wheels of a slot machine.
+		Camera: Closing in toward the computer the center of the screen
+		Lighting: Dim 
+		
+		VO2 Trinity
+		Dialogue: Don't be ridiculous. Morpheus believes he is the One.
+		
+		VO1 Cypher
+		Dialogue: Do you?
+		
+		
+		
+		---
+		
+		Scene5 Opening 1-3
+		BG: Dark
+		Setting: Only two thin area digits left.
+		Camera: Closing in toward the computer the center of the screen
+		Lighting: Dim 
+		
+		VO2 Trinity
+		Dialogue: I... it doesn't matter what I believe. If you have something to say, I suggest you say it to Morpheus.
+		
+		VO1 Cypher
+		Dialogue: I intend to, believe me. Someone has to.
+		
+		
+		Object: O1 Computer
+		[at center of screen]
+		(The final number POPS into place --)
+		
+		---
+		
+		Scene7 Opening 1-3
+		BG: Dark
+		Setting: On screen: 'Trace complete. Call origin: #312-555-0690.'
+		Camera: Stops moving towards the computer 
+		Lighting: Dim 
+		
+		VO2 Trinity
+		Dialogue: Are you sure this line is clean?
+		
+		VO1 Cypher
+		Dialogue: Yeah, 'course I'm sure.
+		
+		
+		
+		---
+		
+		Scene8 Opening 1-4
+		BG: Dark
+		Setting: ELECTRIC HUM of the green NUMBERS GROWING into an ominous ROAR
+		Camera: Zoom in at computer center of screen
+		Lighting: Green after effects zooming in on the side screen
+		
+		VO2 Trinity
+		Dialogue: I better go.
+		*hangs up the call*
+		
+		
+		Object: O1 Computer screen
+		[at center of screen]
+		(we PASS THROUGH the numbers, entering the nether world of the computer screen.)
+		
+		---
+		
+		Scene9 Opening 2-1
+		BG: Hotel - Night
+		Setting: Surrounded by police cruisers at the back
+		Camera: Close up of headlights low angle
+		Lighting: Backlight 
+		
+		AS Agent Smith
+		Dialogue: Lieutenant?
+		*Gets out of the car*
+		(Wear dark suits and sunglasses even at night, always have Secret Service earphones in one ear)
+		
+		PO1 Lieutenant
+		Dialogue: Oh sh*t.
+		
+		
+		Object: CAR1 A black sedan with tinted windows
+		[at bottom right of screen]
+		(Blinding headlights)
+		
+		---
+		
+		Scene10 Opening 2-2
+		BG: Hotel - Night
+		Setting: Surrounded by police cruisers at the back
+		Camera: Medium shot lieutenant's back
+		Lighting: Hard 
+		
+		AS Agent Smith
+		Dialogue: Lieutenant, you were given specific orders...
+		*Walks up to lieutenant*
+		
+		AB Agent Brown
+		[behind Agent Smith]
+		
+		PO1 Lieutenant
+		Dialogue: I think we can handle one little girl. I sent two units. They're bringing her down now.
+		*laughs*
+		
+		
+		
+		---
+		
+		Scene11 Opening 2-4
+		BG: Hotel - Night
+		Setting: Shot is centered at Agent Smith's profile
+		Camera: Medium shot agent smith's back
+		Lighting: Hard 
+		
+		AB Agent Brown
+		*nods to Agent Smith, and walks towards hotel, away from the lieutenant*
+		
+		AS Agent Smith
+		Dialogue: No, Lieutenant, your men are already dead.
+		*looks back at lieutenant*
+		
+		
+		
+		---
+		
+		

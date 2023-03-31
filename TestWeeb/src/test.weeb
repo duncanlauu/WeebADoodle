@@ -1,0 +1,28 @@
+board {
+	title: "testBoard"
+	
+	scene {
+		Scene1 : "testScene" ;
+		background: "Background" ; 
+		
+		setting {
+			camera: "cameraShot" ;
+			lighting: "Source" ;
+			description: "Description" ;
+		}
+		
+		character {
+			Char1 name: "Name1" ;
+			position: "Position" ;
+			action: "Action" ;
+			dialogue: "Dialogue" ;
+			description: "Description" ;
+		}
+		
+		object {
+			Obj1 name: "Obj1" ;
+			position: "Position" ;
+			description: "Description" ;
+		}	
+	}
+}

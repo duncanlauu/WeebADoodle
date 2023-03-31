@@ -1,0 +1,250 @@
+board {
+	title: "The Matrix"
+    scene {
+        Scene1 : "Opening 1-1"; 
+        background: "Dark"; 
+        setting { 
+            camera: "Fade in" from "the middle"; 
+            lighting: "Dim green light flickering" from "computer screen";
+            description: "A blinding cursor pulses in the electric darkness like a heart coursing with phosphorous light, burning beneath the derma of black-neon glass. Data slashes across the screen, information flashing faster then we can read.";
+        } 
+        
+        character { 
+            VO1  name: 'Man';
+            dialogue: "Yeah?"; 
+            description: "Off screen."; 
+        }
+        
+        character {
+            VO2  name: 'Woman'; 
+            dialogue: "Is everything in place?"; 
+            description: "Off screen."; 
+        }
+        
+        object {  
+            O1 name: 'Computer';
+            position: "center of screen"; 
+            description: "On screen: 'Trace program: running.'"; 
+        }
+    }
+    
+    scene {
+        Scene2 : "Opening 1-2";
+        background: "Dark";
+        setting { 
+            camera: "Close up at computer";
+            lighting: "Dim";
+            description: "We listen to the phone conversation as though we were on a third line. The man's name is Cypher. The woman, Trinity.";
+        }
+        
+        character {
+            VO2 name: 'Trinity'; 
+            dialogue: "I said, is everything in place?";
+        } 
+        
+        character {
+            VO1 name: 'Cypher'; 
+            dialogue: "You weren't supposed to relieve me.";
+        } 
+         
+    }
+    
+    scene {
+        Scene3 : "Opening 1-3";
+        background: "Dark";
+        setting { 
+            camera: "Close up at computer"; 
+            lighting: "Dim"; 
+            description: "The entire screen with racing columns of numbers. Shimmering like green-electric rivers, they rush at a 10-digit phone number in the top corner.";
+        }
+        
+        character { 
+            VO2 name: 'Trinity';
+            dialogue: "I know but I felt like taking a shift.";
+        }
+        
+        character { 
+            VO1 name: 'Cypher';
+            dialogue: "You like him, don't you? You like watching him?";
+        }
+        
+        object {
+            O1 name: 'Computer';
+            position: "center of screen";
+            description: "The area code is identified. The first three numbers suddenly fixed, leaving only seven flowing columns.";
+        }
+    }
+    
+    scene {
+        Scene4 : "Opening 1-3";
+        background: "Dark";
+        setting { 
+            camera: "Closing in toward the computer" from "the center of the screen"; 
+            lighting: "Dim"; 
+            description: "Each area digit is matched, one by one, snapping into place like the wheels of a slot machine.";
+        }
+        
+        character { 
+            VO2 name: 'Trinity';
+            dialogue: "Don't be ridiculous. Morpheus believes he is the One.";
+        }
+        
+        character { 
+            VO1 name: 'Cypher';
+            dialogue: "Do you?";
+        }
+        
+    }
+    
+    scene {
+        Scene5 : "Opening 1-3";
+        background: "Dark";
+        setting { 
+            camera: "Closing in toward the computer" from "the center of the screen"; 
+            lighting: "Dim"; 
+            description: "Only two thin area digits left.";
+        }
+        
+        character { 
+            VO2 name: 'Trinity';
+            dialogue: "I... it doesn't matter what I believe. If you have something to say, I suggest you say it to Morpheus.";
+        }
+        
+        character { 
+            VO1 name: 'Cypher';
+            dialogue: "I intend to, believe me. Someone has to.";
+        }
+        
+        object {
+            O1 name: 'Computer';
+            position: "center of screen";
+            description: "The final number POPS into place --";
+        }
+    }
+    
+    scene {
+        Scene7 : "Opening 1-3";
+        background: "Dark";
+        setting { 
+            camera: "Stops moving towards the computer"; 
+            lighting: "Dim"; 
+            description: "On screen: 'Trace complete. Call origin: #312-555-0690.'";
+        }
+        
+        character { 
+            VO2 name: 'Trinity';
+            dialogue: "Are you sure this line is clean?";
+        }
+        
+        character { 
+            VO1 name: 'Cypher';
+            dialogue: "Yeah, 'course I'm sure.";
+        }
+        
+    }
+    
+    scene { 
+        Scene8 : "Opening 1-4";
+        background: "Dark";
+        setting { 
+            camera: "Zoom in at computer" from "center of screen"; 
+            lighting: "Green after effects" from "zooming in on the side screen"; 
+            description: "ELECTRIC HUM of the green NUMBERS GROWING into an ominous ROAR";
+        }
+        
+        character { 
+            VO2 name: 'Trinity'; 
+            action: "hangs up the call" ;
+            dialogue: "I better go.";
+        }
+        
+        object {
+            O1 name: 'Computer screen';
+            position: "center of screen";
+            description: "we PASS THROUGH the numbers, entering the nether world of the computer screen.";
+        }
+    }
+    
+    scene {
+        Scene9 : "Opening 2-1";
+        background: "Hotel - Night";
+        setting { 
+            camera: "Close up of headlights" from "low angle"; 
+            lighting: "Backlight"; 
+            description: "Surrounded by police cruisers at the back";
+        }
+        
+        character { 
+            AS name: 'Agent Smith';
+            action: "Gets out of the car";
+            dialogue: "Lieutenant?";
+            description: "Wear dark suits and sunglasses even at night, always have Secret Service earphones in one ear";
+        }
+        
+        character { 
+            PO1 name: 'Lieutenant';
+            dialogue: "Oh sh*t." ;
+        }
+        
+        object {
+            CAR1 name: 'A black sedan with tinted windows';
+            position: "bottom right of screen";
+            description: "Blinding headlights";
+        }
+    }
+    
+    scene {
+        Scene10 : "Opening 2-2";
+        background: "Hotel - Night";
+        setting { 
+            camera: "Medium shot" from "lieutenant's back"; 
+            lighting: "Hard"; 
+            description: "Surrounded by police cruisers at the back";
+        }
+        
+        character { 
+            AS name: 'Agent Smith';
+            action: "Walks up to lieutenant";
+            dialogue: "Lieutenant, you were given specific orders...";
+        }
+        
+        character { 
+            AB name: 'Agent Brown';
+            position: "behind Agent Smith";
+        }
+        
+        
+        character { 
+            PO1 name: 'Lieutenant';
+            action: "laughs";
+            dialogue: "I think we can handle one little girl. I sent two units. They're bringing her down now.";
+        }
+        
+    }
+    
+    scene {
+        Scene11 : "Opening 2-4";
+        background: "Hotel - Night";
+        setting { 
+            camera: "Medium shot" from "agent smith's back"; 
+            lighting: "Hard"; 
+            description: "Shot is centered at Agent Smith's profile";
+        }
+        
+        character { 
+            AB name: 'Agent Brown';
+            action: "nods to Agent Smith, and walks towards hotel, away from the lieutenant";
+        }
+        
+        character { 
+            AS name: 'Agent Smith';
+            action: "looks back at lieutenant";
+            dialogue: "No, Lieutenant, your men are already dead.";
+        }
+        
+        
+        
+    }
+    
+    
+}   

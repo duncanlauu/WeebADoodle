@@ -1,0 +1,23 @@
+
+		Script Title: testBoard
+		
+		Scene1 testScene
+		BG: Background
+		Setting: Description
+		Camera: cameraShot 
+		Lighting: Source 
+		
+		Char1 Name1
+		Dialogue: Dialogue
+		*Action*
+		[Position]
+		(Description)
+		
+		
+		Object: Obj1 Obj1
+		[at Position]
+		(Description)
+		
+		---
+		
+		

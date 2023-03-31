@@ -11,5 +11,5 @@ package uk.ac.kcl.inf.mde.scoping
  * on how and when to use it.
  */
 class WeebADoodleScopeProvider extends AbstractWeebADoodleScopeProvider {
-
+ 
 }

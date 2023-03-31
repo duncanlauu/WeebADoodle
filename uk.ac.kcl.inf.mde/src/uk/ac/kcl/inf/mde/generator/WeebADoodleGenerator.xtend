@@ -20,13 +20,17 @@ class WeebADoodleGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val model = resource.contents.head as Board
-		fsa.generateFile("storyboard.txt", model.doGenerateTxt)
-		fsa.generateFile("storyboard.html", model.doGenerateHTML)
+		fsa.generateFile(derivateTargetScriptFileNameFor(model, resource), model.doGenerateTxt)
+		fsa.generateFile(derivateTargetBoardFileNameFor(model, resource), model.doGenerateHTML)
 
 	}
 
-	def derivateTargetFileNameFor(Board model, Resource resource) {
+	def derivateTargetScriptFileNameFor(Board model, Resource resource) {
 		resource.URI.appendFileExtension('txt').lastSegment
+	}
+	
+	def derivateTargetBoardFileNameFor(Board model, Resource resource) {
+		resource.URI.appendFileExtension('html').lastSegment
 	}
 
 	def String doGenerateTxt(Board m) '''

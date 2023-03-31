@@ -29,12 +29,16 @@ public class WeebADoodleGenerator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     EObject _head = IterableExtensions.<EObject>head(resource.getContents());
     final Board model = ((Board) _head);
-    fsa.generateFile("storyboard.txt", this.doGenerateTxt(model));
-    fsa.generateFile("storyboard.html", this.doGenerateHTML(model));
+    fsa.generateFile(this.derivateTargetScriptFileNameFor(model, resource), this.doGenerateTxt(model));
+    fsa.generateFile(this.derivateTargetBoardFileNameFor(model, resource), this.doGenerateHTML(model));
   }
 
-  public String derivateTargetFileNameFor(final Board model, final Resource resource) {
+  public String derivateTargetScriptFileNameFor(final Board model, final Resource resource) {
     return resource.getURI().appendFileExtension("txt").lastSegment();
+  }
+
+  public String derivateTargetBoardFileNameFor(final Board model, final Resource resource) {
+    return resource.getURI().appendFileExtension("html").lastSegment();
   }
 
   public String doGenerateTxt(final Board m) {
